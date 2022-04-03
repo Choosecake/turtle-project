@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        print(moveSpeed);
+        // print(moveSpeed);
         float vertical = Input.GetAxisRaw("Vertical");
         float horizontal = Input.GetAxisRaw("Horizontal") * 0.4f;
 
