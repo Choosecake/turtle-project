@@ -10,13 +10,23 @@ namespace Code
         [SerializeField] private float nutritionDecayPeriod = 1.0f; 
         [Range(0, 1)] [SerializeField] private float nutritionDecayFactor = 0.1f;
 
+        [Header("References")] 
+        //Might have to change to something without ProgressBarPro
+        [SerializeField] private ProgressBarPro nutritionMeter;
+        
         private float _currentNutrition;
+
+        private float CurrentNutrition
+        {
+            set => nutritionMeter.Value = _currentNutrition = value;
+            get => _currentNutrition;
+        }
         
         private const float MAXNutrition = 1.0f;
 
         private void Awake()
         {
-            _currentNutrition = MAXNutrition;
+            CurrentNutrition = MAXNutrition;
         }
 
         private void Start()
@@ -26,7 +36,7 @@ namespace Code
 
         private void Update()
         {
-            if (_currentNutrition <= 0)
+            if (CurrentNutrition <= 0)
             {
                 Die();
             }
@@ -42,7 +52,7 @@ namespace Code
             while (true)
             {
                 yield return period;
-                _currentNutrition -= nutritionDecayFactor;
+                CurrentNutrition -= nutritionDecayFactor;
             }
         }
 
