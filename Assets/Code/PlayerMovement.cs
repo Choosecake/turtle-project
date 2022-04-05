@@ -1,26 +1,26 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Vector3 playerMovement;
-    private float moveSpeed = 5.0f;
+    [SerializeField] private Transform target;
+    [SerializeField] private Transform turtleModel;
+    private Vector3 movementDirection;
+    private float movementSpeed = 5.0f;
+    private float rotationSpeed = 350.0f;
 
     private void Update()
     {
-        // print(moveSpeed);
         float vertical = Input.GetAxisRaw("Vertical");
-        float horizontal = Input.GetAxisRaw("Horizontal") * 0.4f;
+        float horizontal = Input.GetAxisRaw("Horizontal");
 
-        playerMovement = new Vector3(horizontal, 0f, vertical) * moveSpeed * Time.deltaTime;
-        transform.Translate(playerMovement, Space.Self);
+        movementDirection = new Vector3(horizontal, 0f, vertical);
+        
+        transform.Translate(movementDirection * movementSpeed * Time.deltaTime, Space.Self);
+        transform.rotation = Quaternion.Lerp(transform.rotation, target.rotation, 5.0f * Time.deltaTime);
 
-        if (vertical != 0)
-        {
-            transform.Rotate(Vector3.forward * -horizontal, Space.Self);
-        }
+        if (movementDirection == Vector3.zero) return;
+        // character rotation
+        Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up) * target.rotation;
+        turtleModel.rotation = Quaternion.RotateTowards(turtleModel.rotation, toRotation, rotationSpeed * Time.deltaTime);
     }
 }
