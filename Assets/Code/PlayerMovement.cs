@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
 
         movementDirection = new Vector3(horizontal, 0f, vertical);
+        movementDirection.Normalize();
         
         transform.Translate(movementDirection * movementSpeed * Time.deltaTime, Space.Self);
         transform.rotation = Quaternion.Lerp(transform.rotation, target.rotation, 5.0f * Time.deltaTime);
