@@ -3,7 +3,8 @@ using UnityEngine;
 public class ThirdPersonCameraController : MonoBehaviour
 {
     [SerializeField] private Transform target;
-    private const float Sensitivity = 100.0f;
+    [Range(100.0f, 1000.0f)]
+    [SerializeField] private float Sensitivity = 300.0f;
     private float _mouseX, _mouseY;
 
     private void Start()
