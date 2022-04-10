@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+[SelectionBase]
 public class PlayerMovement : MonoBehaviour
 {
     public Vector3 playerMovement;

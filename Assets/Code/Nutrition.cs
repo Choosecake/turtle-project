@@ -62,5 +62,10 @@ namespace Code
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+
+        public void RecoverNutrition(float value)
+        {
+            CurrentNutrition += value;
+        }
     }
 }
