@@ -21,14 +21,14 @@ public class GuidingLight : MonoBehaviour
 
     private void Update()
     {
+        if (Vector3.Distance(waypoints[currentWaypoint].transform.position, player.position) < minDistance)
+        {
+            if (currentWaypoint < waypoints.Length-1) currentWaypoint += 1;
+        }
+        
         pointLight.transform.position = Vector3.Lerp(
             pointLight.transform.position,
             waypoints[currentWaypoint].transform.position,
             pointLightSpeed * Time.deltaTime);
-        
-        if (Vector3.Distance(waypoints[currentWaypoint].transform.position, player.position) < minDistance)
-        {
-            if (currentWaypoint < waypoints.Length) currentWaypoint += 1;
-        }
     }
 }
