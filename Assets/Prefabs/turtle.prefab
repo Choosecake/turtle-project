@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3575046197000799503}
   - component: {fileID: 3575046197000799504}
   - component: {fileID: 9135854282668879642}
+  - component: {fileID: 5161203952362394494}
   m_Layer: 0
   m_Name: turtle
   m_TagString: Untagged
@@ -76,9 +77,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0811c7d380644e97b120213eea511114, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialNutrition: 1
   nutritionDecayPeriod: 1
   nutritionDecayFactor: 0.005
   nutritionMeter: {fileID: 0}
+--- !u!114 &5161203952362394494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3575046197000799506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c30d4a0f6424eccb70410ed71a01a51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nucleusDistance: 0
+  sphereRadius: 1.81
+  foodLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  eatInput_UI: {fileID: 0}
+  detectionInterval: 0.2
+  recoveryValue: 0.25
 --- !u!1 &3575046197012908057
 GameObject:
   m_ObjectHideFlags: 0

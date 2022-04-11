@@ -7,6 +7,7 @@ namespace Code
 {
     public class Nutrition : MonoBehaviour
     {
+        [Range(0, 1)][SerializeField] private float initialNutrition = 1.0f;
         [SerializeField] private float nutritionDecayPeriod = 1.0f; 
         [Range(0, 1)] [SerializeField] private float nutritionDecayFactor = 0.1f;
 
@@ -18,7 +19,7 @@ namespace Code
 
         private float CurrentNutrition
         {
-            set => nutritionMeter.Value = _currentNutrition = value;
+            set => nutritionMeter.Value = _currentNutrition = Mathf.Clamp01(value);
             get => _currentNutrition;
         }
         
@@ -26,7 +27,7 @@ namespace Code
 
         private void Awake()
         {
-            CurrentNutrition = MAXNutrition;
+            CurrentNutrition = initialNutrition;
         }
 
         private void Start()
@@ -60,6 +61,11 @@ namespace Code
         void Die()
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
+        public void RecoverNutrition(float value)
+        {
+            CurrentNutrition += value;
         }
     }
 }

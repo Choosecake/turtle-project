@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[SelectionBase]
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private Transform target;
