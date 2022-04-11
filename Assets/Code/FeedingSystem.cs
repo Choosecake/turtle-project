@@ -41,6 +41,7 @@ public class FeedingSystem : MonoBehaviour
     {
         if (_detectedFood[0] != null && Input.GetKeyDown(KeyCode.E))
         {
+            //Talvez precise trocar esa verificação DE Tag pra LayerMask que é mais precisa e tem menos chance de dar merda
             var signal = _detectedFood[0].tag.Contains("GoodFood") ? 1 : -1;
             _nutrition.RecoverNutrition(recoveryValue * signal);
             Destroy(_detectedFood[0].gameObject);
