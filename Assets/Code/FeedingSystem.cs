@@ -41,8 +41,9 @@ public class FeedingSystem : MonoBehaviour
     {
         if (_detectedFood[0] != null && Input.GetKeyDown(KeyCode.E))
         {
+            var signal = _detectedFood[0].tag.Contains("GoodFood") ? 1 : -1;
+            _nutrition.RecoverNutrition(recoveryValue * signal);
             Destroy(_detectedFood[0].gameObject);
-            _nutrition.RecoverNutrition(recoveryValue);
         }
     }
 
