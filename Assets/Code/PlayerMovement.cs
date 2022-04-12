@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform turtleModel;
     private Vector3 movementDirection;
     private float movementSpeed = 5.0f;
-    private float rotationSpeed = 350.0f;
+    private float rotationSpeed = 300.0f;
 
     private void Update()
     {
