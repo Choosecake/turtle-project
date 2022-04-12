@@ -39,7 +39,9 @@ public class FeedingSystem : MonoBehaviour
 
     private void Update()
     {
-        if (_detectedFood[0] != null && Input.GetKeyDown(KeyCode.E))
+        // if (_detectedFood[0] != null && Input.GetKeyDown(KeyCode.E))
+        if (_detectedFood.Length > 0 && Input.GetKeyDown(KeyCode.E))
+
         {
             //Talvez precise trocar esa verificação DE Tag pra LayerMask que é mais precisa e tem menos chance de dar merda
             var signal = _detectedFood[0].tag.Contains("GoodFood") ? 1 : -1;
@@ -51,7 +53,10 @@ public class FeedingSystem : MonoBehaviour
     private bool IsFoodNearby()
     {
         _spherePosition = transform.position;
-        return Physics.OverlapSphereNonAlloc(_spherePosition, sphereRadius, _detectedFood, foodLayer) > 0;
+        _detectedFood = Physics.OverlapSphere(_spherePosition, sphereRadius, foodLayer);
+        return _detectedFood.Length > 0;
+        // return Physics.OverlapSphereNonAlloc(_spherePosition, sphereRadius, _detectedFood, foodLayer) > 0;
+        // return true;
     }
 
     private IEnumerator CheckForFood()
