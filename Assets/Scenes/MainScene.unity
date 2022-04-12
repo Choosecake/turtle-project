@@ -289,6 +289,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4409698883954191280, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5089685788798826983, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
       propertyPath: m_Name
       value: BaseGameKit
@@ -361,6 +365,18 @@ PrefabInstance:
       propertyPath: turtleModel
       value: 
       objectReference: {fileID: 1755420126}
+    - target: {fileID: 8952975436369531360, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8952975436369531360, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: m_PixelPerfect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8952975436369531360, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
 --- !u!1001 &398595727
