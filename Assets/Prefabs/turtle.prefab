@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3575046197000799505}
   - component: {fileID: 3575046197000799503}
+  - component: {fileID: 2778400144060872906}
   - component: {fileID: 3575046197000799504}
   - component: {fileID: 9135854282668879642}
   - component: {fileID: 5161203952362394494}
@@ -52,6 +53,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &2778400144060872906
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3575046197000799506}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3575046197000799504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,7 +78,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2d1b8edd0aed3047b5ae5d82ed9196a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMovement: {x: 0, y: 0, z: 0}
+  target: {fileID: 0}
+  turtleModel: {fileID: 0}
 --- !u!114 &9135854282668879642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,7 +213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 3575046198383717112}
-  player: {fileID: 3575046197000799505}
+  Sensitivity: 300
 --- !u!1 &3575046197600999627
 GameObject:
   m_ObjectHideFlags: 0
