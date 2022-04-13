@@ -1,0 +1,71 @@
+﻿using System;
+using System.Collections;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+namespace Code
+{
+    public class Breath : MonoBehaviour
+    {
+        [Range(0, 1)][SerializeField] private float initialBreath = 1.0f;
+        [SerializeField] private float breathDecayPeriod = 1.0f; 
+        [Range(0, 1)] [SerializeField] private float breathDecayFactor = 0.1f;
+
+        [Header("References")] 
+        //Might have to change to something without ProgressBarPro
+        [SerializeField] private ProgressBarPro brathMeter;
+        
+        private float _currentBreath;
+
+        private float CurrentBreath
+        {
+            set => brathMeter.Value = _currentBreath = Mathf.Clamp01(value);
+            get => _currentBreath;
+        }
+        
+        // private const float MAXNutrition = 1.0f;
+
+        private void Awake()
+        {
+            CurrentBreath = initialBreath;
+        }
+
+        private void Start()
+        {
+            StartCoroutine(LoseBreath());
+        }
+
+        private void Update()
+        {
+            if (CurrentBreath <= 0)
+            {
+                Die();
+            }
+        }
+
+        /// <summary>
+        /// Loses *breathDecayFactor* each *breathDecayPeriod* seconds
+        /// </summary>
+        /// <returns> it's a COROUTINE </returns>
+        private IEnumerator LoseBreath()
+        {
+            var period = new WaitForSeconds(breathDecayPeriod);
+            while (true)
+            {
+                yield return period;
+                CurrentBreath -= breathDecayFactor;
+            }
+        }
+
+        //Deve ficar numa classe separada
+        void Die()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
+        public void RecoverBreath(float value)
+        {
+            CurrentBreath += value;
+        }
+    }
+}

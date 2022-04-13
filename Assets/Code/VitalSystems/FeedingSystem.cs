@@ -56,7 +56,6 @@ public class FeedingSystem : MonoBehaviour
         _detectedFood = Physics.OverlapSphere(_spherePosition, sphereRadius, foodLayer);
         return _detectedFood.Length > 0;
         // return Physics.OverlapSphereNonAlloc(_spherePosition, sphereRadius, _detectedFood, foodLayer) > 0;
-        // return true;
     }
 
     private IEnumerator CheckForFood()
