@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 namespace Code
 {
@@ -13,13 +14,13 @@ namespace Code
 
         [Header("References")] 
         //Might have to change to something without ProgressBarPro
-        [SerializeField] private ProgressBarPro brathMeter;
+        [SerializeField] private ProgressBarPro breathMeter;
         
         private float _currentBreath;
 
         private float CurrentBreath
         {
-            set => brathMeter.Value = _currentBreath = Mathf.Clamp01(value);
+            set => breathMeter.Value = _currentBreath = Mathf.Clamp01(value);
             get => _currentBreath;
         }
         
