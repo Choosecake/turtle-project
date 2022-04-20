@@ -2,6 +2,7 @@
 using System.Collections;
 using Code;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [RequireComponent(typeof(Breath))]
 public class BreathingSystem : MonoBehaviour
@@ -12,7 +13,7 @@ public class BreathingSystem : MonoBehaviour
 
     [Header("Food Detection Details")] 
     [SerializeField] private LayerMask surfaceLayer;
-    [SerializeField] private GameObject breathInput_UI;
+    [FormerlySerializedAs("breathInput_UI")] [SerializeField] private GameObject breathInstruction_UI;
     [Min(0)] [SerializeField] private float detectionInterval = 0.2f;
     
     /// <summary>
@@ -25,6 +26,9 @@ public class BreathingSystem : MonoBehaviour
     private Breath _breath;
     private Collider[] _detectedSurface;
     private Vector3 _spherePosition;
+    
+    public Breath Breath => _breath;
+
 
     private void Awake()
     {
@@ -61,7 +65,7 @@ public class BreathingSystem : MonoBehaviour
     {
         while (true)
         {
-            breathInput_UI.SetActive(isSurfaceNearby());
+            breathInstruction_UI.SetActive(isSurfaceNearby());
             yield return new WaitForSeconds(detectionInterval);
         }        
     }

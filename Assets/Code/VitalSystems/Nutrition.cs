@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Ez;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -24,6 +25,9 @@ namespace Code
         }
         
         private const float MAXNutrition = 1.0f;
+        
+        public event Action OnNutritionEnd;
+
 
         private void Awake()
         {
@@ -39,7 +43,7 @@ namespace Code
         {
             if (CurrentNutrition <= 0)
             {
-                Die();
+                gameObject.Send<IVitalSystems>(_=>_.Die());
             }
         }
 

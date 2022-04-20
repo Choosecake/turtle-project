@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Ez;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
@@ -25,6 +26,8 @@ namespace Code
         }
         
         // private const float MAXNutrition = 1.0f;
+        
+        public Action OnBreathEnd;
 
         private void Awake()
         {
@@ -40,7 +43,7 @@ namespace Code
         {
             if (CurrentBreath <= 0)
             {
-                Die();
+                gameObject.Send<IVitalSystems>(_=>_.Die());
             }
         }
 
@@ -58,11 +61,11 @@ namespace Code
             }
         }
 
-        //Deve ficar numa classe separada
-        void Die()
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
+        // //Deve ficar numa classe separada
+        // void Die()
+        // {
+        //     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        // }
 
         public void RecoverBreath(float value)
         {

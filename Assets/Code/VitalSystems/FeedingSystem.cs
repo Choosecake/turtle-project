@@ -15,16 +15,19 @@ public class FeedingSystem : MonoBehaviour
     [SerializeField] private GameObject eatInput_UI;
     [Min(0)] [SerializeField] private float detectionInterval = 0.2f;
     
-    /// <summary>
+    /// <summary>e
     /// TEMP!
     /// Esse valor deve ser decidio por um script presente na comida, e não na tartaruga
     /// </summary>
     [Space(11)]
     [Range(0,1)][SerializeField] float recoveryValue = 0.25f;
-    
+
+    private TurtleVitalSystems _vitalSystems;
     private Nutrition _nutrition;
     private Collider[] _detectedFood;
     private Vector3 _spherePosition;
+
+    public Nutrition Nutrition => _nutrition;
 
     private void Awake()
     {
