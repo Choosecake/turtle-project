@@ -257,6 +257,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1590025384, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224542601696086149, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 721140592881546861, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
       propertyPath: sphereRadius
       value: 3
@@ -397,8 +405,7 @@ PrefabInstance:
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 721140592881546861, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
 --- !u!224 &256245707 stripped
 RectTransform:
@@ -551,7 +558,7 @@ MonoBehaviour:
   surfaceLayer:
     serializedVersion: 2
     m_Bits: 128
-  breathInput_UI: {fileID: 1590025383}
+  breathInstruction_UI: {fileID: 1590025383}
   detectionInterval: 0.2
   recoveryValue: 0.25
 --- !u!114 &651181308
@@ -569,7 +576,7 @@ MonoBehaviour:
   initialBreath: 0.591
   breathDecayPeriod: 1
   breathDecayFactor: 0.005
-  brathMeter: {fileID: 671679322}
+  breathMeter: {fileID: 0}
 --- !u!114 &651181309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -794,17 +801,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 224542601179919384, guid: 02f53bb1010a2474fb2be74a5fef6685, type: 3}
   m_PrefabInstance: {fileID: 671679319}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &671679322 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114880495511503512, guid: 02f53bb1010a2474fb2be74a5fef6685, type: 3}
-  m_PrefabInstance: {fileID: 671679319}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cdabb6774b00054d818f93e87ba72cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &768892239
 PrefabInstance:
   m_ObjectHideFlags: 0
