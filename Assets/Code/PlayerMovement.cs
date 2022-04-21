@@ -1,3 +1,5 @@
+using System;
+using Code;
 using UnityEngine;
 
 [SelectionBase]
@@ -8,9 +10,17 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 movementDirection;
     private float movementSpeed = 5.0f;
     private float rotationSpeed = 300.0f;
+    private TurtleVitalSystems _vitalsSystems;
+
+    private void Awake()
+    {
+        _vitalsSystems = GetComponent<TurtleVitalSystems>();
+    }
 
     private void Update()
     {
+        if (_vitalsSystems.IsDead) return;
+        
         float vertical = Input.GetAxisRaw("Vertical");
         float horizontal = Input.GetAxisRaw("Horizontal");
 

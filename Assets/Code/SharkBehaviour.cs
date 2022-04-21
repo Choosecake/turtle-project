@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Code;
+using Ez;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -28,7 +30,7 @@ public class SharkBehaviour : MonoBehaviour
     {
         if (other == turtleCollider)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            other.gameObject.Send<TurtleVitalSystems>(_=>_.Die());
         }
     }
 }
