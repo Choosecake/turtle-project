@@ -435,96 +435,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!1 &8772256097186806229
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3206460964586545400}
-  - component: {fileID: 3457499918134385056}
-  - component: {fileID: 1072776706214700095}
-  - component: {fileID: 2787504167169983557}
-  m_Layer: 5
-  m_Name: DeathCoverImage
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &3206460964586545400
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8772256097186806229}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8952975436369531361}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &3457499918134385056
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8772256097186806229}
-  m_CullTransparentMesh: 1
---- !u!114 &1072776706214700095
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8772256097186806229}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!114 &2787504167169983557
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8772256097186806229}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7847019357f9494497860afb4f60c959, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _vitalSystems: {fileID: 1818186629508582277}
-  fadeTime: 1
 --- !u!1 &8952975435583162226
 GameObject:
   m_ObjectHideFlags: 0
@@ -1014,6 +924,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02f53bb1010a2474fb2be74a5fef6685, type: 3}
+--- !u!224 &224542601696086149 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 224542601179919384, guid: 02f53bb1010a2474fb2be74a5fef6685, type: 3}
+  m_PrefabInstance: {fileID: 659356829}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &114880494895201797 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114880495511503512, guid: 02f53bb1010a2474fb2be74a5fef6685, type: 3}
@@ -1025,11 +940,180 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cdabb6774b00054d818f93e87ba72cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &224542601696086149 stripped
+--- !u!1001 &3758708190360374675
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8952975436369531361}
+    m_Modifications:
+    - target: {fileID: 1334940613012785622, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: fadeInTime
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334940613012785622, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: fadeOutTime
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334940613012785622, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: messageText
+      value: 
+      objectReference: {fileID: 8943355231457669549}
+    - target: {fileID: 1334940613012785622, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: _vitalSystems
+      value: 
+      objectReference: {fileID: 1818186629508582277}
+    - target: {fileID: 1334940613012785622, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: textFadeInTime
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334940613012785622, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: textUnBlurTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334940613012785622, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: readingDelayTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334940613012785622, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: messageContent.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334940613012785622, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: messageContent.Array.data[0]
+      value: "Voc\xEA prefere lutar  contra uma \xE1gua-viva  ou uma sacola pl\xE1stica?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334940613012785622, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: messageContent.Array.data[1]
+      value: "Para tartarugas marinhas,  essa quest\xE3o deveria ser simples.  Suas
+        escamas as protegem  do pior do veneno de uma \xE1gua-viva,  e se alimentar
+        delas \xE9 delicioso e nutritivo.  Mas uma \xFAnico peda\xE7o de pl\xE1stico
+        pode ser fatal."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334940613012785622, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: messageContent.Array.data[2]
+      value: "O problema \xE9 que as tartarugas marinhas  n\xE3o sabem o que \xE9
+        plastico,  e elas n\xE3o podem escolher."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753657744803392875, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753657744803392875, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753657744803392875, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753657744803392875, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753657744803392875, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753657744803392875, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753657744803392875, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753657744803392875, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753657744803392875, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753657744803392875, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753657744803392875, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753657744803392875, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753657744803392875, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753657744803392875, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753657744803392875, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753657744803392875, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753657744803392875, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753657744803392875, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753657744803392875, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753657744803392875, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753657744803392875, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202980409673153598, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: m_text
+      value: "O problema \xE9 que as tartarugas marinhas\n n\xE3o sabem o que \xE9
+        plastico, \ne elas n\xE3o podem escolher."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202980409673153598, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: m_fontColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202980409673153598, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 16777215
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590318841677411398, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: m_Name
+      value: DeathCoverImage
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+--- !u!224 &3206460964586545400 stripped
 RectTransform:
-  m_CorrespondingSourceObject: {fileID: 224542601179919384, guid: 02f53bb1010a2474fb2be74a5fef6685, type: 3}
-  m_PrefabInstance: {fileID: 659356829}
+  m_CorrespondingSourceObject: {fileID: 1753657744803392875, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+  m_PrefabInstance: {fileID: 3758708190360374675}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8943355231457669549 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5202980409673153598, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+  m_PrefabInstance: {fileID: 3758708190360374675}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5594110833991263507
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1105,14 +1189,14 @@ PrefabInstance:
     - {fileID: 0}
     - {fileID: 5161203952362394494, guid: 7010ad10925c442478014a961c45da9c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7010ad10925c442478014a961c45da9c, type: 3}
---- !u!4 &8952975434462437378 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3575046197000799505, guid: 7010ad10925c442478014a961c45da9c, type: 3}
-  m_PrefabInstance: {fileID: 5594110833991263507}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8952975434462437377 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3575046197000799506, guid: 7010ad10925c442478014a961c45da9c, type: 3}
+  m_PrefabInstance: {fileID: 5594110833991263507}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8952975434462437378 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3575046197000799505, guid: 7010ad10925c442478014a961c45da9c, type: 3}
   m_PrefabInstance: {fileID: 5594110833991263507}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &651181307
