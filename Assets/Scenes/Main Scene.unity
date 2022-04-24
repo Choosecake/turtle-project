@@ -257,10 +257,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 651181311, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
-      propertyPath: boundary
-      value: 
-      objectReference: {fileID: 883602997}
     - target: {fileID: 5089685788798826983, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
       propertyPath: m_Name
       value: BaseGameKit
@@ -530,11 +526,6 @@ Transform:
   m_Father: {fileID: 1310133664}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &883602997 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3917857305480172132, guid: 862ca09c08e00a948bdd40dcdee36e79, type: 3}
-  m_PrefabInstance: {fileID: 3917857305138963537}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &940347620
 GameObject:
   m_ObjectHideFlags: 0
