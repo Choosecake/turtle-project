@@ -18,6 +18,10 @@ public class SharkSpawn : MonoBehaviour
     private void Start()
     {
         boundaryCollider = boundary.GetComponent<Collider>();
+        if (boundary == null)
+        {
+            boundary = GameObject.Find("Boundary");
+        }
     }
 
     private void Update()

@@ -17,10 +17,11 @@ namespace UI
         [SerializeField] private float delayTime = 0.5f;
         [SerializeField] private float fadeOutTime = 1.0f;
         [Header("Message")] 
-        [SerializeField] private string[] messageContent;
+        [Multiline][SerializeField] private string[] messageContent;
+        [SerializeField] private float[] readingDelayTime;
         [SerializeField] private TextMeshProUGUI messageText;
         [SerializeField] private float textFadeInTime;
-        [SerializeField] private float readingDelayTime;
+
 
         private Image _blackoutScreen;
 
@@ -37,6 +38,7 @@ namespace UI
         void Start()
         {
             _blackoutScreen.color = Color.black;
+            messageText.color = new Color(1,1,1,0);
             StartCoroutine(BackgroundFadeOut());
         }
 
@@ -68,13 +70,13 @@ namespace UI
 
         private IEnumerator MessageFadeCycle()
         {
-            var readingYield = new WaitForSeconds(textFadeInTime + readingDelayTime);
+            // var readingYield = new WaitForSeconds(textFadeInTime + readingDelayTime);
             var fadeCompletionYield = new WaitForSeconds(textFadeInTime);
-            foreach (var subMessage in messageContent)
+            for (int i = 0; i < messageContent.Length; i++)
             {
-                messageText.text = subMessage;
+                messageText.text = messageContent[i];
                 Tween fadeTween = messageText.DOFade(1, textFadeInTime);
-                yield return readingYield;
+                yield return new WaitForSeconds(textFadeInTime + readingDelayTime[i]);
                 fadeTween = messageText.DOFade(0, textFadeInTime);
                 yield return fadeCompletionYield;
             }

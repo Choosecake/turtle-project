@@ -980,20 +980,60 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1334940613012785622, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: readingDelayTime.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334940613012785622, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
       propertyPath: messageContent.Array.data[0]
-      value: "Voc\xEA prefere lutar  contra uma \xE1gua-viva  ou uma sacola pl\xE1stica?"
+      value: "Voc\xEA prefere lutar \n contra uma \xE1gua-viva \nou uma sacola pl\xE1stica?"
       objectReference: {fileID: 0}
     - target: {fileID: 1334940613012785622, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
       propertyPath: messageContent.Array.data[1]
-      value: "Para tartarugas marinhas,  essa quest\xE3o deveria ser simples.  Suas
-        escamas as protegem  do pior do veneno de uma \xE1gua-viva,  e se alimentar
-        delas \xE9 delicioso e nutritivo.  Mas uma \xFAnico peda\xE7o de pl\xE1stico
+      value: "Para tartarugas marinhas,  \nessa quest\xE3o deveria ser simples. \n\nSuas
+        escamas as protegem  \ndo pior do veneno de uma \xE1gua-viva,  \ne se alimentar
+        delas \xE9 delicioso e nutritivo.  \n\nMas uma \xFAnico peda\xE7o de pl\xE1stico
         pode ser fatal."
       objectReference: {fileID: 0}
     - target: {fileID: 1334940613012785622, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
       propertyPath: messageContent.Array.data[2]
-      value: "O problema \xE9 que as tartarugas marinhas  n\xE3o sabem o que \xE9
-        plastico,  e elas n\xE3o podem escolher."
+      value: "O problema \xE9 que as tartarugas marinhas\n n\xE3o sabem o que \xE9
+        plastico, \ne elas n\xE3o podem escolher."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334940613012785622, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: readingDelayTime.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334940613012785622, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: readingDelayTime.Array.data[1]
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334940613012785622, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: readingDelayTime.Array.data[2]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334940613012785622, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: displayContentAndTime.m_keys.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334940613012785622, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: displayContentAndTime.m_values.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334940613012785622, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: displayContentAndTime.m_keys.Array.data[0]
+      value: jhjh
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334940613012785622, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: displayContentAndTime.m_keys.Array.data[1]
+      value: y
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334940613012785622, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: displayContentAndTime.m_values.Array.data[0]
+      value: 15.136364
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334940613012785622, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: displayContentAndTime.m_values.Array.data[1]
+      value: NaN
       objectReference: {fileID: 0}
     - target: {fileID: 1753657744803392875, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
       propertyPath: m_Pivot.x
@@ -1077,6 +1117,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1753657744803392875, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4236437630347487660, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5202980409673153598, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
