@@ -15795,10 +15795,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 651181308, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: breathDecayPeriod
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 651181311, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
       propertyPath: boundary
       value: 
       objectReference: {fileID: 496445723}
+    - target: {fileID: 2787504167169983557, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: deathTrack
+      value: 
+      objectReference: {fileID: 8300000, guid: 1c77d3f48b3949a49b6c13042ecb3381, type: 3}
     - target: {fileID: 4842093821317369974, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
       propertyPath: m_IsActive
       value: 1
