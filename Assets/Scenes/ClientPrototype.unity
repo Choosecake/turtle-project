@@ -11477,6 +11477,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23a42ebe5962ed74cb3d672bf8200f6c, type: 3}
+--- !u!82 &911755243 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3905747376216329595, guid: ee76152a454c6854c849a0b1b5476995, type: 3}
+  m_PrefabInstance: {fileID: 1640866512}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &921531762
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15803,6 +15808,22 @@ PrefabInstance:
       propertyPath: boundary
       value: 
       objectReference: {fileID: 496445723}
+    - target: {fileID: 651181311, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: musicPlayer
+      value: 
+      objectReference: {fileID: 911755243}
+    - target: {fileID: 651181311, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: endDangerSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 9ac0ff1c798969f43bcb0af000e1b12c, type: 3}
+    - target: {fileID: 651181311, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: middleDangerSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7dc7639ce64ee5a4e99dd5db310576a2, type: 3}
+    - target: {fileID: 651181311, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: initialDangerSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 49a9e69a10fb7fb40a4ff1ecc631761a, type: 3}
     - target: {fileID: 2787504167169983557, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
       propertyPath: deathTrack
       value: 
