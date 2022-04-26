@@ -30,12 +30,12 @@ public class SharkBehaviour : MonoBehaviour
         if (isHunting)
         {
             MoveShark(turtle.transform.position);
+            transform.LookAt(turtle.transform);
         }
         else
         {
             StartCoroutine(SharkGoBack());
         }
-        transform.LookAt(turtle.transform);
     }
 
     // criar classe separada
@@ -55,6 +55,7 @@ public class SharkBehaviour : MonoBehaviour
     private IEnumerator SharkGoBack()
     {
         MoveShark(startPosition);
+        transform.LookAt(startPosition);
         yield return new WaitForSeconds(3f);
         Destroy(this.gameObject);
     }
