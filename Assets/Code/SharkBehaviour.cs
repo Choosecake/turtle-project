@@ -8,12 +8,18 @@ using UnityEngine.SceneManagement;
 
 public class SharkBehaviour : MonoBehaviour
 {
+    public bool isHunting;
+    
+    [SerializeField] private float movementSpeed;
     private GameObject turtle;
     private Collider turtleCollider;
-    [SerializeField] private float movementSpeed;
+    private Vector3 startPosition;
 
     private void Start()
     {
+        startPosition = transform.position;
+        isHunting = true;
+        
         // nojo nojento fix this
         turtle = GameObject.Find("PlayerTurtle");
         turtleCollider = turtle.GetComponent<Collider>();
@@ -21,7 +27,14 @@ public class SharkBehaviour : MonoBehaviour
 
     private void Update()
     {
-        transform.position = Vector3.Lerp(transform.position, turtle.transform.position, movementSpeed * Time.deltaTime);
+        if (isHunting)
+        {
+            MoveShark(turtle.transform.position);
+        }
+        else
+        {
+            StartCoroutine(SharkGoBack());
+        }
         transform.LookAt(turtle.transform);
     }
 
@@ -32,5 +45,17 @@ public class SharkBehaviour : MonoBehaviour
         {
             other.gameObject.Send<TurtleVitalSystems>(_=>_.Die());
         }
+    }
+
+    public Vector3 MoveShark(Vector3 direction)
+    {
+        return transform.position = Vector3.Lerp(transform.position, direction, movementSpeed * Time.deltaTime);
+    }
+
+    private IEnumerator SharkGoBack()
+    {
+        MoveShark(startPosition);
+        yield return new WaitForSeconds(3f);
+        Destroy(this.gameObject);
     }
 }

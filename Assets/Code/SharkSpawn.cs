@@ -12,6 +12,7 @@ public class SharkSpawn : MonoBehaviour
     private Collider turtleCollider;
     private Collider boundaryCollider;
     private Vector3 position;
+    private SharkBehaviour sharkBehaviour;
     private float sharkDistance = 250.0f;
     private bool hasSharkSpawned = false;
 
@@ -43,8 +44,18 @@ public class SharkSpawn : MonoBehaviour
     {
         if (other == boundaryCollider && !hasSharkSpawned)
         {
-            Instantiate(shark, position, transform.rotation);
+            GameObject currentShark = Instantiate(shark, position, transform.rotation);
+            sharkBehaviour = currentShark.GetComponent<SharkBehaviour>();
             hasSharkSpawned = true;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other == boundaryCollider && hasSharkSpawned)
+        {
+            sharkBehaviour.isHunting = false;
+            hasSharkSpawned = false;
         }
     }
 }
