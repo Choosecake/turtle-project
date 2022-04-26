@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6491910270207658515}
   - component: {fileID: 7906137777404577206}
   - component: {fileID: 5358378806366171516}
+  - component: {fileID: 2635998361648953374}
   m_Layer: 0
   m_Name: Anemona01
   m_TagString: Untagged
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2635998361648953374
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5862619442772463785}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.1290636, y: 3.3950598, z: 3.1577854}
+  m_Center: {x: -0.0004478097, y: 1.6977285, z: -0.00011700392}
