@@ -214,7 +214,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1800631750
 GameObject:
@@ -393,7 +393,7 @@ Transform:
   m_LocalScale: {x: 5.9752, y: 5.9752, z: 5.9752}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &148375247759590719
 PrefabInstance:
@@ -404,7 +404,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 397895653271046209, guid: 38b825d6a495fc54aa56d085cc565102, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 397895653271046209, guid: 38b825d6a495fc54aa56d085cc565102, type: 3}
       propertyPath: m_LocalPosition.x
@@ -461,7 +461,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 69141565090108566, guid: 7de1249171dc46f41886c71365ef9ca2, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 69141565090108566, guid: 7de1249171dc46f41886c71365ef9ca2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -522,7 +522,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4501904859741272125, guid: 9f676b0c1c8a75349a7a5d568374c61d, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4501904859741272125, guid: 9f676b0c1c8a75349a7a5d568374c61d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -579,7 +579,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6491910270207658515, guid: f2752b684a09e164a838709059b63dd9, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6491910270207658515, guid: f2752b684a09e164a838709059b63dd9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -636,7 +636,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6520131374434989997, guid: 1b32dc4417869634d8c57bc6dbf07460, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6520131374434989997, guid: 1b32dc4417869634d8c57bc6dbf07460, type: 3}
       propertyPath: m_LocalPosition.x
@@ -680,120 +680,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b32dc4417869634d8c57bc6dbf07460, type: 3}
---- !u!1001 &7288212107457827462
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6268298082298176854, guid: dd4538c6972f0ee4bb7e627d651d9373, type: 3}
-      propertyPath: m_Name
-      value: TartarugaDeCouroOFC_ApenasModelo
-      objectReference: {fileID: 0}
-    - target: {fileID: 6752768625529421804, guid: dd4538c6972f0ee4bb7e627d651d9373, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6752768625529421804, guid: dd4538c6972f0ee4bb7e627d651d9373, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.7412782
-      objectReference: {fileID: 0}
-    - target: {fileID: 6752768625529421804, guid: dd4538c6972f0ee4bb7e627d651d9373, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 10.429373
-      objectReference: {fileID: 0}
-    - target: {fileID: 6752768625529421804, guid: dd4538c6972f0ee4bb7e627d651d9373, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 16.641611
-      objectReference: {fileID: 0}
-    - target: {fileID: 6752768625529421804, guid: dd4538c6972f0ee4bb7e627d651d9373, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6752768625529421804, guid: dd4538c6972f0ee4bb7e627d651d9373, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 3.5527145e-15
-      objectReference: {fileID: 0}
-    - target: {fileID: 6752768625529421804, guid: dd4538c6972f0ee4bb7e627d651d9373, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6752768625529421804, guid: dd4538c6972f0ee4bb7e627d651d9373, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6752768625529421804, guid: dd4538c6972f0ee4bb7e627d651d9373, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6752768625529421804, guid: dd4538c6972f0ee4bb7e627d651d9373, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6752768625529421804, guid: dd4538c6972f0ee4bb7e627d651d9373, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: dd4538c6972f0ee4bb7e627d651d9373, type: 3}
---- !u!1001 &7536156463949879717
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 8106831178578134536, guid: 0fe8f3c7a6e683d4b999415bb9023d19, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8106831178578134536, guid: 0fe8f3c7a6e683d4b999415bb9023d19, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -7.7763596
-      objectReference: {fileID: 0}
-    - target: {fileID: 8106831178578134536, guid: 0fe8f3c7a6e683d4b999415bb9023d19, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 11.779192
-      objectReference: {fileID: 0}
-    - target: {fileID: 8106831178578134536, guid: 0fe8f3c7a6e683d4b999415bb9023d19, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 21.20241
-      objectReference: {fileID: 0}
-    - target: {fileID: 8106831178578134536, guid: 0fe8f3c7a6e683d4b999415bb9023d19, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8106831178578134536, guid: 0fe8f3c7a6e683d4b999415bb9023d19, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8106831178578134536, guid: 0fe8f3c7a6e683d4b999415bb9023d19, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8106831178578134536, guid: 0fe8f3c7a6e683d4b999415bb9023d19, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8106831178578134536, guid: 0fe8f3c7a6e683d4b999415bb9023d19, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8106831178578134536, guid: 0fe8f3c7a6e683d4b999415bb9023d19, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8106831178578134536, guid: 0fe8f3c7a6e683d4b999415bb9023d19, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8920101088280337586, guid: 0fe8f3c7a6e683d4b999415bb9023d19, type: 3}
-      propertyPath: m_Name
-      value: "TartarugaDeCouroOFC_ComAnima\xE7\xE3o"
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0fe8f3c7a6e683d4b999415bb9023d19, type: 3}
 --- !u!1001 &8101417573452045073
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -803,7 +689,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8639237934964513794, guid: f893b72e1d5cd77439e15f91c21ccf7a, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8639237934964513794, guid: f893b72e1d5cd77439e15f91c21ccf7a, type: 3}
       propertyPath: m_LocalPosition.x
