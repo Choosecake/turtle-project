@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Code;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
 
@@ -12,8 +13,14 @@ public class SharkSpawn : MonoBehaviour
     private Collider turtleCollider;
     private Collider boundaryCollider;
     private Vector3 position;
+    private SharkBehaviour sharkBehaviour;
     private float sharkDistance = 250.0f;
     private bool hasSharkSpawned = false;
+    [Header("Sounds")] 
+    [SerializeField] private AudioClip initialDangerSound;
+    [SerializeField] private AudioClip middleDangerSound;
+    [SerializeField] private AudioClip endDangerSound;
+    [SerializeField] private AudioSource musicPlayer;
 
     private void Start()
     {
@@ -43,8 +50,57 @@ public class SharkSpawn : MonoBehaviour
     {
         if (other == boundaryCollider && !hasSharkSpawned)
         {
-            Instantiate(shark, position, transform.rotation);
+            StartCoroutine(PlayDangerSound());
+            GameObject currentShark = Instantiate(shark, position, transform.rotation);
+            sharkBehaviour = currentShark.GetComponent<SharkBehaviour>();
             hasSharkSpawned = true;
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other == boundaryCollider && hasSharkSpawned)
+        {
+            sharkBehaviour.isHunting = false;
+            hasSharkSpawned = false;
+        }
+    }
+
+    private IEnumerator PlayDangerSound()
+    {
+        if (musicPlayer == null)
+        {
+            musicPlayer = GameObject.Find("MusicPlayer").GetComponent<AudioSource>();
+            if (musicPlayer == null)
+            {
+                Debug.LogWarning("No valid audioSource has been found!");
+            }
+        }
+        
+        
+        
+        AudioClip originalTrack = musicPlayer.clip;
+        musicPlayer.loop = false;
+        musicPlayer.clip = initialDangerSound;
+        musicPlayer.Play();
+        yield return new WaitWhile(() => musicPlayer.isPlaying);
+        musicPlayer.loop = true;
+        musicPlayer.clip = middleDangerSound;
+        musicPlayer.Play();
+        TurtleVitalSystems turtleVitalSystems = sharkBehaviour.turtle.GetComponent<TurtleVitalSystems>();
+        yield return new WaitWhile(() => sharkBehaviour.isHunting && !turtleVitalSystems.IsDead);
+        if (turtleVitalSystems.IsDead)
+        {
+            musicPlayer.loop = false;
+            yield break;
+        }
+        musicPlayer.loop = false;
+        musicPlayer.clip = endDangerSound;
+        musicPlayer.Play();
+        yield return new WaitWhile(() => musicPlayer.isPlaying);
+        musicPlayer.loop = true;
+        musicPlayer.clip = originalTrack;
+        musicPlayer.Play();
+        
     }
 }
