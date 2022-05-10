@@ -11,7 +11,7 @@ public class SharkBehaviour : MonoBehaviour
     public bool isHunting;
     
     [SerializeField] private float movementSpeed;
-    private GameObject turtle;
+    public GameObject turtle;
     private Collider turtleCollider;
     private Vector3 startPosition;
 

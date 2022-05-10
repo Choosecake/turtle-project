@@ -21,7 +21,9 @@ namespace UI
         [SerializeField] private float[] readingDelayTime;
         [SerializeField] private TextMeshProUGUI messageText;
         [SerializeField] private float textFadeInTime;
-
+        [Space]
+        [SerializeField] private AudioClip deathTrack;
+        [SerializeField] private AudioSource musicPlayer;
 
         private Image _blackoutScreen;
 
@@ -37,6 +39,15 @@ namespace UI
 
         void Start()
         {
+            if (musicPlayer == null)
+            {
+                musicPlayer = GameObject.Find("MusicPlayer").GetComponent<AudioSource>();
+                if (musicPlayer == null)
+                {
+                    Debug.LogWarning("No valid audioSource has been found!");
+                }
+            }
+                
             _blackoutScreen.color = Color.black;
             messageText.color = new Color(1,1,1,0);
             StartCoroutine(BackgroundFadeOut());
@@ -49,6 +60,10 @@ namespace UI
         
         private IEnumerator BackgroundFadeIn()
         {
+            musicPlayer.loop = false;
+            musicPlayer.clip = deathTrack;
+            musicPlayer.Play();
+            
             Tween fadeTween = _blackoutScreen.DOFade(1, fadeInTime);
             yield return new WaitForSeconds(fadeInTime+delayTime);
             StartCoroutine(MessageFadeCycle());
