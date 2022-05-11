@@ -1,8 +1,23 @@
 fileFormatVersion: 2
-guid: 4fac3108a29689d459278ffbeb61a8e1
+guid: 397327fd88d08cf4fa5c23bac39399e9
 ModelImporter:
   serializedVersion: 20200
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: 5784049189767549974
+    second: MotorBarcoPequeno
+  - first:
+      74: -3644895702846508129
+    second: Cylinder.002|Cube.005Action
+  - first:
+      74: -4633791512490463895
+    second: Cylinder.002|Cylinder.008Action
+  - first:
+      74: 7271490062644327439
+    second: Cylinder.002|GiroRemo
+  - first:
+      74: -2150709205257078583
+    second: Cylinder.002|MotorBarcoPequeno
   externalObjects: {}
   materials:
     materialImportMode: 2
