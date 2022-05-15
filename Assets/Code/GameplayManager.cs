@@ -1,6 +1,5 @@
 ﻿using System;
 using UnityEngine;
-using UnityEngine.UI;
 using Utilities;
 
 namespace Code
@@ -10,6 +9,9 @@ namespace Code
         private float defaultTime = 1f;
         private bool isPaused;
 
+        public Action OnGamePause;
+        public Action OnGameResume;
+
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.Escape))
@@ -18,18 +20,18 @@ namespace Code
             }
         }
 
-        public bool IsPaused
+        private bool IsPaused
         {
             get => isPaused;
             set
             {
                 isPaused = value;
-                if (value)  OnGamePause?.Invoke();
+                if (isPaused)  OnGamePause?.Invoke();
+                else OnGameResume?.Invoke();
             }
         } 
-        public Action OnGamePause;
 
-        private void TogglePause()
+        public void TogglePause()
         {
             if (!IsPaused)
             {
@@ -42,6 +44,11 @@ namespace Code
                 Time.timeScale = defaultTime;
                 IsPaused = false;
             }
+        }
+
+        public void QuitGame()
+        {
+            AppHelper.Quit();
         }
     }
 }

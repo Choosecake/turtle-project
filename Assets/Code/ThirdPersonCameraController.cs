@@ -6,13 +6,7 @@ public class ThirdPersonCameraController : MonoBehaviour
     [Range(100.0f, 1000.0f)]
     [SerializeField] private float Sensitivity = 300.0f;
     private float _mouseX, _mouseY;
-
-    private void Start()
-    {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-    }
-
+    
     private void LateUpdate()
     {
         _mouseX += Input.GetAxis("Mouse X") * Sensitivity * Time.deltaTime;
