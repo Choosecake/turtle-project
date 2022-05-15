@@ -13,6 +13,11 @@ GameObject:
   - component: {fileID: 2778400144060872906}
   - component: {fileID: 3575046197000799504}
   - component: {fileID: 9135854282668879642}
+  - component: {fileID: 651181307}
+  - component: {fileID: 651181308}
+  - component: {fileID: 651181309}
+  - component: {fileID: 651181311}
+  - component: {fileID: 1818186629508582277}
   m_Layer: 0
   m_Name: turtle
   m_TagString: Untagged
@@ -62,7 +67,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3575046197000799506}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -93,10 +98,96 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0811c7d380644e97b120213eea511114, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialNutrition: 1
+  initialNutrition: 0.364
   nutritionDecayPeriod: 1
   nutritionDecayFactor: 0.005
   nutritionMeter: {fileID: 0}
+--- !u!114 &651181307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3575046197000799506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9768b22920c24bdea62d99c084882872, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nucleusDistance: 0
+  sphereRadius: 2.56
+  surfaceLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  breathInstruction_UI: {fileID: 0}
+  detectionInterval: 0.2
+  recoveryValue: 0.25
+--- !u!114 &651181308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3575046197000799506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f80175182c034dbda7b332f255891b80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialBreath: 0.591
+  breathDecayPeriod: 1
+  breathDecayFactor: 0.005
+  breathMeter: {fileID: 0}
+--- !u!114 &651181309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3575046197000799506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f31436184ddf433ea7412899d5f883cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nucleusDistance: 0
+  sphereRadius: 3.1
+  foodLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  eatInput_UI: {fileID: 0}
+  detectionInterval: 0.2
+  recoveryValue: 0.25
+--- !u!114 &651181311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3575046197000799506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3b04764ad1f01e4887716ede2ef22b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boundary: {fileID: 0}
+  shark: {fileID: 6501827882769555929, guid: a2e0ad960c86d2d47b28f87a07f155b1, type: 3}
+  initialDangerSound: {fileID: 0}
+  middleDangerSound: {fileID: 0}
+  endDangerSound: {fileID: 0}
+  musicPlayer: {fileID: 0}
+--- !u!114 &1818186629508582277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3575046197000799506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 515988885a6b4b65ac4a5eb7c96152c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3575046197012908057
 GameObject:
   m_ObjectHideFlags: 0
@@ -868,14 +959,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81bc17c0ca3e0c64ab37e7a6e340afac, type: 3}
---- !u!1 &6766870937487937053 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3560940923356383677, guid: 81bc17c0ca3e0c64ab37e7a6e340afac, type: 3}
-  m_PrefabInstance: {fileID: 7819306291774162848}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6242853228796597415 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4188576676822602503, guid: 81bc17c0ca3e0c64ab37e7a6e340afac, type: 3}
+  m_PrefabInstance: {fileID: 7819306291774162848}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6766870937487937053 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3560940923356383677, guid: 81bc17c0ca3e0c64ab37e7a6e340afac, type: 3}
   m_PrefabInstance: {fileID: 7819306291774162848}
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &5747619006526077898
