@@ -10,11 +10,14 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 movementDirection;
     private float movementSpeed = 5.0f;
     private float rotationSpeed = 300.0f;
+    private Rigidbody _rb;
     private TurtleVitalSystems _vitalsSystems;
 
     private void Awake()
     {
         _vitalsSystems = GetComponent<TurtleVitalSystems>();
+        _rb = GetComponent<Rigidbody>();
+        _rb.maxDepenetrationVelocity = 1;
     }
 
     private void Update()
@@ -35,4 +38,10 @@ public class PlayerMovement : MonoBehaviour
         Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up) * target.rotation;
         turtleModel.rotation = Quaternion.RotateTowards(turtleModel.rotation, toRotation, rotationSpeed * Time.deltaTime);
     }
+
+    // private void FixedUpdate()
+    // {
+    //     _rb.vel
+    // }
+    
 }
