@@ -11,9 +11,11 @@ public class SharkBehaviour : MonoBehaviour
     public bool isHunting;
     
     [SerializeField] private float movementSpeed;
-    public GameObject turtle;
-    private Collider turtleCollider;
+    private Transform targetPrey;
+    private Collider preyCollider;
     private Vector3 startPosition;
+
+    public Transform TargetPrey;
 
     private void Start()
     {
@@ -21,16 +23,16 @@ public class SharkBehaviour : MonoBehaviour
         isHunting = true;
         
         // nojo nojento fix this
-        turtle = GameObject.Find("PlayerTurtle");
-        turtleCollider = turtle.GetComponent<Collider>();
+        // turtle = GameObject.Find("PlayerTurtle");
+        // turtleCollider = turtle.GetComponent<Collider>();
     }
 
     private void Update()
     {
         if (isHunting)
         {
-            MoveShark(turtle.transform.position);
-            transform.LookAt(turtle.transform);
+            MoveShark(targetPrey.transform.position);
+            transform.LookAt(targetPrey.transform);
         }
         else
         {
@@ -41,7 +43,7 @@ public class SharkBehaviour : MonoBehaviour
     // criar classe separada
     private void OnTriggerEnter(Collider other)
     {
-        if (other == turtleCollider)
+        if (other == preyCollider)
         {
             other.gameObject.Send<TurtleVitalSystems>(_=>_.Die());
         }
@@ -58,5 +60,14 @@ public class SharkBehaviour : MonoBehaviour
         transform.LookAt(startPosition);
         yield return new WaitForSeconds(3f);
         Destroy(this.gameObject);
+    }
+
+    public void SetTargetAttributes(Transform target)
+    {
+        this.targetPrey = target;
+        if (!targetPrey.TryGetComponent(out this.preyCollider))
+        {
+            Debug.LogWarning("No collider has been found on shark's target");
+        }
     }
 }

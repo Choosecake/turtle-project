@@ -10,14 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 3575046197000799505}
   - component: {fileID: 3575046197000799503}
-  - component: {fileID: 2778400144060872906}
   - component: {fileID: 3575046197000799504}
   - component: {fileID: 9135854282668879642}
   - component: {fileID: 651181307}
   - component: {fileID: 651181308}
   - component: {fileID: 651181309}
-  - component: {fileID: 651181311}
   - component: {fileID: 1818186629508582277}
+  - component: {fileID: 7693342600629072253}
+  - component: {fileID: 8507313425900643702}
   m_Layer: 0
   m_Name: turtle
   m_TagString: Untagged
@@ -57,19 +57,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &2778400144060872906
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3575046197000799506}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3575046197000799504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,7 +143,32 @@ MonoBehaviour:
   eatInput_UI: {fileID: 0}
   detectionInterval: 0.2
   recoveryValue: 0.25
---- !u!114 &651181311
+--- !u!114 &1818186629508582277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3575046197000799506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 515988885a6b4b65ac4a5eb7c96152c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &7693342600629072253
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3575046197000799506}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8507313425900643702
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -170,22 +182,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boundary: {fileID: 0}
   shark: {fileID: 6501827882769555929, guid: a2e0ad960c86d2d47b28f87a07f155b1, type: 3}
-  initialDangerSound: {fileID: 0}
-  middleDangerSound: {fileID: 0}
-  endDangerSound: {fileID: 0}
+  turtleVitalSystems: {fileID: 1818186629508582277}
+  initialDangerSound: {fileID: 8300000, guid: 49a9e69a10fb7fb40a4ff1ecc631761a, type: 3}
+  middleDangerSound: {fileID: 8300000, guid: 7dc7639ce64ee5a4e99dd5db310576a2, type: 3}
+  endDangerSound: {fileID: 8300000, guid: 9ac0ff1c798969f43bcb0af000e1b12c, type: 3}
   musicPlayer: {fileID: 0}
---- !u!114 &1818186629508582277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3575046197000799506}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 515988885a6b4b65ac4a5eb7c96152c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3575046197012908057
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,11 +485,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4188576676822602503, guid: 81bc17c0ca3e0c64ab37e7a6e340afac, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.52
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4188576676822602503, guid: 81bc17c0ca3e0c64ab37e7a6e340afac, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4188576676822602503, guid: 81bc17c0ca3e0c64ab37e7a6e340afac, type: 3}
       propertyPath: m_LocalRotation.w
