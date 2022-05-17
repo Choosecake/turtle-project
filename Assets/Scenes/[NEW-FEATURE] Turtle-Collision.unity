@@ -15978,6 +15978,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -153.33333
       objectReference: {fileID: 0}
+    - target: {fileID: 8952975434462437379, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: depenetrationThreshold
+      value: 0.077
+      objectReference: {fileID: 0}
     - target: {fileID: 8952975434462437404, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
       propertyPath: m_Constraints
       value: 0

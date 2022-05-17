@@ -7,6 +7,9 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private Transform target;
     [SerializeField] private Transform turtleModel;
+
+    [Header(" TESTING ")]
+    [Range(-10, 100)] [SerializeField] private float depenetrationThreshold; 
     private Vector3 movementDirection;
     private float movementSpeed = 5.0f;
     private float rotationSpeed = 300.0f;
@@ -17,11 +20,15 @@ public class PlayerMovement : MonoBehaviour
     {
         _vitalsSystems = GetComponent<TurtleVitalSystems>();
         _rb = GetComponent<Rigidbody>();
-        _rb.maxDepenetrationVelocity = 1;
+        // _rb.maxDepenetrationVelocity = depenetrationThreshold;
     }
 
     private void Update()
     {
+
+        PhysicsTesting();
+        
+        
         if (_vitalsSystems.IsDead) return;
         
         float vertical = Input.GetAxisRaw("Vertical");
@@ -39,9 +46,33 @@ public class PlayerMovement : MonoBehaviour
         turtleModel.rotation = Quaternion.RotateTowards(turtleModel.rotation, toRotation, rotationSpeed * Time.deltaTime);
     }
 
-    // private void FixedUpdate()
-    // {
-    //     _rb.vel
-    // }
+    private void PhysicsTesting()
+    {
+        if (Input.GetKeyDown(KeyCode.KeypadPlus))
+        {
+            Debug.Log("Depentration Velocity updated to" + ++_rb.maxDepenetrationVelocity ) ;
+        }
+        
+        if (Input.GetKeyDown(KeyCode.KeypadMinus))
+        {
+            Debug.Log("Depentration Velocity updated to" + --_rb.maxDepenetrationVelocity ) ;
+        }
+            //TESTING
+            if (Input.GetKey(KeyCode.LeftControl))
+            {
+                if (Input.GetKeyDown(KeyCode.C))
+                {
+                    _rb.maxDepenetrationVelocity = depenetrationThreshold;
+                    Debug.Log("Depentration Velocity updated to" + _rb.maxDepenetrationVelocity ) ;
+                }
+
+                if (Input.GetKeyDown(KeyCode.G))
+                {
+                    Debug.Log(" Depenetration Velocity IS: " + _rb.maxDepenetrationVelocity);
+                }
+            }
+        
+        //TESTING
+    }
     
 }
