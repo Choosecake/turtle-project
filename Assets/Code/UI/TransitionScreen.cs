@@ -85,7 +85,6 @@ namespace UI
 
         private IEnumerator MessageFadeCycle()
         {
-            // var readingYield = new WaitForSeconds(textFadeInTime + readingDelayTime);
             var fadeCompletionYield = new WaitForSeconds(textFadeInTime);
             for (int i = 0; i < messageContent.Length; i++)
             {
