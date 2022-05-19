@@ -7,9 +7,11 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private Transform target;
     [SerializeField] private Transform turtleModel;
+    [Min(0)][SerializeField] private float movementSpeed = 5.0f;
+    [Min(0)][SerializeField] private float rotationSpeed = 300.0f;
+
     private Vector3 movementDirection;
-    private float movementSpeed = 5.0f;
-    private float rotationSpeed = 300.0f;
+
     private Rigidbody _rb;
     private TurtleVitalSystems _vitalsSystems;
 
