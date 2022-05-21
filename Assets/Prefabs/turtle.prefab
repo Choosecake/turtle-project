@@ -71,6 +71,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 3575046198383717112}
   turtleModel: {fileID: 0}
+  movementSpeed: 7.5
+  rotationSpeed: 300
 --- !u!114 &9135854282668879642
 MonoBehaviour:
   m_ObjectHideFlags: 0
