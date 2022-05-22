@@ -81,6 +81,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GoodWater
       objectReference: {fileID: 0}
+    - target: {fileID: 1217322703544948497, guid: af05d37f7d5fbff4f910955193d0f5c6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1217322703544948498, guid: af05d37f7d5fbff4f910955193d0f5c6, type: 3}
       propertyPath: m_CastShadows
       value: 0
@@ -146,6 +150,10 @@ PrefabInstance:
     - target: {fileID: 1217322703544948496, guid: af05d37f7d5fbff4f910955193d0f5c6, type: 3}
       propertyPath: m_Name
       value: GoodWater (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1217322703544948497, guid: af05d37f7d5fbff4f910955193d0f5c6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1217322703544948498, guid: af05d37f7d5fbff4f910955193d0f5c6, type: 3}
       propertyPath: m_CastShadows
@@ -213,6 +221,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GoodWater (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1217322703544948497, guid: af05d37f7d5fbff4f910955193d0f5c6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1217322703544948498, guid: af05d37f7d5fbff4f910955193d0f5c6, type: 3}
       propertyPath: m_CastShadows
       value: 0
@@ -278,6 +290,10 @@ PrefabInstance:
     - target: {fileID: 1217322703544948496, guid: af05d37f7d5fbff4f910955193d0f5c6, type: 3}
       propertyPath: m_Name
       value: GoodWater (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1217322703544948497, guid: af05d37f7d5fbff4f910955193d0f5c6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1217322703544948498, guid: af05d37f7d5fbff4f910955193d0f5c6, type: 3}
       propertyPath: m_CastShadows
@@ -345,6 +361,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GoodWater (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1217322703544948497, guid: af05d37f7d5fbff4f910955193d0f5c6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1217322703544948498, guid: af05d37f7d5fbff4f910955193d0f5c6, type: 3}
       propertyPath: m_CastShadows
       value: 0
@@ -410,6 +430,10 @@ PrefabInstance:
     - target: {fileID: 1217322703544948496, guid: af05d37f7d5fbff4f910955193d0f5c6, type: 3}
       propertyPath: m_Name
       value: GoodWater (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1217322703544948497, guid: af05d37f7d5fbff4f910955193d0f5c6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1217322703544948498, guid: af05d37f7d5fbff4f910955193d0f5c6, type: 3}
       propertyPath: m_CastShadows
@@ -477,6 +501,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GoodWater (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1217322703544948497, guid: af05d37f7d5fbff4f910955193d0f5c6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1217322703544948498, guid: af05d37f7d5fbff4f910955193d0f5c6, type: 3}
       propertyPath: m_CastShadows
       value: 0
@@ -543,6 +571,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GoodWater (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1217322703544948497, guid: af05d37f7d5fbff4f910955193d0f5c6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1217322703544948498, guid: af05d37f7d5fbff4f910955193d0f5c6, type: 3}
       propertyPath: m_CastShadows
       value: 0
@@ -608,6 +640,10 @@ PrefabInstance:
     - target: {fileID: 1217322703544948496, guid: af05d37f7d5fbff4f910955193d0f5c6, type: 3}
       propertyPath: m_Name
       value: GoodWater (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1217322703544948497, guid: af05d37f7d5fbff4f910955193d0f5c6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1217322703544948498, guid: af05d37f7d5fbff4f910955193d0f5c6, type: 3}
       propertyPath: m_CastShadows
