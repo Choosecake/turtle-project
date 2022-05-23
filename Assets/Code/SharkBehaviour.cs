@@ -8,15 +8,23 @@ using UnityEngine.SceneManagement;
 
 public class SharkBehaviour : MonoBehaviour
 {
-    public bool isHunting;
-    
+    [SerializeField] private Animator anim;
     [SerializeField] private float movementSpeed;
+    public bool isHunting;
     private Transform targetPrey;
     private Collider preyCollider;
     private Vector3 startPosition;
-
+    
     public Transform TargetPrey;
 
+    void Awake()
+    {
+        if (anim == null)
+        {
+            anim = GetComponentInChildren<Animator>();
+        }
+    }
+    
     private void Start()
     {
         startPosition = transform.position;
@@ -45,6 +53,7 @@ public class SharkBehaviour : MonoBehaviour
     {
         if (other == preyCollider)
         {
+            anim.SetTrigger("eat");
             other.gameObject.Send<TurtleVitalSystems>(_=>_.Die());
         }
     }
