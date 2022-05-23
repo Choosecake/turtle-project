@@ -14,7 +14,10 @@ public class FeedingSystem : MonoBehaviour
     [SerializeField] private LayerMask foodLayer;
     [SerializeField] private GameObject eatInput_UI;
     [Min(0)] [SerializeField] private float detectionInterval = 0.2f;
-    
+
+    [Header("Misc")] [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip biteSound;
+
     /// <summary>e
     /// TEMP!
     /// Esse valor deve ser decidio por um script presente na comida, e não na tartaruga
@@ -31,6 +34,11 @@ public class FeedingSystem : MonoBehaviour
 
     private void Awake()
     {
+        if (audioSource == null)
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
+
         _nutrition = GetComponent<Nutrition>();
         StartCoroutine(CheckForFood());
     }
@@ -49,7 +57,9 @@ public class FeedingSystem : MonoBehaviour
             //Talvez precise trocar esa verificação DE Tag pra LayerMask que é mais precisa e tem menos chance de dar merda
             var signal = _detectedFood[0].tag.Contains("GoodFood") ? 1 : -1;
             _nutrition.RecoverNutrition(recoveryValue * signal);
+            audioSource.PlayOneShot(biteSound);
             Destroy(_detectedFood[0].gameObject);
+            
         }
     }
 

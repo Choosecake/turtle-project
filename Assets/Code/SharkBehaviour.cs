@@ -9,11 +9,13 @@ using UnityEngine.SceneManagement;
 public class SharkBehaviour : MonoBehaviour
 {
     [SerializeField] private Animator anim;
+    [SerializeField] private AudioClip biteSound;
     [SerializeField] private float movementSpeed;
     public bool isHunting;
     private Transform targetPrey;
     private Collider preyCollider;
     private Vector3 startPosition;
+    private AudioSource audioSource;
     
     public Transform TargetPrey;
 
@@ -23,6 +25,8 @@ public class SharkBehaviour : MonoBehaviour
         {
             anim = GetComponentInChildren<Animator>();
         }
+
+        audioSource = GetComponent<AudioSource>();
     }
     
     private void Start()
@@ -54,6 +58,7 @@ public class SharkBehaviour : MonoBehaviour
         if (other == preyCollider)
         {
             anim.SetTrigger("eat");
+            audioSource.PlayOneShot(biteSound);
             other.gameObject.Send<TurtleVitalSystems>(_=>_.Die());
         }
     }
