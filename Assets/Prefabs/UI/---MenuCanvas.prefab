@@ -811,17 +811,17 @@ MonoBehaviour:
   m_FillRect: {fileID: 2276219184688547513}
   m_HandleRect: {fileID: 2276219184568092925}
   m_Direction: 0
-  m_MinValue: 0.1
-  m_MaxValue: 10
+  m_MinValue: 1
+  m_MaxValue: 1000
   m_WholeNumbers: 0
-  m_Value: 5
+  m_Value: 300
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3575046197000799504, guid: 7010ad10925c442478014a961c45da9c, type: 3}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: ChangeSensitivity
-        m_Mode: 1
+      - m_Target: {fileID: 265737646344816614}
+        m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
+        m_MethodName: SetSensitivity
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1116,6 +1116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdf37ef9d0ee1164382947052629c54e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mouseSensitivitySlider: {fileID: 2276219183435544383}
   audioMixer: {fileID: 24100000, guid: 7f420338cfd8f5e4cbd2af72127cea77, type: 2}
 --- !u!1 &2276219183898347922
 GameObject:
