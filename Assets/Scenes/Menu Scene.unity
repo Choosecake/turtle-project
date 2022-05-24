@@ -1268,7 +1268,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh22776
+  m_Name: pb_Mesh33956
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4907,6 +4907,18 @@ PrefabInstance:
     - target: {fileID: 2276219183483559821, guid: 4150a173344dd3d429abce73e4220bf1, type: 3}
       propertyPath: m_Name
       value: ---MenuCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2276219183483559822, guid: 4150a173344dd3d429abce73e4220bf1, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2276219183483559822, guid: 4150a173344dd3d429abce73e4220bf1, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 2276219183483559822, guid: 4150a173344dd3d429abce73e4220bf1, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 2276219184331278094, guid: 4150a173344dd3d429abce73e4220bf1, type: 3}
       propertyPath: m_AnchorMax.y
