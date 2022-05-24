@@ -43,6 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35bc15697800482b89815c6c6e0e7726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameEnders:
+  - {fileID: 8952975434462437377}
+  - {fileID: 0}
+  CanPause: 1
 --- !u!1 &5089685788798826983
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,6 +244,11 @@ PrefabInstance:
       objectReference: {fileID: 9054338113764195832}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7010ad10925c442478014a961c45da9c, type: 3}
+--- !u!1 &8952975434462437377 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3575046197000799506, guid: 7010ad10925c442478014a961c45da9c, type: 3}
+  m_PrefabInstance: {fileID: 5594110833991263507}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8952975434462437378 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3575046197000799505, guid: 7010ad10925c442478014a961c45da9c, type: 3}
@@ -250,7 +259,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1818186629508582277, guid: 7010ad10925c442478014a961c45da9c, type: 3}
   m_PrefabInstance: {fileID: 5594110833991263507}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 8952975434462437377}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 515988885a6b4b65ac4a5eb7c96152c4, type: 3}
@@ -412,6 +421,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 500387627303694610}
+    - target: {fileID: 6031288580325228411, guid: 4f584e47309481340ae39627bc17598d, type: 3}
+      propertyPath: m_Color.b
+      value: 0.31132078
+      objectReference: {fileID: 0}
+    - target: {fileID: 6031288580325228411, guid: 4f584e47309481340ae39627bc17598d, type: 3}
+      propertyPath: m_Color.g
+      value: 0.2515413
+      objectReference: {fileID: 0}
     - target: {fileID: 6415215735170359123, guid: 4f584e47309481340ae39627bc17598d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -465,6 +482,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8284676180233615882, guid: 4f584e47309481340ae39627bc17598d, type: 3}
+      propertyPath: gameEnder
+      value: 
+      objectReference: {fileID: 8952975434462437377}
+    - target: {fileID: 8284676180233615882, guid: 4f584e47309481340ae39627bc17598d, type: 3}
       propertyPath: deathTrack
       value: 
       objectReference: {fileID: 8300000, guid: 1c77d3f48b3949a49b6c13042ecb3381, type: 3}
@@ -472,6 +493,31 @@ PrefabInstance:
       propertyPath: _vitalSystems
       value: 
       objectReference: {fileID: 6095966453726441110}
+    - target: {fileID: 8934862369030184705, guid: 4f584e47309481340ae39627bc17598d, type: 3}
+      propertyPath: gameEnder
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8934862369030184705, guid: 4f584e47309481340ae39627bc17598d, type: 3}
+      propertyPath: messageContent.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8934862369030184705, guid: 4f584e47309481340ae39627bc17598d, type: 3}
+      propertyPath: readingDelayTime.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8934862369030184705, guid: 4f584e47309481340ae39627bc17598d, type: 3}
+      propertyPath: messageContent.Array.data[0]
+      value: "Voc\xEA chegou ao fim de sua jornada.\nConseguiu sobreviver como uma
+        tartaruga, parab\xE9ns!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8934862369030184705, guid: 4f584e47309481340ae39627bc17598d, type: 3}
+      propertyPath: messageContent.Array.data[1]
+      value: "Muito obrigado por experimentar nosso jogo \n:D"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8934862369030184705, guid: 4f584e47309481340ae39627bc17598d, type: 3}
+      propertyPath: readingDelayTime.Array.data[1]
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f584e47309481340ae39627bc17598d, type: 3}
 --- !u!224 &8952975436369531361 stripped

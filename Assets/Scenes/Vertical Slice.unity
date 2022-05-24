@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10629,7 +10629,7 @@ PrefabInstance:
       objectReference: {fileID: 179923668}
     - target: {fileID: 4267687208137966336, guid: 7acd79438d6fdc349b9e7bab578e7318, type: 3}
       propertyPath: waypoints.Array.size
-      value: 9
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4267687208137966336, guid: 7acd79438d6fdc349b9e7bab578e7318, type: 3}
       propertyPath: waypoints.Array.data[0]
@@ -12764,6 +12764,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 397895653271046209, guid: 38b825d6a495fc54aa56d085cc565102, type: 3}
   m_PrefabInstance: {fileID: 829741300}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1204494198 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4267687208137966337, guid: 7acd79438d6fdc349b9e7bab578e7318, type: 3}
+  m_PrefabInstance: {fileID: 755043592}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1212633585
 PrefabInstance:
@@ -15743,6 +15748,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6080070187691934570, guid: 09b87d9eb5ee7714285558140852490c, type: 3}
   m_PrefabInstance: {fileID: 1369509137}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1898343080 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8438403031058355366, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+  m_PrefabInstance: {fileID: 1927961477}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1905950683 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 69141565090108566, guid: 7de1249171dc46f41886c71365ef9ca2, type: 3}
@@ -15827,10 +15843,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1072776706214700095, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
-      propertyPath: m_Color.a
-      value: 0
+    - target: {fileID: 500387627303694610, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: gameEnders.Array.size
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 500387627303694610, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: gameEnders.Array.data[1]
+      value: 
+      objectReference: {fileID: 1204494198}
     - target: {fileID: 2723328159608326327, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -15857,6 +15877,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2839089104842822766, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
       propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3434312125645644110, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: gameEnder
+      value: 
+      objectReference: {fileID: 1204494198}
+    - target: {fileID: 3434312125645644110, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: messageText
+      value: 
+      objectReference: {fileID: 1898343080}
+    - target: {fileID: 3434312125645644110, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: readingDelayTime.Array.data[2]
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4301582329761923173, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
@@ -16453,7 +16485,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh62444
+  m_Name: pb_Mesh145940
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
