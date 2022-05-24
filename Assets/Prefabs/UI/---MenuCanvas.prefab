@@ -524,8 +524,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 250, y: -115}
-  m_SizeDelta: {x: 500, y: 115}
+  m_AnchoredPosition: {x: 250, y: -495.78}
+  m_SizeDelta: {x: 500, y: 54.21999}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &2276219183215677496
 CanvasRenderer:
@@ -944,7 +944,7 @@ GameObject:
   - component: {fileID: 2276219183670081841}
   - component: {fileID: 2276219183670081846}
   m_Layer: 5
-  m_Name: Sensibilidade
+  m_Name: "Cr\xE9ditos"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -967,7 +967,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 250, y: 0}
-  m_SizeDelta: {x: 500, y: 115}
+  m_SizeDelta: {x: 500, y: 495.78}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &2276219183670081841
 CanvasRenderer:
@@ -997,7 +997,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "CR\xC9DITOS V\xC3O AQUI"
+  m_text: "PROGRAMA\xC7\xC3O:\nMARLUS VINICIUS\nCHOOSECAKE\n\nARTE VISUAL:\nGUILHERME
+    \"COBRA\" ANTUNES\nGABRIEL ZANINI\n\nGAME DESIGN:\nEDUARDO CHAVES\n\nSONOPLASTIA:\nMATEUS
+    DANTAS"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2440,7 +2442,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 500, y: 230}
+  m_SizeDelta: {x: 500, y: 550}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2276219185067591679
 MonoBehaviour:
