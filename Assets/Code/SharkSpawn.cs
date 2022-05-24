@@ -49,7 +49,7 @@ public class SharkSpawn : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other == boundaryCollider && !hasSharkSpawned)
+        if (other.tag == "Boundary" && !hasSharkSpawned)
         {
             StartCoroutine(PlayDangerSound());
             GameObject currentShark = Instantiate(shark, position, transform.rotation);
@@ -63,7 +63,7 @@ public class SharkSpawn : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other == boundaryCollider && hasSharkSpawned)
+        if (other.tag == "Boundary" && hasSharkSpawned)
         {
             sharkBehaviour.isHunting = false;
             hasSharkSpawned = false;
