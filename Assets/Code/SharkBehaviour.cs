@@ -8,29 +8,43 @@ using UnityEngine.SceneManagement;
 
 public class SharkBehaviour : MonoBehaviour
 {
-    public bool isHunting;
-    
+    [SerializeField] private Animator anim;
+    [SerializeField] private AudioClip biteSound;
     [SerializeField] private float movementSpeed;
-    public GameObject turtle;
-    private Collider turtleCollider;
+    public bool isHunting;
+    private Transform targetPrey;
+    private Collider preyCollider;
     private Vector3 startPosition;
+    private AudioSource audioSource;
+    
+    public Transform TargetPrey;
 
+    void Awake()
+    {
+        if (anim == null)
+        {
+            anim = GetComponentInChildren<Animator>();
+        }
+
+        audioSource = GetComponent<AudioSource>();
+    }
+    
     private void Start()
     {
         startPosition = transform.position;
         isHunting = true;
         
         // nojo nojento fix this
-        turtle = GameObject.Find("PlayerTurtle");
-        turtleCollider = turtle.GetComponent<Collider>();
+        // turtle = GameObject.Find("PlayerTurtle");
+        // turtleCollider = turtle.GetComponent<Collider>();
     }
 
     private void Update()
     {
         if (isHunting)
         {
-            MoveShark(turtle.transform.position);
-            transform.LookAt(turtle.transform);
+            MoveShark(targetPrey.transform.position);
+            transform.LookAt(targetPrey.transform);
         }
         else
         {
@@ -41,8 +55,10 @@ public class SharkBehaviour : MonoBehaviour
     // criar classe separada
     private void OnTriggerEnter(Collider other)
     {
-        if (other == turtleCollider)
+        if (other == preyCollider)
         {
+            anim.SetTrigger("eat");
+            audioSource.PlayOneShot(biteSound);
             other.gameObject.Send<TurtleVitalSystems>(_=>_.Die());
         }
     }
@@ -58,5 +74,14 @@ public class SharkBehaviour : MonoBehaviour
         transform.LookAt(startPosition);
         yield return new WaitForSeconds(3f);
         Destroy(this.gameObject);
+    }
+
+    public void SetTargetAttributes(Transform target)
+    {
+        this.targetPrey = target;
+        if (!targetPrey.TryGetComponent(out this.preyCollider))
+        {
+            Debug.LogWarning("No collider has been found on shark's target");
+        }
     }
 }

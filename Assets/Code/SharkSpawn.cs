@@ -10,7 +10,8 @@ public class SharkSpawn : MonoBehaviour
 {
     [SerializeField] private GameObject boundary;
     [SerializeField] private GameObject shark;
-    private Collider turtleCollider;
+    [SerializeField] private TurtleVitalSystems turtleVitalSystems;
+    // private Collider turtleCollider;
     private Collider boundaryCollider;
     private Vector3 position;
     private SharkBehaviour sharkBehaviour;
@@ -48,18 +49,21 @@ public class SharkSpawn : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other == boundaryCollider && !hasSharkSpawned)
+        if (other.tag == "Boundary" && !hasSharkSpawned)
         {
             StartCoroutine(PlayDangerSound());
             GameObject currentShark = Instantiate(shark, position, transform.rotation);
             sharkBehaviour = currentShark.GetComponent<SharkBehaviour>();
+            sharkBehaviour.SetTargetAttributes(transform);
+            // sharkBehaviour.target = gameObject;
+            // sharkBehaviour.TurtleCollider = gameObject.GetComponent<Collider>();
             hasSharkSpawned = true;
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other == boundaryCollider && hasSharkSpawned)
+        if (other.tag == "Boundary" && hasSharkSpawned)
         {
             sharkBehaviour.isHunting = false;
             hasSharkSpawned = false;
@@ -87,7 +91,7 @@ public class SharkSpawn : MonoBehaviour
         musicPlayer.loop = true;
         musicPlayer.clip = middleDangerSound;
         musicPlayer.Play();
-        TurtleVitalSystems turtleVitalSystems = sharkBehaviour.turtle.GetComponent<TurtleVitalSystems>();
+        // TurtleVitalSystems turtleVitalSystems = sharkBehaviour.TargetPrey.GetComponent<TurtleVitalSystems>();
         yield return new WaitWhile(() => sharkBehaviour.isHunting && !turtleVitalSystems.IsDead);
         if (turtleVitalSystems.IsDead)
         {

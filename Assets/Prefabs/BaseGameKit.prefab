@@ -162,6 +162,22 @@ PrefabInstance:
       propertyPath: eatInput_UI
       value: 
       objectReference: {fileID: 7881431941747559192}
+    - target: {fileID: 2631965485079118842, guid: 7010ad10925c442478014a961c45da9c, type: 3}
+      propertyPath: boundary
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2631965485079118842, guid: 7010ad10925c442478014a961c45da9c, type: 3}
+      propertyPath: musicPlayer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2631965485079118842, guid: 7010ad10925c442478014a961c45da9c, type: 3}
+      propertyPath: turtleVitalSystems
+      value: 
+      objectReference: {fileID: 6095966453726441110}
+    - target: {fileID: 3575046197000799504, guid: 7010ad10925c442478014a961c45da9c, type: 3}
+      propertyPath: turtleModel
+      value: 
+      objectReference: {fileID: 1945933019120726452}
     - target: {fileID: 3575046197000799505, guid: 7010ad10925c442478014a961c45da9c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -210,6 +226,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerTurtle
       objectReference: {fileID: 0}
+    - target: {fileID: 3575046198383717112, guid: 7010ad10925c442478014a961c45da9c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 3575046198383717112, guid: 7010ad10925c442478014a961c45da9c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.25
+      objectReference: {fileID: 0}
     - target: {fileID: 9135854282668879642, guid: 7010ad10925c442478014a961c45da9c, type: 3}
       propertyPath: nutritionMeter
       value: 
@@ -232,6 +256,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 515988885a6b4b65ac4a5eb7c96152c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1945933019120726452 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6242853228796597415, guid: 7010ad10925c442478014a961c45da9c, type: 3}
+  m_PrefabInstance: {fileID: 5594110833991263507}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6077081387278564943
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -249,47 +278,47 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 245564642185853991, guid: 4f584e47309481340ae39627bc17598d, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 245564642185853991, guid: 4f584e47309481340ae39627bc17598d, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 245564642185853991, guid: 4f584e47309481340ae39627bc17598d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 500
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 245564642185853991, guid: 4f584e47309481340ae39627bc17598d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 76.666664
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 245564642185853991, guid: 4f584e47309481340ae39627bc17598d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 250
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2860891584819941892, guid: 4f584e47309481340ae39627bc17598d, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2860891584819941892, guid: 4f584e47309481340ae39627bc17598d, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2860891584819941892, guid: 4f584e47309481340ae39627bc17598d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 500
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2860891584819941892, guid: 4f584e47309481340ae39627bc17598d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 76.666664
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2860891584819941892, guid: 4f584e47309481340ae39627bc17598d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 250
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2860891584819941892, guid: 4f584e47309481340ae39627bc17598d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -153.33333
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2911993786365833130, guid: 4f584e47309481340ae39627bc17598d, type: 3}
       propertyPath: m_Name
@@ -413,28 +442,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8186723726489138936, guid: 4f584e47309481340ae39627bc17598d, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8186723726489138936, guid: 4f584e47309481340ae39627bc17598d, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8186723726489138936, guid: 4f584e47309481340ae39627bc17598d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 500
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8186723726489138936, guid: 4f584e47309481340ae39627bc17598d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 76.666664
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8186723726489138936, guid: 4f584e47309481340ae39627bc17598d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 250
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8186723726489138936, guid: 4f584e47309481340ae39627bc17598d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -76.666664
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8284676180233615882, guid: 4f584e47309481340ae39627bc17598d, type: 3}
+      propertyPath: deathTrack
+      value: 
+      objectReference: {fileID: 8300000, guid: 1c77d3f48b3949a49b6c13042ecb3381, type: 3}
     - target: {fileID: 8284676180233615882, guid: 4f584e47309481340ae39627bc17598d, type: 3}
       propertyPath: _vitalSystems
       value: 
