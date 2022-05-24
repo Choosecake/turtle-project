@@ -850,6 +850,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2936328491082285396, guid: 160f2c1054c0e374a8b6252ae249ec29, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 9f8209b110cc54c418c0d87d1d074857, type: 2}
+    - target: {fileID: 2936328491082285396, guid: 160f2c1054c0e374a8b6252ae249ec29, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 9f8209b110cc54c418c0d87d1d074857, type: 2}
+    - target: {fileID: 6089065218108597567, guid: 160f2c1054c0e374a8b6252ae249ec29, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 9f8209b110cc54c418c0d87d1d074857, type: 2}
+    - target: {fileID: 6089065218108597567, guid: 160f2c1054c0e374a8b6252ae249ec29, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 9f8209b110cc54c418c0d87d1d074857, type: 2}
     - target: {fileID: 8365998713897787981, guid: 160f2c1054c0e374a8b6252ae249ec29, type: 3}
       propertyPath: m_Name
       value: GamePlay
