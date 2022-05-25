@@ -59,13 +59,13 @@ namespace UI
             pauseMenu.SetActive(false);
         }
 
-        private void ToggleMousePointerOff()
+        public static void ToggleMousePointerOff()
         {
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
 
-        private void ToggleMousePointerOn()
+        public static void ToggleMousePointerOn()
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;

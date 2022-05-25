@@ -87,7 +87,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialNutrition: 0.364
-  nutritionDecayPeriod: 1
+  nutritionDecayPeriod: 0.2
   nutritionDecayFactor: 0.005
   nutritionMeter: {fileID: 0}
 --- !u!114 &651181307
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialBreath: 0.591
-  breathDecayPeriod: 1
+  breathDecayPeriod: 0.4
   breathDecayFactor: 0.005
   breathMeter: {fileID: 0}
 --- !u!114 &651181309

@@ -12,7 +12,9 @@ namespace UI
 {
     public class TransitionScreen : MonoBehaviour
     {
-        [SerializeField] private TurtleVitalSystems _vitalSystems;
+        // [SerializeField] private TurtleVitalSystems _vitalSystems;
+        // [SerializeField] private GuidingLight guidingLight;
+        [SerializeField] private GameObject gameEnder;
         [SerializeField] private float fadeInTime = 1.0f;
         [SerializeField] private float delayTime = 0.5f;
         [SerializeField] private float fadeOutTime = 1.0f;
@@ -34,7 +36,14 @@ namespace UI
 
         private void OnEnable()
         {
-            _vitalSystems.OnTurtleDeath += FadeInCoroutine;
+            
+            gameEnder.GetComponent<GameEnder>().OnCriticalPointReached += FadeInCoroutine;
+            // if (_vitalSystems != null)
+            // {
+            //     _vitalSystems.OnTurtleDeath += FadeInCoroutine;
+            // }
+            //
+            // if (guidingLight != null) guidingLight.OnPathFinished += FadeInCoroutine;
         }
 
         void Start()
@@ -48,14 +57,22 @@ namespace UI
                 }
             }
                 
-            _blackoutScreen.color = Color.black;
-            messageText.color = new Color(1,1,1,0);
+            _blackoutScreen.color = new Color(_blackoutScreen.color.r, _blackoutScreen.color.g, _blackoutScreen.color.b, 0);
+            messageText.color = new Color(messageText.color.r, messageText.color.g, messageText.color.b, 0);
             StartCoroutine(BackgroundFadeOut());
         }
 
         private void OnDisable()
         {
-            _vitalSystems.OnTurtleDeath -= FadeInCoroutine;
+            gameEnder.GetComponent<GameEnder>().OnCriticalPointReached -= FadeInCoroutine;
+
+            // if (_vitalSystems != null)
+            // {
+            //     _vitalSystems.OnTurtleDeath -= FadeInCoroutine;
+            // }
+            //
+            // if (guidingLight != null) guidingLight.OnPathFinished -= FadeInCoroutine;
+
         }
         
         private IEnumerator BackgroundFadeIn()
@@ -94,7 +111,7 @@ namespace UI
                 fadeTween = messageText.DOFade(0, textFadeInTime);
                 yield return fadeCompletionYield;
             }
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene(0);
         }
     }
 }

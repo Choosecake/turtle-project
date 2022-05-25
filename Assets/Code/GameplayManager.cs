@@ -1,12 +1,15 @@
 ﻿using System;
+using UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Utilities;
 
 namespace Code
 {
     public class GameplayManager : MonoSingleton<GameplayManager>
     {
-        [SerializeField] private TurtleVitalSystems playerVitalSystems;
+        public GameObject[] gameEnders;
+        public bool CanPause = true;
 
         private float defaultTime = 1f;
         private bool isPaused;
@@ -14,17 +17,24 @@ namespace Code
         public Action OnGamePause;
         public Action OnGameResume;
 
-        void Start()
+        private void OnEnable()
         {
-            if (playerVitalSystems == null)
-            {
-                playerVitalSystems = FindObjectOfType<TurtleVitalSystems>();
-            }
+            Array.ForEach(gameEnders, g =>
+                g.GetComponent<GameEnder>().OnCriticalPointReached += DisablePause);
+            
+            Time.timeScale = defaultTime;
+
+        }
+        
+        private void OnDisable()
+        {
+            Array.ForEach(gameEnders, g =>
+                g.GetComponent<GameEnder>().OnCriticalPointReached -= DisablePause);
         }
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Escape) && !playerVitalSystems.IsDead)
+            if (Input.GetKeyDown(KeyCode.Escape) && CanPause)
             {
                 TogglePause();
             }
@@ -58,7 +68,13 @@ namespace Code
 
         public void QuitGame()
         {
-            AppHelper.Quit();
+            // AppHelper.Quit();
+            SceneManager.LoadScene(0);
+        }
+
+        public void DisablePause()
+        {
+            CanPause = false;
         }
     }
 }
