@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: RastroLuzGuia
+  m_Shader: {fileID: -6465566751694194690, guid: a32aaf133aa130f419d1abd400dfbf2e, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_25a4d412ec994b8587a336a957e63f94:
+        m_Texture: {fileID: 2800000, guid: 3721093ed41914f4a9df9697e0d622e8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_653dbecbd459403c9e5fcd58d68249ca: 35
+    m_Colors:
+    - Color_2bc4507fb6334d46aec6adef56f0939c: {r: 0.050791837, g: 0.022027401, b: 0.5188679, a: 1}
+    - Color_64e0d23dea284a3d98c228aec9bb271c: {r: 2.4283333, g: 18.892202, b: 28.988234, a: 1}
+    - Vector2_015c035f38b34638b81afbc35f68cf28: {r: -0.5, g: 0, b: 0, a: 0}
+    - Vector2_8e64eb22980f4c4ead8c52da19fa7708: {r: -0.1, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []
