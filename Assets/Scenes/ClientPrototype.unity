@@ -9417,6 +9417,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6242018156400415341, guid: 288f22a31754e9c4d9737a096b98b91e, type: 3}
+      propertyPath: sharedProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: e4cb884540dd45140a99b858c9e2549a, type: 2}
     - target: {fileID: 6242018156400415342, guid: 288f22a31754e9c4d9737a096b98b91e, type: 3}
       propertyPath: m_RootOrder
       value: 0
