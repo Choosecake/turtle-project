@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using Code.Utilities;
 using UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,8 +10,8 @@ namespace Code
 {
     public class GameplayManager : MonoSingleton<GameplayManager>
     {
-        public GameObject[] gameEnders;
-        public bool CanPause = true;
+        private List<GameEnder> gameEnders;
+        private bool CanPause = true;
 
         private float defaultTime = 1f;
         private bool isPaused;
@@ -17,10 +19,14 @@ namespace Code
         public Action OnGamePause;
         public Action OnGameResume;
 
+        private void Awake()
+        {
+            gameEnders = MonoUtilities.FindGameObjects<GameEnder>();
+        }
+        
         private void OnEnable()
         {
-            Array.ForEach(gameEnders, g =>
-                g.GetComponent<GameEnder>().OnCriticalPointReached += DisablePause);
+            gameEnders.ForEach(gE => gE.OnCriticalPointReached += DisablePause);
             
             Time.timeScale = defaultTime;
 
@@ -28,8 +34,7 @@ namespace Code
         
         private void OnDisable()
         {
-            Array.ForEach(gameEnders, g =>
-                g.GetComponent<GameEnder>().OnCriticalPointReached -= DisablePause);
+            gameEnders.ForEach(gE => gE.OnCriticalPointReached += DisablePause);
         }
 
         private void Update()

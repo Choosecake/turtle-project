@@ -12,8 +12,6 @@ namespace UI
 {
     public class TransitionScreen : MonoBehaviour
     {
-        // [SerializeField] private TurtleVitalSystems _vitalSystems;
-        // [SerializeField] private GuidingLight guidingLight;
         [SerializeField] private GameObject gameEnder;
         [SerializeField] private float fadeInTime = 1.0f;
         [SerializeField] private float delayTime = 0.5f;
@@ -36,21 +34,14 @@ namespace UI
 
         private void OnEnable()
         {
-            
             gameEnder.GetComponent<GameEnder>().OnCriticalPointReached += FadeInCoroutine;
-            // if (_vitalSystems != null)
-            // {
-            //     _vitalSystems.OnTurtleDeath += FadeInCoroutine;
-            // }
-            //
-            // if (guidingLight != null) guidingLight.OnPathFinished += FadeInCoroutine;
         }
 
         void Start()
         {
             if (musicPlayer == null)
             {
-                musicPlayer = GameObject.Find("MusicPlayer").GetComponent<AudioSource>();
+                 musicPlayer = GameObject.Find("MusicPlayer").GetComponent<AudioSource>();
                 if (musicPlayer == null)
                 {
                     Debug.LogWarning("No valid audioSource has been found!");
@@ -65,14 +56,6 @@ namespace UI
         private void OnDisable()
         {
             gameEnder.GetComponent<GameEnder>().OnCriticalPointReached -= FadeInCoroutine;
-
-            // if (_vitalSystems != null)
-            // {
-            //     _vitalSystems.OnTurtleDeath -= FadeInCoroutine;
-            // }
-            //
-            // if (guidingLight != null) guidingLight.OnPathFinished -= FadeInCoroutine;
-
         }
         
         private IEnumerator BackgroundFadeIn()
@@ -97,7 +80,6 @@ namespace UI
         {
             Tween fadeTween = _blackoutScreen.DOFade(1, fadeInTime);
             await fadeTween.AsyncWaitForCompletion();
-            // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
         private IEnumerator MessageFadeCycle()

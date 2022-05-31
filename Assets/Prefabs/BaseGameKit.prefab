@@ -1,52 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3241357612698232236
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1944354455920486305}
-  - component: {fileID: 500387627303694610}
-  m_Layer: 0
-  m_Name: GamePlay Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1944354455920486305
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3241357612698232236}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 5364436828195708409}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &500387627303694610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3241357612698232236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35bc15697800482b89815c6c6e0e7726, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEnders:
-  - {fileID: 8952975434462437377}
-  - {fileID: 0}
-  CanPause: 1
 --- !u!1 &5089685788798826983
 GameObject:
   m_ObjectHideFlags: 0
@@ -56,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5364436828195708409}
+  - component: {fileID: 146934628266263562}
   m_Layer: 0
   m_Name: BaseGameKit
   m_TagString: Untagged
@@ -77,10 +31,23 @@ Transform:
   - {fileID: 8952975434462437378}
   - {fileID: 8952975436369531361}
   - {fileID: 8952975435704718573}
-  - {fileID: 1944354455920486305}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &146934628266263562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5089685788798826983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35bc15697800482b89815c6c6e0e7726, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEnders: []
+  CanPause: 1
 --- !u!1 &8952975435704718546
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,7 +403,7 @@ PrefabInstance:
     - target: {fileID: 4047019912012739735, guid: 4f584e47309481340ae39627bc17598d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 500387627303694610}
+      objectReference: {fileID: 0}
     - target: {fileID: 6031288580325228411, guid: 4f584e47309481340ae39627bc17598d, type: 3}
       propertyPath: m_Color.b
       value: 0.31132078
@@ -484,7 +451,7 @@ PrefabInstance:
     - target: {fileID: 6415215735170359123, guid: 4f584e47309481340ae39627bc17598d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 500387627303694610}
+      objectReference: {fileID: 0}
     - target: {fileID: 6415215735170359123, guid: 4f584e47309481340ae39627bc17598d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
