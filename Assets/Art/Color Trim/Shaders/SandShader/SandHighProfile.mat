@@ -32,7 +32,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_27bb8b05a3e94d2c9a185a4167b5d330: 0.25
+    - Vector1_27bb8b05a3e94d2c9a185a4167b5d330: 0.1
     - Vector1_7440d71cb96d409997f73c7f88f3d835: 1
     - Vector1_7f838d82320c46a9a9f0b001f0177ba2: 200
     - Vector1_92781b32ef65494193b10de4863c4bd6: 1
@@ -43,13 +43,13 @@ Material:
     - _GrainShineStrenght: 1
     - _NormalSampleRadius: 0.01
     - _ShineDuneHeightMin: 1
-    - _SineFrequency: 1
+    - _SineFrequency: 0.43
     - _SineRotation: 1
     - _SinheThreshold: 0.99
     - _Smoothness: 0.2
     - _SubstrateDuneHeightMax: 0.5
     - _SubstrateGrainHeightMax: 1
-    - _UVScale: 2
+    - _UVScale: 10
     m_Colors:
     - Color_206494789bdd4de0a66133b0d7fd06d5: {r: 0.67058825, g: 0.5243874, b: 0.30588236, a: 0}
     - Color_a4188edbae6c46548942d30416d22c08: {r: 0.9150943, g: 0.7260427, b: 0.5222944, a: 0}
