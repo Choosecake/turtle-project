@@ -71,5 +71,11 @@ namespace Code
         {
             CurrentBreath += value;
         }
+
+        public float BreathDecayFactor
+        {
+            get => breathDecayFactor;
+            set => breathDecayFactor = value;
+        }
     }
 }
