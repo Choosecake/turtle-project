@@ -8599,6 +8599,18 @@ PrefabInstance:
       propertyPath: gameEnders.Array.data[1]
       value: 
       objectReference: {fileID: 59514622}
+    - target: {fileID: 1409118495254015926, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409118495254015926, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: maxDistance
+      value: -7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409118495254015926, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: minDistance
+      value: -3
+      objectReference: {fileID: 0}
     - target: {fileID: 3434312125645644110, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
       propertyPath: gameEnder
       value: 
@@ -8702,6 +8714,18 @@ PrefabInstance:
     - target: {fileID: 8952975434462437378, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
       propertyPath: m_LocalPosition.z
       value: -11.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 8952975435712630763, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9087613395971662355, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9087613395971662355, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: sphereRadius
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}

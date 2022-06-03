@@ -92,13 +92,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3395591840760388289}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c3769e7ac964aa34899b9a2e6023fe0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 3575046197000799506}
   target: {fileID: 3575046198383717112}
   Sensitivity: 300
+  sphereRadius: 0
 --- !u!114 &1654025324483376538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -429,6 +431,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3575046198383717112}
+  - component: {fileID: 6197867278107447274}
   m_Layer: 0
   m_Name: target
   m_TagString: Untagged
@@ -451,6 +454,19 @@ Transform:
   m_Father: {fileID: 3575046197000799505}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 20, y: 0, z: 0}
+--- !u!114 &6197867278107447274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3575046198383717113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 921560e067c4af14485f51a70066a5ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 7646235439161274907}
 --- !u!1001 &7819306291774162848
 PrefabInstance:
   m_ObjectHideFlags: 0
