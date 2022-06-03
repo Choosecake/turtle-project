@@ -3,6 +3,7 @@ using System.Collections;
 using System.Threading.Tasks;
 using Code;
 using DG.Tweening;
+using Ez;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -27,18 +28,24 @@ namespace UI
 
         private Image _blackoutScreen;
 
+        public GameObject GameEnder
+        {
+            get => gameEnder;
+            set => gameEnder = value;
+        }
+
         private void Awake()
         {
             _blackoutScreen = GetComponent<Image>();
         }
 
-        private void OnEnable()
-        {
-            gameEnder.GetComponent<GameEnder>().OnCriticalPointReached += FadeInCoroutine;
-        }
-
         void Start()
         {
+            if (gameEnder != null)
+            {
+                gameEnder.GetComponent<GameEnder>().OnCriticalPointReached += FadeInCoroutine;
+            }
+
             if (musicPlayer == null)
             {
                  musicPlayer = GameObject.Find("MusicPlayer").GetComponent<AudioSource>();
@@ -55,7 +62,10 @@ namespace UI
 
         private void OnDisable()
         {
-            gameEnder.GetComponent<GameEnder>().OnCriticalPointReached -= FadeInCoroutine;
+            if (gameEnder != null)
+            {
+                gameEnder.GetComponent<GameEnder>().OnCriticalPointReached -= FadeInCoroutine;
+            }
         }
         
         private IEnumerator BackgroundFadeIn()

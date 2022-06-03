@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Code;
 using JetBrains.Annotations;
 using UI;
 using UnityEngine;
@@ -9,14 +10,32 @@ using UnityEngine.Experimental.GlobalIllumination;
 public class GuidingLight : MonoBehaviour, GameEnder
 { 
     [NotNull][SerializeField] private GameObject[] waypoints;
+    [Header("External Refs")]
     [SerializeField] private Transform player;
-    [SerializeField] private float minDistance = 15f;
+    [SerializeField] private TransitionScreen victoryTransitionScreen;
+    [Header("Point Light")]
     [SerializeField] private GameObject pointLight;
     [Range(1.0f, 250.0f)] [SerializeField] private float pointLightSpeed;
+    [SerializeField] private float minDistance = 15f;
+
     private int currentWaypoint;
     private bool hasFinishedPath;
 
     public Action OnPathFinished;
+
+    private void Awake()
+    {
+        if (victoryTransitionScreen == null)
+        {
+            victoryTransitionScreen = GameplayManager.Instance.VictoryTransitionScreen;
+        }
+        victoryTransitionScreen.GameEnder = gameObject;
+
+        if (player == null)
+        {
+            player = GameplayManager.Instance.PlayerGameObject.transform;
+        }
+    }
 
     private void Start()
     {

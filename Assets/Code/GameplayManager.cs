@@ -10,6 +10,9 @@ namespace Code
 {
     public class GameplayManager : MonoSingleton<GameplayManager>
     {
+        [SerializeField] private GameObject playerGameObject;
+        [SerializeField] private TransitionScreen victoryTransitionScreen;    
+
         private List<GameEnder> gameEnders;
         private bool CanPause = true;
 
@@ -18,6 +21,9 @@ namespace Code
 
         public Action OnGamePause;
         public Action OnGameResume;
+
+        public TransitionScreen VictoryTransitionScreen => victoryTransitionScreen;
+        public GameObject PlayerGameObject => playerGameObject;
 
         private void Awake()
         {
