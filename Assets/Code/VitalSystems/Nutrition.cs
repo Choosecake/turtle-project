@@ -71,5 +71,11 @@ namespace Code
         {
             CurrentNutrition += value;
         }
+
+        public float NutritionDecayFactor
+        {
+            get => nutritionDecayFactor;
+            set => nutritionDecayFactor = value;
+        }
     }
 }
