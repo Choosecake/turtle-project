@@ -21,5 +21,11 @@ namespace Code.Utilities
 
             return objects;
         }
+
+        public static bool TryFindWithTag(out GameObject gameObject, string tag)
+        {
+            gameObject = GameObject.FindGameObjectWithTag(tag);
+            return gameObject != null;
+        }
     }
 }

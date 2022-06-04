@@ -50,6 +50,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerGameObject: {fileID: 8952975434462437377}
   victoryTransitionScreen: {fileID: 3434312125645644110}
+  musicPlayerGameObject: {fileID: 0}
+  musicPlayerTag: MusicPlayer
+  sharkBoundaryGameObject: {fileID: 0}
+  sharkBoundaryTag: Boundary
 --- !u!114 &7258430217783252006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,7 +69,8 @@ MonoBehaviour:
   turtle: {fileID: 8952975434462437377}
   gamePlayHUD: {fileID: 4474540436660080924}
   playerCamera: {fileID: 7115079260930998226}
-  cinematicCamera: {fileID: 7115079260930998226}
+  cinematicCamera: {fileID: 2412989296907415830}
+  holdingKeyCode: 304
 --- !u!1 &8952975435704718546
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,6 +194,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2caeed775d445324bb25bd7caadd1777, type: 3}
+--- !u!1 &2412989296907415830 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1111975906956149671, guid: 2caeed775d445324bb25bd7caadd1777, type: 3}
+  m_PrefabInstance: {fileID: 3319751923054572209}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2412989296907415835 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1111975906956149674, guid: 2caeed775d445324bb25bd7caadd1777, type: 3}

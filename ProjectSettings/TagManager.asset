@@ -8,6 +8,7 @@ TagManager:
   - BadFood
   - PollutedAir
   - Boundary
+  - MusicPlayer
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - Eatable
   - WaterSurface
   - SpaceBounds
-  - 
+  - CameraBound
   - 
   - 
   - 

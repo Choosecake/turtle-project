@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using Code.Utilities;
+using TMPro;
 using UI;
+using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Utilities;
@@ -11,7 +13,11 @@ namespace Code
     public class GameplayManager : MonoSingleton<GameplayManager>
     {
         [SerializeField] private GameObject playerGameObject;
-        [SerializeField] private TransitionScreen victoryTransitionScreen;    
+        [SerializeField] private TransitionScreen victoryTransitionScreen;
+        [SerializeField] private GameObject musicPlayerGameObject;
+        [SerializeField] private string musicPlayerTag = "MusicPlayer";
+        [SerializeField] private GameObject sharkBoundaryGameObject;
+        [SerializeField] private string sharkBoundaryTag = "Boundary";
 
         private List<GameEnder> gameEnders;
         private bool CanPause = true;
@@ -24,10 +30,29 @@ namespace Code
 
         public TransitionScreen VictoryTransitionScreen => victoryTransitionScreen;
         public GameObject PlayerGameObject => playerGameObject;
+        public GameObject MusicPlayerGameObject 
+        {
+            get
+            {
+                MonoUtilities.TryFindWithTag(out musicPlayerGameObject, musicPlayerTag);
+                return musicPlayerGameObject;
+            }
+        }
+        public GameObject SharkBoundaryGameObject 
+        {
+            get
+            {
+                MonoUtilities.TryFindWithTag(out sharkBoundaryGameObject, sharkBoundaryTag);
+                return sharkBoundaryGameObject;
+            }
+        }
 
         private void Awake()
         {
             gameEnders = MonoUtilities.FindGameObjects<GameEnder>();
+            
+            MonoUtilities.TryFindWithTag(out musicPlayerGameObject, musicPlayerTag);
+            MonoUtilities.TryFindWithTag(out sharkBoundaryGameObject, sharkBoundaryTag);
         }
         
         private void OnEnable()

@@ -45,14 +45,19 @@ namespace UI
             {
                 gameEnder.GetComponent<GameEnder>().OnCriticalPointReached += FadeInCoroutine;
             }
-
+            
             if (musicPlayer == null)
             {
-                 musicPlayer = GameObject.Find("MusicPlayer").GetComponent<AudioSource>();
-                if (musicPlayer == null)
+                var musicPlayerGameObject = GameplayManager.Instance.MusicPlayerGameObject;
+                if (musicPlayerGameObject != null)
                 {
-                    Debug.LogWarning("No valid audioSource has been found!");
+                    musicPlayer = musicPlayerGameObject.GetComponent<AudioSource>();
+                    if (musicPlayer == null)
+                    {
+                        Debug.LogWarning("No valid audioSource has been found!");
+                    }
                 }
+
             }
                 
             _blackoutScreen.color = new Color(_blackoutScreen.color.r, _blackoutScreen.color.g, _blackoutScreen.color.b, 0);
@@ -70,9 +75,7 @@ namespace UI
         
         private IEnumerator BackgroundFadeIn()
         {
-            musicPlayer.loop = false;
-            musicPlayer.clip = deathTrack;
-            musicPlayer.Play();
+            TryPlayDeathTrack();
             
             Tween fadeTween = _blackoutScreen.DOFade(1, fadeInTime);
             yield return new WaitForSeconds(fadeInTime+delayTime);
@@ -104,6 +107,15 @@ namespace UI
                 yield return fadeCompletionYield;
             }
             SceneManager.LoadScene(0);
+        }
+
+        private void TryPlayDeathTrack()
+        {
+            if (musicPlayer == null) return;
+            
+            musicPlayer.loop = false;
+            musicPlayer.clip = deathTrack;
+            musicPlayer.Play();
         }
     }
 }

@@ -12,7 +12,7 @@ public class Projectile : MonoBehaviour {
     }
 
     // If a message or request takes no parameter, we may simply declare it as static
-    public static EzMsg.EventFunc<IArmor,int?> GetArmorHealth = _=>_.GetHealth();
+    public static readonly EzMsg.EventFunc<IArmor,int?> GetArmorHealth = _=>_.GetHealth();
 
 
 	public void OnTriggerEnter(Collider other) {
@@ -25,7 +25,7 @@ public class Projectile : MonoBehaviour {
 //	    var health = EzMsg.Request(other.gameObject, GetArmorHealth);
 
 //      * Shorthand/Extension form from gameObject
-//	    var health = other.gameObject.Request(GetArmorHealth);
+	    var health = other.gameObject.Request(GetArmorHealth);
 //
 //	    Debug.Log("(Projectile) Armor Health found: " + health);
 

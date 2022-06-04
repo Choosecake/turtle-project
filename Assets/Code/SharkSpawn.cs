@@ -11,7 +11,6 @@ public class SharkSpawn : MonoBehaviour
     [SerializeField] private GameObject boundary;
     [SerializeField] private GameObject shark;
     [SerializeField] private TurtleVitalSystems turtleVitalSystems;
-    // private Collider turtleCollider;
     private Collider boundaryCollider;
     private Vector3 position;
     private SharkBehaviour sharkBehaviour;
@@ -25,11 +24,15 @@ public class SharkSpawn : MonoBehaviour
 
     private void Start()
     {
-        // if (boundary == null)
-        // {
-        //     boundary = GameObject.Find;
-        // }
-        // boundaryCollider = boundary.GetComponent<Collider>();
+        boundary = GameplayManager.Instance.SharkBoundaryGameObject;
+        if (boundary != null)
+        {
+            boundaryCollider = boundary.GetComponent<Collider>();
+        }
+        else
+        {
+            this.enabled = false;
+        }
     }
 
     private void Update()

@@ -9,6 +9,7 @@ namespace Code
         [SerializeField] private GameObject gamePlayHUD;
         [SerializeField] private GameObject playerCamera;
         [SerializeField] private GameObject cinematicCamera;
+        [SerializeField] private KeyCode holdingKeyCode = KeyCode.LeftShift;
 
         private PlayerMovement _playerMovement;
         private Nutrition _nutrition;
@@ -40,7 +41,7 @@ namespace Code
 
         private void Update()
         {
-            if (Input.GetKey(KeyCode.LeftShift))
+            if (Input.GetKey(holdingKeyCode))
             {
                 if (Input.GetKeyDown(KeyCode.Z))
                 {
