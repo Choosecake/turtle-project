@@ -1,0 +1,41 @@
+{
+  "66656919c8a2ae44781de1bea2fc463a": {
+    "sceneGuid": "2f0b1e483276ded4c8d9b68478d265d6",
+    "uniqueCameraId": "66656919c8a2ae44781de1bea2fc463a",
+    "name": "GuidingLight0",
+    "pointX": 725.8797,
+    "pointY": 100.799553,
+    "pointZ": 129.2766,
+    "directionX": -0.02448995,
+    "directionY": -0.08891698,
+    "directionZ": -0.00219511753,
+    "directionW": 0.995742738,
+    "zoom": 13.2816038
+  },
+  "ffa0d0f14536f6e4f9b675a88c568d92": {
+    "sceneGuid": "2f0b1e483276ded4c8d9b68478d265d6",
+    "uniqueCameraId": "ffa0d0f14536f6e4f9b675a88c568d92",
+    "name": "CaveWithin0",
+    "pointX": 716.6241,
+    "pointY": 92.38806,
+    "pointZ": 73.74782,
+    "directionX": -0.001991055,
+    "directionY": -0.300353169,
+    "directionZ": -0.000636962,
+    "directionW": 0.953833461,
+    "zoom": 13.2816038
+  },
+  "6f3334e77abca1c4784935d5a7d366e8": {
+    "sceneGuid": "2f0b1e483276ded4c8d9b68478d265d6",
+    "uniqueCameraId": "6f3334e77abca1c4784935d5a7d366e8",
+    "name": "Boat0",
+    "pointX": 679.161865,
+    "pointY": 121.048256,
+    "pointZ": 351.295,
+    "directionX": -0.00352660636,
+    "directionY": 0.190272108,
+    "directionZ": 0.0006740601,
+    "directionW": 0.981733143,
+    "zoom": 13.2816038
+  }
+}
