@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4086022559908607248}
   - component: {fileID: 6680241536342975181}
   m_Layer: 0
-  m_Name: Shark Boundary
+  m_Name: Shark Boundary - Required for Shark Activation
   m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

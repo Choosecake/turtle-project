@@ -52,21 +52,19 @@ public class SharkSpawn : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Boundary" && !hasSharkSpawned)
+        if (other.CompareTag("Boundary") && !hasSharkSpawned)
         {
             StartCoroutine(PlayDangerSound());
             GameObject currentShark = Instantiate(shark, position, transform.rotation);
             sharkBehaviour = currentShark.GetComponent<SharkBehaviour>();
             sharkBehaviour.SetTargetAttributes(transform);
-            // sharkBehaviour.target = gameObject;
-            // sharkBehaviour.TurtleCollider = gameObject.GetComponent<Collider>();
             hasSharkSpawned = true;
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Boundary" && hasSharkSpawned)
+        if (other.CompareTag("Boundary") && hasSharkSpawned)
         {
             sharkBehaviour.isHunting = false;
             hasSharkSpawned = false;
@@ -77,10 +75,16 @@ public class SharkSpawn : MonoBehaviour
     {
         if (musicPlayer == null)
         {
-            musicPlayer = GameObject.Find("MusicPlayer").GetComponent<AudioSource>();
-            if (musicPlayer == null)
+            var musicPlayerGO = GameplayManager.Instance.MusicPlayerGameObject;
+            if (musicPlayerGO == null)
             {
-                Debug.LogWarning("No valid audioSource has been found!");
+                Debug.LogWarning("No valid audioSource  Game Object  has been found!");
+                yield break;
+            }
+            else if (!musicPlayerGO.TryGetComponent(out musicPlayer))
+            {               
+                Debug.LogWarning("No valid audioSource  Component  has been found!");
+                yield break;
             }
         }
         
@@ -94,7 +98,6 @@ public class SharkSpawn : MonoBehaviour
         musicPlayer.loop = true;
         musicPlayer.clip = middleDangerSound;
         musicPlayer.Play();
-        // TurtleVitalSystems turtleVitalSystems = sharkBehaviour.TargetPrey.GetComponent<TurtleVitalSystems>();
         yield return new WaitWhile(() => sharkBehaviour.isHunting && !turtleVitalSystems.IsDead);
         if (turtleVitalSystems.IsDead)
         {

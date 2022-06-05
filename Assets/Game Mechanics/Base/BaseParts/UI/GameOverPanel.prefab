@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4236437630347487660}
   - component: {fileID: 1334940613012785622}
   m_Layer: 5
-  m_Name: DeathCoverImage
+  m_Name: GameOverPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
