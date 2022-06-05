@@ -97,8 +97,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3769e7ac964aa34899b9a2e6023fe0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 3575046197000799506}
   target: {fileID: 3575046198383717112}
   Sensitivity: 300
+  sphereRadius: 0.1
 --- !u!114 &1654025324483376538
 MonoBehaviour:
   m_ObjectHideFlags: 0
