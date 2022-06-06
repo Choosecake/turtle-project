@@ -57,6 +57,18 @@ public class SceneLikeCamera : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Plus) || Input.GetKeyDown(KeyCode.KeypadPlus))
+        {
+            moveSpeed += 0.1f;
+            moveSpeed = Math.Min(2, moveSpeed);
+        }
+        
+        if (Input.GetKeyDown(KeyCode.Minus) || Input.GetKeyDown(KeyCode.KeypadMinus))
+        {
+            moveSpeed -= 0.1f;
+            moveSpeed = Math.Max(0, moveSpeed);
+        }
+        
         if (!doFocus)
             return;
 
@@ -72,6 +84,9 @@ public class SceneLikeCamera : MonoBehaviour
             if (Input.GetKeyDown(secondUndoKey))
                 GoBackToLastPosition();
         }
+
+
+
 
         cooldown -= Time.deltaTime;
     }

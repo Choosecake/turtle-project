@@ -8693,6 +8693,10 @@ PrefabInstance:
       value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 7258430217783252006, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: turtleMesh
+      value: 
+      objectReference: {fileID: 1267781325}
+    - target: {fileID: 7258430217783252006, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
       propertyPath: cinematicCamera
       value: 
       objectReference: {fileID: 1084182544}
@@ -8877,6 +8881,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0239772ae0e654146ba5e896da0698b3, type: 3}
+--- !u!1 &1267781325 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1173899541210245902, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+  m_PrefabInstance: {fileID: 1250367318}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1284584501
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9154,6 +9163,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PostProcessing Game
       objectReference: {fileID: 0}
+    - target: {fileID: 6242018156400415341, guid: 288f22a31754e9c4d9737a096b98b91e, type: 3}
+      propertyPath: sharedProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: a1601617196388247bc82d33696d93d0, type: 2}
     - target: {fileID: 6242018156400415342, guid: 288f22a31754e9c4d9737a096b98b91e, type: 3}
       propertyPath: m_RootOrder
       value: 1

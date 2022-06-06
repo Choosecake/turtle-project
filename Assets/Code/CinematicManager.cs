@@ -6,6 +6,7 @@ namespace Code
     public class CinematicManager : MonoBehaviour
     {
         [SerializeField] private GameObject turtle;
+        [SerializeField] private GameObject turtleMesh;
         [SerializeField] private GameObject gamePlayHUD;
         [SerializeField] private GameObject playerCamera;
         [SerializeField] private GameObject cinematicCamera;
@@ -56,6 +57,11 @@ namespace Code
                 {
                     SwitchToCinematicFreeMode();
                 }
+
+                if (Input.GetKeyDown(KeyCode.A))
+                {
+                    ToggleTurtleMesh();
+                }
             }
         }
 
@@ -86,6 +92,11 @@ namespace Code
         private void ToggleGameplayHUD(bool enable)
         {
             gamePlayHUD.SetActive(enable);
+        }
+
+        private void ToggleTurtleMesh()
+        {
+            turtleMesh.SetActive(!turtleMesh.activeSelf);
         }
 
         private void SwitchToCinematicPlayMode()
