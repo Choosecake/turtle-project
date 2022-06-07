@@ -58,7 +58,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4267687208137966351}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &321073900
 GameObject:
@@ -88,7 +88,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4267687208137966351}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &406725012
 GameObject:
@@ -268,7 +268,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4267687208137966351}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4267687208137966337
 GameObject:
@@ -305,6 +305,7 @@ Transform:
   - {fileID: 627507305}
   - {fileID: 1756895599}
   - {fileID: 406725013}
+  - {fileID: 8125859269439196044}
   - {fileID: 321073901}
   - {fileID: 1798643971}
   - {fileID: 260293646}
@@ -335,9 +336,10 @@ MonoBehaviour:
   - {fileID: 1798643970}
   - {fileID: 260293645}
   player: {fileID: 0}
-  minDistance: 15
+  victoryTransitionScreen: {fileID: 0}
   pointLight: {fileID: 4267687208988866455}
   pointLightSpeed: 1.1
+  minDistance: 15
 --- !u!1 &4267687208629339927
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,6 +401,36 @@ Transform:
   - {fileID: 4267687208988866451}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6946018316776262984
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8125859269439196044}
+  m_Layer: 0
+  m_Name: Waypoint (10)
+  m_TagString: Untagged
+  m_Icon: {fileID: 2800000, guid: d113590616b5cff43b411d34bb6d1665, type: 3}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8125859269439196044
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6946018316776262984}
+  m_LocalRotation: {x: -0.29283625, y: -0.11077705, z: -0.0001641661, w: 0.94972384}
+  m_LocalPosition: {x: -53.5, y: 137.24, z: 265.89}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4267687208137966351}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &8860007335110590182
 PrefabInstance:
