@@ -369,9 +369,21 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1334940613012785622, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: deathMessages.deathMessages.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334940613012785622, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
       propertyPath: displayContentAndTime.m_keys.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1334940613012785622, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: deathMessages.deathMessages.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 789b70907e2fb684faba60774400f2f6, type: 2}
+    - target: {fileID: 1334940613012785622, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: deathMessages.deathMessages.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 844e178216152f74590a4d84db480c18, type: 2}
     - target: {fileID: 1334940613012785622, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
       propertyPath: displayContentAndTime.m_values.Array.size
       value: 2
@@ -593,9 +605,17 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1334940613012785622, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: deathMessages.deathMessages.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334940613012785622, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
       propertyPath: displayContentAndTime.m_keys.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1334940613012785622, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
+      propertyPath: deathMessages.deathMessages.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 83841402f2621c34892026179c4638b5, type: 2}
     - target: {fileID: 1334940613012785622, guid: 9c8179c62b761c54fa9762ed26d1a531, type: 3}
       propertyPath: displayContentAndTime.m_values.Array.size
       value: 2

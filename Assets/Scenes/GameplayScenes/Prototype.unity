@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9899,11 +9899,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2961630572447239170, guid: 23a42ebe5962ed74cb3d672bf8200f6c, type: 3}
   m_PrefabInstance: {fileID: 1557409889}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &496445723 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1684605504869569503, guid: 862ca09c08e00a948bdd40dcdee36e79, type: 3}
-  m_PrefabInstance: {fileID: 1527601475}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &501018175
 PrefabInstance:
@@ -20840,14 +20835,34 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -76.666664
       objectReference: {fileID: 0}
+    - target: {fileID: 2787504167169983557, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: deathMessages.deathMessages.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2787504167169983557, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: deathMessages.deathMessages.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 789b70907e2fb684faba60774400f2f6, type: 2}
+    - target: {fileID: 2787504167169983557, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: deathMessages.deathMessages.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 844e178216152f74590a4d84db480c18, type: 2}
     - target: {fileID: 2839089104842822766, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3434312125645644110, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: deathMessages.deathMessages.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3434312125645644110, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: deathMessages.deathMessages.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 83841402f2621c34892026179c4638b5, type: 2}
     - target: {fileID: 4301582329761923173, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
       propertyPath: boundary
       value: 
-      objectReference: {fileID: 496445723}
+      objectReference: {fileID: 0}
     - target: {fileID: 4301582329761923173, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
       propertyPath: musicPlayer
       value: 
@@ -20927,7 +20942,7 @@ PrefabInstance:
     - target: {fileID: 7576418533803583209, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
       propertyPath: boundary
       value: 
-      objectReference: {fileID: 496445723}
+      objectReference: {fileID: 0}
     - target: {fileID: 7576418533803583209, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
       propertyPath: musicPlayer
       value: 
@@ -21825,6 +21840,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8639237934964513794, guid: f893b72e1d5cd77439e15f91c21ccf7a, type: 3}
   m_PrefabInstance: {fileID: 1678841852}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2126218153
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3985389126403751532, guid: b1211e10d77eecf41a6c7ff4af1b3e64, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3985389126403751532, guid: b1211e10d77eecf41a6c7ff4af1b3e64, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3985389126403751532, guid: b1211e10d77eecf41a6c7ff4af1b3e64, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3985389126403751532, guid: b1211e10d77eecf41a6c7ff4af1b3e64, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3985389126403751532, guid: b1211e10d77eecf41a6c7ff4af1b3e64, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3985389126403751532, guid: b1211e10d77eecf41a6c7ff4af1b3e64, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3985389126403751532, guid: b1211e10d77eecf41a6c7ff4af1b3e64, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3985389126403751532, guid: b1211e10d77eecf41a6c7ff4af1b3e64, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3985389126403751532, guid: b1211e10d77eecf41a6c7ff4af1b3e64, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3985389126403751532, guid: b1211e10d77eecf41a6c7ff4af1b3e64, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3985389126403751532, guid: b1211e10d77eecf41a6c7ff4af1b3e64, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7087193985691580311, guid: b1211e10d77eecf41a6c7ff4af1b3e64, type: 3}
+      propertyPath: m_Name
+      value: Shark Boundary - Required for Shark Activation
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b1211e10d77eecf41a6c7ff4af1b3e64, type: 3}
 --- !u!1001 &2126595652
 PrefabInstance:
   m_ObjectHideFlags: 0

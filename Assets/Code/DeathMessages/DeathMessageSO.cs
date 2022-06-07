@@ -6,6 +6,7 @@ namespace Code.DeathMessages
     [CreateAssetMenu(fileName = "DeathMessage", menuName = "DeathMessage")]
     public class DeathMessageSO : ScriptableObject
     {
+        //Automatized time per letter = 029367234;
         public const float TimePerChar = .029367234f;
         
         public CauseOfDeath causeOfDeath;
@@ -22,6 +23,5 @@ namespace Code.DeathMessages
                 messageDurations[i] = messageParts[i].Length * TimePerChar;
             }
         }
-        //Automatized time per letter = 029367234;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Code.DeathMessages;
 using UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -14,17 +15,17 @@ namespace Code
 
         private bool _isDead = false;
         
-        public IEnumerable Die()
+        public IEnumerable Die(CauseOfDeath causeOfDeath)
         {
             if (_isDead) yield break;
             
             OnTurtleDeath?.Invoke();
-            OnCriticalPointReached?.Invoke();
+            OnCriticalPointReached?.Invoke(causeOfDeath);
             _isDead = true;
             yield return null;
         }
 
         public bool IsDead => _isDead;
-        public Action OnCriticalPointReached { get; set; }
+        public Action<CauseOfDeath> OnCriticalPointReached { get; set; }
     }
 }

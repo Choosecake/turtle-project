@@ -20,9 +20,7 @@ namespace UI
         [SerializeField] private float fadeOutTime = 1.0f;
 
         [Header("Message")]
-        // [Multiline][SerializeField] private string[] messageContent;
-        // [SerializeField] private float[] readingDelayTime;
-        [SerializeField] private DeathMessageSO deathMessage;
+        [SerializeField] private DeathMessageManager deathMessages;
         [SerializeField] private TextMeshProUGUI messageText;
         [SerializeField] private float textFadeInTime;
         [Space]
@@ -76,15 +74,15 @@ namespace UI
             }
         }
         
-        private IEnumerator BackgroundFadeIn()
+        private IEnumerator BackgroundFadeIn(CauseOfDeath causeOfDeath)
         {
             TryPlayDeathTrack();
             
             Tween fadeTween = _blackoutScreen.DOFade(1, fadeInTime);
             yield return new WaitForSeconds(fadeInTime+delayTime);
-            StartCoroutine(MessageFadeCycle());
+            StartCoroutine(MessageFadeCycle(causeOfDeath));
         }
-        private void FadeInCoroutine() => StartCoroutine(BackgroundFadeIn());
+        private void FadeInCoroutine(CauseOfDeath causeOfDeath) => StartCoroutine(BackgroundFadeIn(causeOfDeath));
 
         private IEnumerator BackgroundFadeOut()
         {
@@ -98,8 +96,9 @@ namespace UI
             await fadeTween.AsyncWaitForCompletion();
         }
 
-        private IEnumerator MessageFadeCycle()
+        private IEnumerator MessageFadeCycle(CauseOfDeath causeOfDeath)
         {
+            DeathMessageSO deathMessage = deathMessages.GetMessage(causeOfDeath);
             var fadeCompletionYield = new WaitForSeconds(textFadeInTime);
             for (int i = 0; i < deathMessage.messageParts.Length; i++)
             {

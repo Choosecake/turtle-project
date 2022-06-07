@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Code.DeathMessages;
 using Ez;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -18,6 +19,7 @@ namespace Code
         [SerializeField] private ProgressBarPro breathMeter;
         
         private float _currentBreath;
+        private CauseOfDeath _causeOfDeath = CauseOfDeath.Asphyxiation;
 
         private float CurrentBreath
         {
@@ -43,7 +45,7 @@ namespace Code
         {
             if (CurrentBreath <= 0)
             {
-                gameObject.Send<IVitalSystems>(_=>_.Die());
+                gameObject.Send<IVitalSystems>(_=>_.Die(_causeOfDeath));
             }
         }
 

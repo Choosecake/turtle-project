@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Code.DeathMessages;
 using Ez;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -17,6 +18,7 @@ namespace Code
         [SerializeField] private ProgressBarPro nutritionMeter;
         
         private float _currentNutrition;
+        private CauseOfDeath _causeOfDeath = CauseOfDeath.Indigestion;
 
         private float CurrentNutrition
         {
@@ -43,7 +45,7 @@ namespace Code
         {
             if (CurrentNutrition <= 0)
             {
-                gameObject.Send<IVitalSystems>(_=>_.Die());
+                gameObject.Send<IVitalSystems>(_=>_.Die(_causeOfDeath));
             }
         }
 

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Code;
+using Code.DeathMessages;
 using JetBrains.Annotations;
 using UI;
 using UnityEngine;
@@ -51,7 +52,7 @@ public class GuidingLight : MonoBehaviour, GameEnder
         {
             if (currentWaypoint >= waypoints.Length-1)
             {
-                OnCriticalPointReached?.Invoke();
+                OnCriticalPointReached?.Invoke(CauseOfDeath.Default);
                 hasFinishedPath = true;
                 return;
             }
@@ -76,5 +77,5 @@ public class GuidingLight : MonoBehaviour, GameEnder
             pointLightSpeed * Time.deltaTime);
     }
 
-    public Action OnCriticalPointReached { get; set; }
+    public Action<CauseOfDeath> OnCriticalPointReached { get; set; }
 }

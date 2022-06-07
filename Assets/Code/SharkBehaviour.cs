@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Code;
+using Code.DeathMessages;
 using Ez;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -16,6 +17,7 @@ public class SharkBehaviour : MonoBehaviour
     private Collider preyCollider;
     private Vector3 startPosition;
     private AudioSource audioSource;
+    private CauseOfDeath _causeOfDeath = CauseOfDeath.Eaten;
     
     public Transform TargetPrey;
 
@@ -59,7 +61,7 @@ public class SharkBehaviour : MonoBehaviour
         {
             anim.SetTrigger("eat");
             audioSource.PlayOneShot(biteSound);
-            other.gameObject.Send<TurtleVitalSystems>(_=>_.Die());
+            other.gameObject.Send<TurtleVitalSystems>(_=>_.Die(_causeOfDeath));
         }
     }
 

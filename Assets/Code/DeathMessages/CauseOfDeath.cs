@@ -5,7 +5,7 @@
         Indigestion,
         Asphyxiation,
         Fishing,
-        Shark,
+        Eaten,
         Default
     }
 }

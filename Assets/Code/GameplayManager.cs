@@ -57,7 +57,7 @@ namespace Code
         
         private void OnEnable()
         {
-            gameEnders.ForEach(gE => gE.OnCriticalPointReached += DisablePause);
+            gameEnders.ForEach(gE => gE.OnCriticalPointReached += _ => DisablePause());
             
             Time.timeScale = defaultTime;
 
@@ -65,7 +65,7 @@ namespace Code
         
         private void OnDisable()
         {
-            gameEnders.ForEach(gE => gE.OnCriticalPointReached += DisablePause);
+            gameEnders.ForEach(gE => gE.OnCriticalPointReached -= _ => DisablePause());
         }
 
         private void Update()
