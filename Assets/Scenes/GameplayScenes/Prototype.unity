@@ -20835,30 +20835,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -76.666664
       objectReference: {fileID: 0}
-    - target: {fileID: 2787504167169983557, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
-      propertyPath: deathMessages.deathMessages.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2787504167169983557, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
-      propertyPath: deathMessages.deathMessages.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 789b70907e2fb684faba60774400f2f6, type: 2}
-    - target: {fileID: 2787504167169983557, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
-      propertyPath: deathMessages.deathMessages.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 844e178216152f74590a4d84db480c18, type: 2}
     - target: {fileID: 2839089104842822766, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3434312125645644110, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
-      propertyPath: deathMessages.deathMessages.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3434312125645644110, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
-      propertyPath: deathMessages.deathMessages.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 83841402f2621c34892026179c4638b5, type: 2}
     - target: {fileID: 4301582329761923173, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
       propertyPath: boundary
       value: 
