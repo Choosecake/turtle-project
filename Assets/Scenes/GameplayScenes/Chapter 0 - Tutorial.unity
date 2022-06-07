@@ -6059,7 +6059,7 @@ PrefabInstance:
     - target: {fileID: 4267687208137966336, guid: 7acd79438d6fdc349b9e7bab578e7318, type: 3}
       propertyPath: waypoints.Array.data[10]
       value: 
-      objectReference: {fileID: 755043593}
+      objectReference: {fileID: 1012746178}
     - target: {fileID: 4267687208632268590, guid: 7acd79438d6fdc349b9e7bab578e7318, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -6110,11 +6110,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7acd79438d6fdc349b9e7bab578e7318, type: 3}
---- !u!1 &755043593 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 260293645, guid: 7acd79438d6fdc349b9e7bab578e7318, type: 3}
-  m_PrefabInstance: {fileID: 755043592}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &755043594 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1798643970, guid: 7acd79438d6fdc349b9e7bab578e7318, type: 3}
@@ -7451,6 +7446,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 45c4d016e174173448cbecd1abf371c4, type: 3}
+--- !u!1 &1012746178 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 260293645, guid: 7acd79438d6fdc349b9e7bab578e7318, type: 3}
+  m_PrefabInstance: {fileID: 755043592}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1026790480
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8813,10 +8813,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5364436828195708409, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5594110833365260783, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
-      propertyPath: breathDecayFactor
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7258430217783252006, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}

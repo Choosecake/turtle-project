@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14dcf16bea9b45e0898ef605429f5ca2, type: 3}
   m_Name: PescaEhFoda
   m_EditorClassIdentifier: 
-  causeOfDeath: 0
+  causeOfDeath: 2
   messageParts:
   - Pesca a foda
   - Mata as tortuga tudo :((((
