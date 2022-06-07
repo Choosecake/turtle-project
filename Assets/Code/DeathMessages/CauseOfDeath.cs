@@ -5,7 +5,7 @@
         Indigestion,
         Asphyxiation,
         Fishing,
-        Eaten,
+        Predation,
         Default
     }
 }

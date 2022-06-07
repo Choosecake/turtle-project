@@ -8,6 +8,7 @@ namespace Code.DeathMessages
     [Serializable]
     public class DeathMessageManager
     {
+        [SerializeField] private bool loadMessagesFromResourceFolder;
         [SerializeField] private DeathMessageSO[] deathMessages;
 
         public DeathMessageSO GetMessage(CauseOfDeath causeOfDeath)
@@ -24,6 +25,13 @@ namespace Code.DeathMessages
                 return deathMessages[0];
             }
             return filteredArray.ElementAt(Random.Range(0, filteredArray.Count()));
+        }
+
+        public void TryGetMessagesFromResourceFolder()
+        {
+            if (!loadMessagesFromResourceFolder)
+                return;
+           deathMessages = Resources.LoadAll("DeathMessages", typeof(DeathMessageSO)).Cast<DeathMessageSO>().ToArray();
         }
     }
 }

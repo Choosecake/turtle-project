@@ -67,6 +67,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turtle: {fileID: 8952975434462437377}
+  turtleMesh: {fileID: 0}
   gamePlayHUD: {fileID: 4474540436660080924}
   playerCamera: {fileID: 7115079260930998226}
   cinematicCamera: {fileID: 2412989296907415830}
@@ -219,6 +220,10 @@ PrefabInstance:
       propertyPath: breathMeter
       value: 
       objectReference: {fileID: 114880494895201797}
+    - target: {fileID: 651181308, guid: 7010ad10925c442478014a961c45da9c, type: 3}
+      propertyPath: breathDecayPeriod
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 651181309, guid: 7010ad10925c442478014a961c45da9c, type: 3}
       propertyPath: eatInput_UI
       value: 
@@ -299,6 +304,10 @@ PrefabInstance:
       propertyPath: nutritionMeter
       value: 
       objectReference: {fileID: 9054338113764195832}
+    - target: {fileID: 9135854282668879642, guid: 7010ad10925c442478014a961c45da9c, type: 3}
+      propertyPath: nutritionDecayPeriod
+      value: 0.6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7010ad10925c442478014a961c45da9c, type: 3}
 --- !u!1 &8952975434462437377 stripped

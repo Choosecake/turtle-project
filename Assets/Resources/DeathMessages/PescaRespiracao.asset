@@ -10,12 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14dcf16bea9b45e0898ef605429f5ca2, type: 3}
-  m_Name: MarPoluido
+  m_Name: PescaRespiracao
   m_EditorClassIdentifier: 
   causeOfDeath: 1
   messageParts:
-  - MAR TA POLUIDO.
-  - FODA :(
+  - "A tartaruga marinha precisa subir, \r\nde cada 20 a 30 minutos, \r\nat\xE9 a
+    superf\xEDcie da \xE1gua \r\npara emergir e poder respirar.\r"
+  - "Ao ser pega por uma rede de pesca, \r\npode ficar imobilizada, \r\nincapaz de
+    emergir e respirar no tempo adequado, \r\nchegando \xE0 morte.\r"
   messageDurations:
-  - 0.4405085
-  - 0.20557064
+  - 4
+  - 5

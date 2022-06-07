@@ -17,7 +17,7 @@ public class SharkBehaviour : MonoBehaviour
     private Collider preyCollider;
     private Vector3 startPosition;
     private AudioSource audioSource;
-    private CauseOfDeath _causeOfDeath = CauseOfDeath.Eaten;
+    private CauseOfDeath _causeOfDeath = CauseOfDeath.Predation;
     
     public Transform TargetPrey;
 

@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14dcf16bea9b45e0898ef605429f5ca2, type: 3}
+  m_Name: RelacaoTubaroesAlgas
+  m_EditorClassIdentifier: 
+  causeOfDeath: 3
+  messageParts:
+  - "Tubar\xF5es e tartarugas marinhas dependem uns dos outros\r\npara manter uma
+    popula\xE7\xE3o saud\xE1vel.\r\n"
+  - "Embora a recupera\xE7\xE3o da popula\xE7\xE3o de tartarugas \r\nforne\xE7a mais
+    presas aos tubar\xF5es-tigre,\r\ntamb\xE9m fomenta a abund\xE2ncia de algas marinhas,
+    \r\nque \xE9 a principal fonte de alimentos das tartarugas.\r\n"
+  - "O decl\xEDnio da popula\xE7\xE3o de tubar\xF5es pode levar \xE0 destrui\xE7\xE3o
+    das algas marinhas. \r\n"
+  - "Tartarugas, polui\xE7\xE3o e mudan\xE7as na qualidade da \xE1gua representam
+    um risco \xE0s algas.\r\n"
+  - "A perda dos tubar\xF5es tamb\xE9m pode causar um colapso no ecossistema das
+    algas.\r\n"
+  messageDurations:
+  - 3
+  - 6
+  - 2.5
+  - 2.6
+  - 2.5
