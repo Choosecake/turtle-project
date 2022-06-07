@@ -8741,10 +8741,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9087613395971662355, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
-      propertyPath: collisionMask.m_Bits
-      value: 951
-      objectReference: {fileID: 0}
-    - target: {fileID: 9087613395971662355, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
       propertyPath: colliderToIgnore.m_Bits
       value: 64
       objectReference: {fileID: 0}

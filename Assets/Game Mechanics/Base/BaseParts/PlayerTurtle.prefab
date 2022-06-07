@@ -101,6 +101,9 @@ MonoBehaviour:
   target: {fileID: 3575046198383717112}
   Sensitivity: 300
   sphereRadius: 0.1
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 951
 --- !u!114 &1654025324483376538
 MonoBehaviour:
   m_ObjectHideFlags: 0
