@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14dcf16bea9b45e0898ef605429f5ca2, type: 3}
+  m_Name: Sacolas X AguasVivas
+  m_EditorClassIdentifier: 
+  causeOfDeath: 0
+  messageParts:
+  - "Voc\xEA prefere lutar \n contra uma \xE1gua-viva \nou uma sacola pl\xE1stica?"
+  - "Para tartarugas marinhas,  \nessa quest\xE3o deveria ser simples. \n\nSuas escamas
+    as protegem  \ndo pior do veneno de uma \xE1gua-viva,  \ne se alimentar delas
+    \xE9 delicioso e nutritivo.  \n\nMas uma \xFAnico peda\xE7o de pl\xE1stico pode
+    ser fatal."
+  - "O problema \xE9 que as tartarugas marinhas\n n\xE3o sabem o que \xE9 plastico,
+    \ne elas n\xE3o podem escolher."
+  messageDurations:
+  - 1.9382374
+  - 6.636995
+  - 2.8192544

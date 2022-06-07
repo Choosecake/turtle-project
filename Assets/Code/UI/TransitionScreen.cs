@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Threading.Tasks;
 using Code;
+using Code.DeathMessages;
 using DG.Tweening;
 using Ez;
 using UnityEngine;
@@ -17,9 +18,11 @@ namespace UI
         [SerializeField] private float fadeInTime = 1.0f;
         [SerializeField] private float delayTime = 0.5f;
         [SerializeField] private float fadeOutTime = 1.0f;
-        [Header("Message")] 
-        [Multiline][SerializeField] private string[] messageContent;
-        [SerializeField] private float[] readingDelayTime;
+
+        [Header("Message")]
+        // [Multiline][SerializeField] private string[] messageContent;
+        // [SerializeField] private float[] readingDelayTime;
+        [SerializeField] private DeathMessageSO deathMessage;
         [SerializeField] private TextMeshProUGUI messageText;
         [SerializeField] private float textFadeInTime;
         [Space]
@@ -98,11 +101,11 @@ namespace UI
         private IEnumerator MessageFadeCycle()
         {
             var fadeCompletionYield = new WaitForSeconds(textFadeInTime);
-            for (int i = 0; i < messageContent.Length; i++)
+            for (int i = 0; i < deathMessage.messageParts.Length; i++)
             {
-                messageText.text = messageContent[i];
+                messageText.text = deathMessage.messageParts[i];
                 Tween fadeTween = messageText.DOFade(1, textFadeInTime);
-                yield return new WaitForSeconds(textFadeInTime + readingDelayTime[i]);
+                yield return new WaitForSeconds(textFadeInTime + deathMessage.messageDurations[i]);
                 fadeTween = messageText.DOFade(0, textFadeInTime);
                 yield return fadeCompletionYield;
             }

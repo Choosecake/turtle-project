@@ -8616,10 +8616,18 @@ PrefabInstance:
       propertyPath: minDistance
       value: -3
       objectReference: {fileID: 0}
+    - target: {fileID: 2787504167169983557, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: deathMessage
+      value: 
+      objectReference: {fileID: 11400000, guid: 789b70907e2fb684faba60774400f2f6, type: 2}
     - target: {fileID: 3434312125645644110, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
       propertyPath: gameEnder
       value: 
       objectReference: {fileID: 59514622}
+    - target: {fileID: 3434312125645644110, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: deathMessage
+      value: 
+      objectReference: {fileID: 11400000, guid: 83841402f2621c34892026179c4638b5, type: 2}
     - target: {fileID: 3705148829528689161, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
       propertyPath: nutritionDecayPeriod
       value: 0.6
@@ -8731,6 +8739,14 @@ PrefabInstance:
     - target: {fileID: 8952975435712630763, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9087613395971662355, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: collisionMask.m_Bits
+      value: 951
+      objectReference: {fileID: 0}
+    - target: {fileID: 9087613395971662355, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: colliderToIgnore.m_Bits
+      value: 64
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}

@@ -7,6 +7,7 @@ public class ThirdPersonCameraController : MonoBehaviour
     [Range(100.0f, 1000.0f)]
     [SerializeField] private float Sensitivity = 300.0f;
     [SerializeField] private float sphereRadius;
+    [SerializeField] private LayerMask collisionMask;
     private Vector3 rayDirection, cameraOffset;
     private float _mouseX, _mouseY, distance;
 
@@ -36,7 +37,7 @@ public class ThirdPersonCameraController : MonoBehaviour
         Ray ray = new Ray(player.transform.position, rayDirection);
         RaycastHit hit;
         LayerMask layer = LayerMask.NameToLayer("CameraBound");
-        if (Physics.SphereCast(ray, sphereRadius, out hit, 7.5f))
+        if (Physics.SphereCast(ray, sphereRadius, out hit, 7.5f, collisionMask))
         {
             distance = Mathf.Clamp(hit.distance, -5.0f, 7.5f);
         }
