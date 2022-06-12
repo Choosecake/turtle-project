@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -21,21 +18,28 @@ namespace Behaviours
         [Range(0,10)][SerializeField] private float cohesionDistance;
         [Range(0,10)][SerializeField] private float avoidanceDistance;
         [Range(0,10)][SerializeField] private float alignmentDistance;
+        [Range(0, 100)] [SerializeField] private float boundDistance;
+        [Range(0, 10)] [SerializeField] private float obstacleDistance;
         
         [Header("Behaviour Weights")] 
         [Range(0,10)][SerializeField] private float cohesionWeight;
         [Range(0,10)][SerializeField] private float avoidanceWeight;
         [Range(0,10)][SerializeField] private float alignmentWeight;
-        
-        
+        [Range(0, 10)] [SerializeField] private float boundWeight;
+        [Range(0, 10)] [SerializeField] private float obstacleWeight;
+
 
         public float CohesionDistance => cohesionDistance;
         public float AvoidanceDistance => avoidanceDistance;
         public float AlignmentDistance => alignmentDistance;
+        public float BoundDistance => boundDistance;
+        public float ObstacleDistance => obstacleDistance;
 
         public float CohesionWeight => cohesionWeight;
         public float AvoidanceWeight => avoidanceWeight;
         public float AlignmentWeight => alignmentWeight;
+        public float BoundWeight => boundWeight;
+        public float ObstacleWeight => obstacleWeight;
 
         public float MinSpeed => minSpeed;
         public float MaxSpeed => maxSpeed;
