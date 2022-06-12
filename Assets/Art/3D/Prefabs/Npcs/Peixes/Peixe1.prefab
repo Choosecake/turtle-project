@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3092421847751027899}
   - component: {fileID: 2109275464396989214}
   - component: {fileID: 4224747629848074196}
+  - component: {fileID: 4368402520876203320}
   m_Layer: 0
   m_Name: Peixe1
   m_TagString: Untagged
@@ -81,3 +82,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4368402520876203320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2423409277192058369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a190a8f6136547f3ad80173827bc5f86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FOVAngle: 270
+  smoothDamp: 1
