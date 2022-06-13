@@ -1,3 +1,5 @@
+using System;
+using UnityEditor;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -9,6 +11,7 @@ namespace Behaviours
         [SerializeField] private FlockUnit flockUnityPrefab;
         [SerializeField] private int flockSize;
         [SerializeField] private Vector3 spawnBounds;
+        [SerializeField] private Transform flockParent;
 
         [Header("Speed Setup")] 
         [Range(0,10)] [SerializeField] private float minSpeed;
@@ -26,7 +29,7 @@ namespace Behaviours
         [Range(0,10)][SerializeField] private float avoidanceWeight;
         [Range(0,10)][SerializeField] private float alignmentWeight;
         [Range(0, 10)] [SerializeField] private float boundWeight;
-        [Range(0, 10)] [SerializeField] private float obstacleWeight;
+        [Range(0, 100)] [SerializeField] private float obstacleWeight;
 
 
         public float CohesionDistance => cohesionDistance;
@@ -68,10 +71,18 @@ namespace Behaviours
                     randomVector.z * spawnBounds.z);
                 var spawnPosition = transform.position + randomVector;
                 var rotation = Quaternion.Euler(0, Random.Range(0, 360), 0);
-                allUnits[i] = Instantiate(flockUnityPrefab, spawnPosition, rotation)
+                allUnits[i] = Instantiate(flockUnityPrefab, spawnPosition, rotation, flockParent)
                     .AssignFlock(this).
                     InitializeSpeed(Random.Range(minSpeed, maxSpeed));
             }
+        }
+
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, boundDistance);
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireCube(transform.position, spawnBounds);
         }
     }
 

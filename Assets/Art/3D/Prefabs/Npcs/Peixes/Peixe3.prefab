@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7475668032470073436}
   - component: {fileID: 5769449647555760121}
   - component: {fileID: 8644031298828024627}
+  - component: {fileID: 2927827632233504413}
   m_Layer: 0
   m_Name: Peixe3
   m_TagString: Untagged
@@ -81,3 +82,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2927827632233504413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7851244039254776550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a190a8f6136547f3ad80173827bc5f86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FOVAngle: 270
+  smoothDamp: 1
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  directionsToCheckWhenAvoidingObstacles:
+  - {x: 1, y: 0, z: 0}
+  - {x: -1, y: 0, z: 0}
+  - {x: 0, y: 1, z: 0}
+  - {x: 0, y: -1, z: 0}
+  - {x: 0, y: 0, z: 1}

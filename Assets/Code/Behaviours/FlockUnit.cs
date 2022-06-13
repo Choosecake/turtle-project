@@ -50,7 +50,7 @@ namespace  Behaviours
             var boundsVector = CalculateBoundsVector() * assignedFlock.BoundWeight;
             var obstacleVector = CalculateObstacleVector() * assignedFlock.ObstacleWeight;
 
-            var moveVector = cohesionVector + alignmentVector + avoidanceVector + boundsVector;
+            var moveVector = cohesionVector + alignmentVector + avoidanceVector + boundsVector + obstacleVector;
             moveVector = Vector3.SmoothDamp(Transform.forward, moveVector, ref currentVelocity, smoothDamp);
             moveVector = moveVector.normalized * speed;
             if (moveVector == Vector3.zero)
@@ -187,11 +187,26 @@ namespace  Behaviours
             {
                 obstacleVector = FindBestDirectionToAvoidObstacle();
             }
+            else
+            {
+                currentObstacleAvoidanceVector = Vector3.zero;
+            }
+            Debug.Log(obstacleVector);
             return obstacleVector;
         }
 
         public Vector3 FindBestDirectionToAvoidObstacle()
         {
+            if (currentObstacleAvoidanceVector != Vector3.zero)
+            {
+                RaycastHit hit;
+                if (!Physics.Raycast(Transform.position, Transform.forward, out hit, assignedFlock.ObstacleDistance,
+                    obstacleMask))
+                {
+                    return currentObstacleAvoidanceVector;
+                }
+            }
+            
             float maxDistance = int.MinValue;
             var selectedDirection = Vector3.zero;
             for (int i = 0; i < directionsToCheckWhenAvoidingObstacles.Length; i++)
@@ -210,6 +225,12 @@ namespace  Behaviours
                         selectedDirection = currentDirection;
                     }
                 }
+                else
+                {
+                    selectedDirection = currentDirection;
+                    currentObstacleAvoidanceVector = currentDirection.normalized;
+                    return selectedDirection.normalized;
+                }
             }
             return selectedDirection.normalized;
         }
@@ -217,6 +238,12 @@ namespace  Behaviours
         private bool IsInFOV(Vector3 position)
         {
             return Vector3.Angle(Transform.forward, position - Transform.position) <= FOVAngle;
+        }
+
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.cyan;
+            Array.ForEach(directionsToCheckWhenAvoidingObstacles, d => Gizmos.DrawRay(transform.position, d));
         }
     }
 }
