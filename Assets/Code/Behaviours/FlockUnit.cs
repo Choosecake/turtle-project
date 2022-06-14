@@ -191,7 +191,6 @@ namespace  Behaviours
             {
                 currentObstacleAvoidanceVector = Vector3.zero;
             }
-            Debug.Log(obstacleVector);
             return obstacleVector;
         }
 
