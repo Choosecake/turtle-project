@@ -16836,6 +16836,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WaterSurface - LowPolyMat (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 4098636128832993755, guid: f3e63d446aacee84f9486747df20e997, type: 3}
+      propertyPath: m_Size.x
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3e63d446aacee84f9486747df20e997, type: 3}
 --- !u!1001 &1981446288
