@@ -32,8 +32,9 @@ public class PlayerMovement : MonoBehaviour
         movementDirection = new Vector3(horizontal, 0f, vertical);
         movementDirection.Normalize();
         
-        // transform.Translate(movementDirection * movementSpeed * Time.deltaTime, Space.Self);
         transform.rotation = Quaternion.Lerp(transform.rotation, target.rotation, 5.0f * Time.deltaTime);
+
+        turtleModel.transform.Rotate(0, 0, -horizontal * 300 * Time.deltaTime, Space.Self);
 
         if (movementDirection == Vector3.zero) return;
         // character rotation
