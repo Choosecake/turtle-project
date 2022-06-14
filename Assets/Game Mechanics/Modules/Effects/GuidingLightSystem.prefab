@@ -55,11 +55,15 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   player: {fileID: 0}
   victoryTransitionScreen: {fileID: 0}
   pointLight: {fileID: 4267687208988866455}
-  pointLightSpeed: 1.1
-  minDistance: 15
+  pointLightSpeed: 1
+  minDistance: 10
 --- !u!1 &4267687208629339927
 GameObject:
   m_ObjectHideFlags: 0
