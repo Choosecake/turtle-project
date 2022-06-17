@@ -118,9 +118,7 @@ namespace  Behaviours
                     neighboursInFOV++;
                     cohesionVector += cohesionNeighbours[i].Transform.position;
                 }
-            } 
-            // if (neighboursInFOV == 0)
-            //     return cohesionVector;
+            }
             cohesionVector /= neighboursInFOV;
             cohesionVector -= Transform.position;
             cohesionVector = cohesionVector.normalized;
@@ -141,8 +139,6 @@ namespace  Behaviours
                     alignmentVector += alignmentNeighbours[i].Transform.forward;
                 }
             }
-            // if (neighboursInFOV == 0)
-            //     return Transform.forward;
             alignmentVector /= neighboursInFOV;
             alignmentVector = alignmentVector.normalized;
             return alignmentVector;
@@ -163,9 +159,6 @@ namespace  Behaviours
                 }
             }
 
-            // if (neighboursInFOV == 0)
-            //     return Vector3.zero;
-            
             avoidanceVector /= neighboursInFOV;
             avoidanceVector = avoidanceVector.normalized;
             return avoidanceVector;
