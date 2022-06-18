@@ -9526,7 +9526,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1967855604672378954, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
       propertyPath: flockSize
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1967855604672378954, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
       propertyPath: flockParent
@@ -10612,7 +10612,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1967855604672378954, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
       propertyPath: flockSize
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1967855604672378954, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
       propertyPath: useObstacles
@@ -15058,7 +15058,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1967855604672378954, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
       propertyPath: flockSize
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1967855604672378954, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
       propertyPath: useObstacles
@@ -17636,7 +17636,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1967855604672378954, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
       propertyPath: flockSize
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1967855604672378954, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
       propertyPath: useObstacles

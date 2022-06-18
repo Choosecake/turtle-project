@@ -16,6 +16,10 @@ public class BreathingSystem : MonoBehaviour
     [FormerlySerializedAs("breathInput_UI")] [SerializeField] private GameObject breathInstruction_UI;
     [Min(0)] [SerializeField] private float detectionInterval = 0.2f;
     
+    [Header("Misc")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip breathSound;
+    
     /// <summary>
     /// TEMP!
     /// Esse valor deve ser decidio por um script presente na comida, e não na tartaruga
@@ -33,6 +37,11 @@ public class BreathingSystem : MonoBehaviour
     private void Awake()
     {
         _breath = GetComponent<Breath>();
+        if (audioSource == null)
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
+        
         StartCoroutine(CheckForFood());
     }
 
@@ -50,6 +59,7 @@ public class BreathingSystem : MonoBehaviour
             //Talvez precise trocar esa verificação DE Tag pra LayerMask que é mais precisa e tem menos chance de dar merda
             var signal = _detectedSurface[0].tag.Contains("PollutedAir") ? -1 : 1;
             _breath.RecoverBreath(recoveryValue * signal);
+            audioSource.PlayOneShot(breathSound);
         }
     }
 

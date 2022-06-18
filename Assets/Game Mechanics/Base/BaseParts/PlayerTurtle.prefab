@@ -246,6 +246,8 @@ MonoBehaviour:
     m_Bits: 128
   breathInstruction_UI: {fileID: 0}
   detectionInterval: 0.2
+  audioSource: {fileID: 1287858583287368664}
+  breathSound: {fileID: 8300000, guid: 858795a0f49c8ab4ea610b1e2a60300b, type: 3}
   recoveryValue: 0.25
 --- !u!114 &651181308
 MonoBehaviour:
