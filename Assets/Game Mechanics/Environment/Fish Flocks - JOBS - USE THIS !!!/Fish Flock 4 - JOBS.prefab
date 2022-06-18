@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4824578821266108785}
-  - component: {fileID: 4824578821266108784}
+  - component: {fileID: -7087485733290751886}
   m_Layer: 0
-  m_Name: Fish Flock 2
+  m_Name: Fish Flock 4 - JOBS
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4824578821266108784
+--- !u!114 &-7087485733290751886
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,22 +40,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 4824578821266108791}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba01cbf81eca97b41833160d10afb5cb, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d025d2997584dd9aabbbd0783ccf822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flockUnityPrefab: {fileID: 1824810254400300682, guid: 2187e8e6b49579044abd02af87477543, type: 3}
-  flockSize: 50
-  spawnBounds: {x: 10, y: 10, z: 10}
-  flockParent: {fileID: 4824578821266108785}
-  minSpeed: 2
-  maxSpeed: 4
-  cohesionDistance: 5
-  avoidanceDistance: 7
-  alignmentDistance: 2
-  boundDistance: 80
-  obstacleDistance: 10
-  cohesionWeight: 4
-  avoidanceWeight: 3
-  alignmentWeight: 3
-  boundWeight: 6.5
-  obstacleWeight: 100
+  flockUnitPrefab: {fileID: -7340249159220289403, guid: b4b0869aa46a07a4aabb47fb89078401, type: 3}
+  flockSize: 0
+  spawnBounds: {x: 0, y: 0, z: 0}
+  flockParent: {fileID: 0}
+  useObstacles: 0
+  minSpeed: 0
+  maxSpeed: 0
+  cohesionDistance: 0
+  avoidanceDistance: 0
+  alignmentDistance: 0
+  boundDistance: 0
+  obstacleDistance: 0
+  cohesionWeight: 0
+  avoidanceWeight: 0
+  alignmentWeight: 0
+  boundWeight: 0
+  obstacleWeight: 0
