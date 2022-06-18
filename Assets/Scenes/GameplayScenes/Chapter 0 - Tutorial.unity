@@ -875,6 +875,123 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3769828735371414786, guid: f3e63d446aacee84f9486747df20e997, type: 3}
   m_PrefabInstance: {fileID: 40061261}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &43693216
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1967855604672378954, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
+      propertyPath: maxSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1967855604672378954, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
+      propertyPath: minSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1967855604672378954, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
+      propertyPath: boundWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1967855604672378954, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
+      propertyPath: flockParent
+      value: 
+      objectReference: {fileID: 1283546209}
+    - target: {fileID: 1967855604672378954, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
+      propertyPath: useObstacles
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1967855604672378954, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
+      propertyPath: boundDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1967855604672378954, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
+      propertyPath: cohesionWeight
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1967855604672378954, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
+      propertyPath: obstacleWeight
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1967855604672378954, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
+      propertyPath: _boundsDistance
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1967855604672378954, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
+      propertyPath: alignmentWeight
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1967855604672378954, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
+      propertyPath: avoidanceWeight
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1967855604672378954, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
+      propertyPath: cohesionDistance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1967855604672378954, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
+      propertyPath: obstacleDistance
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1967855604672378954, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
+      propertyPath: alignmentDistance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1967855604672378954, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
+      propertyPath: avoidanceDistance
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824578821266108785, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824578821266108785, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 728.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824578821266108785, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 99.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824578821266108785, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 168.18756
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824578821266108785, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824578821266108785, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824578821266108785, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824578821266108785, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824578821266108785, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824578821266108785, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824578821266108785, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824578821266108791, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
+      propertyPath: m_Name
+      value: Fish Flock - JOBS 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
 --- !u!1 &57535315
 GameObject:
   m_ObjectHideFlags: 0
@@ -11496,6 +11613,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5131707411051643814, guid: 58a9837e7f3863c4ca4b1c55a37b870e, type: 3}
   m_PrefabInstance: {fileID: 1280845578}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1283546209 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4824578821266108785, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
+  m_PrefabInstance: {fileID: 43693216}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1284584501
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13844,42 +13966,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4824578821266108784, guid: 7bb35ed63b12f9242885e6a0f5d3ec11, type: 3}
-      propertyPath: flockSize
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 4824578821266108784, guid: 7bb35ed63b12f9242885e6a0f5d3ec11, type: 3}
-      propertyPath: spawnBounds.x
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4824578821266108784, guid: 7bb35ed63b12f9242885e6a0f5d3ec11, type: 3}
-      propertyPath: spawnBounds.y
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4824578821266108784, guid: 7bb35ed63b12f9242885e6a0f5d3ec11, type: 3}
-      propertyPath: spawnBounds.z
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4824578821266108784, guid: 7bb35ed63b12f9242885e6a0f5d3ec11, type: 3}
-      propertyPath: cohesionWeight
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4824578821266108784, guid: 7bb35ed63b12f9242885e6a0f5d3ec11, type: 3}
-      propertyPath: obstacleWeight
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4824578821266108784, guid: 7bb35ed63b12f9242885e6a0f5d3ec11, type: 3}
-      propertyPath: alignmentWeight
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4824578821266108784, guid: 7bb35ed63b12f9242885e6a0f5d3ec11, type: 3}
-      propertyPath: avoidanceWeight
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4824578821266108784, guid: 7bb35ed63b12f9242885e6a0f5d3ec11, type: 3}
-      propertyPath: cohesionDistance
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 4824578821266108785, guid: 7bb35ed63b12f9242885e6a0f5d3ec11, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -14509,7 +14595,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh53334
+  m_Name: pb_Mesh23066
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -18349,62 +18435,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.57415146, y: 0.8968915, z: 0.5558522}
   m_Center: {x: 0.0014044046, y: -0.2533543, z: -0.021469966}
---- !u!114 &1967855605696958153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4824578820309141492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d025d2997584dd9aabbbd0783ccf822, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flockUnitPrefab: {fileID: 2854604092815677646, guid: 478b3e7634bffa744a8498a0575490c5, type: 3}
-  flockSize: 50
-  spawnBounds: {x: 5, y: 5, z: 5}
-  flockParent: {fileID: 4824578820309141490}
-  minSpeed: 2
-  maxSpeed: 1
-  cohesionDistance: 10
-  avoidanceDistance: 10
-  alignmentDistance: 10
-  boundDistance: 0
-  obstacleDistance: 10
-  cohesionWeight: 10
-  avoidanceWeight: 0
-  alignmentWeight: 0
-  boundWeight: 0
-  obstacleWeight: 100
---- !u!4 &4824578820309141490
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4824578820309141492}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 728.89, y: 99.8, z: 168.18756}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4824578820309141492
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4824578820309141490}
-  - component: {fileID: 1967855605696958153}
-  m_Layer: 0
-  m_Name: Fish Flock - JOBS 1
-  m_TagString: Untagged
-  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1

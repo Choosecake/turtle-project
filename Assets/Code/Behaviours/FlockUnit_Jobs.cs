@@ -1,41 +1,100 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace  Behaviours
+public class FlockUnit_Jobs : MonoBehaviour
 {
-    public class FlockUnit_Jobs : MonoBehaviour
+    [SerializeField] private float FovAngle; 
+    [SerializeField] private float SmoothDamp;
+    [SerializeField] private LayerMask obstacleMask;
+    [SerializeField] private Vector3[] directionsToCheckWhenAvoidingObstacles;
+
+    public Transform Transform { get; set; }
+    public Vector3 CurrentVelocity { get; set; }
+    public float speed { get; set; }
+
+    public float smoothDamp => SmoothDamp;
+    public float FOVAngle => FovAngle;
+
+    private Vector3 currentObstacleAvoidanceVector;
+    private Flock_Jobs assignedFlock;
+    
+    private void Awake()
     {
-        [SerializeField] private float FOVangle;
-        [SerializeField] private float smoothDamp;
+        Transform = transform;
+    }
 
-        
-        public float Speed { get; set; }
-        public Vector3 CurrentVelocity { get; set; }
-        public Transform Transform { get; set; }
-        public float FOVAngle => FOVangle;
-        public float SmoothDamp => smoothDamp;
+    public FlockUnit_Jobs AssignFlock(Flock_Jobs flock)
+    {
+        assignedFlock = flock;
+        return this;
+    }
 
-        private Flock_Jobs assignedFlock;
-        
-        private void Awake()
+    public FlockUnit_Jobs InitializeSpeed(float speed)
+    {
+        this.speed = speed;
+        return this;
+    }
+    
+    public Vector3 CalculateObstacleVector()
+    {
+        var obstacleVector = Vector3.zero;
+        RaycastHit hit;
+        if (Physics.Raycast(Transform.position, Transform.forward, out hit, assignedFlock.ObstacleDistance,
+            obstacleMask))
         {
-            Transform = transform;
+            obstacleVector = FindBestDirectionToAvoidObstacle();
         }
-
-        public FlockUnit_Jobs AssignFlock(Flock_Jobs flock)
+        else
         {
-            assignedFlock = flock;
-            return this;
+            currentObstacleAvoidanceVector = Vector3.zero;
         }
-
-        public FlockUnit_Jobs InitializeSpeed(float speed)
+        return obstacleVector;
+    }
+    
+    public Vector3 FindBestDirectionToAvoidObstacle()
+    {
+        if (currentObstacleAvoidanceVector != Vector3.zero)
         {
-            this.Speed = speed;
-            return this;
+            RaycastHit hit;
+            if (!Physics.Raycast(Transform.position, Transform.forward, out hit, assignedFlock.ObstacleDistance,
+                obstacleMask))
+            {
+                return currentObstacleAvoidanceVector;
+            }
         }
-        
+            
+        float maxDistance = int.MinValue;
+        var selectedDirection = Vector3.zero;
+        for (int i = 0; i < directionsToCheckWhenAvoidingObstacles.Length; i++)
+        {
+            RaycastHit hit;
+            var currentDirection =
+                Transform.TransformDirection(directionsToCheckWhenAvoidingObstacles[i].normalized);
+                
+            if (Physics.Raycast(Transform.position, currentDirection, out hit, assignedFlock.ObstacleDistance,
+                obstacleMask))
+            {
+                float currentDistance = (hit.point - Transform.position).sqrMagnitude;
+                if (currentDistance > maxDistance)
+                {
+                    maxDistance = currentDistance;
+                    selectedDirection = currentDirection;
+                }
+            }
+            else
+            {
+                selectedDirection = currentDirection;
+                currentObstacleAvoidanceVector = currentDirection.normalized;
+                return selectedDirection.normalized;
+            }
+        }
+        return selectedDirection.normalized;
+    }
+    
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.cyan;
+        Array.ForEach(directionsToCheckWhenAvoidingObstacles, d => Gizmos.DrawRay(transform.position, d));
     }
 }

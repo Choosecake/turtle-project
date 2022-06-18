@@ -44,18 +44,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flockUnitPrefab: {fileID: 2854604092815677646, guid: 478b3e7634bffa744a8498a0575490c5, type: 3}
-  flockSize: 50
+  flockSize: 200
   spawnBounds: {x: 5, y: 5, z: 5}
-  flockParent: {fileID: 4824578821266108785}
-  minSpeed: 2
-  maxSpeed: 4
-  cohesionDistance: 2
-  avoidanceDistance: 3
-  alignmentDistance: 2
-  boundDistance: 0
-  obstacleDistance: 10
-  cohesionWeight: 2
-  avoidanceWeight: 3
-  alignmentWeight: 4
-  boundWeight: 0
-  obstacleWeight: 100
+  _minSpeed: 2
+  _maxSpeed: 4
+  _cohesionDistance: 2
+  _avoidanceDistance: 3
+  _aligementDistance: 2
+  _obstacleDistance: 5
+  _boundsDistance: 10
+  _cohesionWeight: 2
+  _avoidanceWeight: 3
+  _aligementWeight: 4
+  _boundsWeight: 5
+  _obstacleWeight: 0

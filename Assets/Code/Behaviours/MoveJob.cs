@@ -3,171 +3,180 @@ using Unity.Collections;
 using Unity.Jobs;
 using UnityEngine;
 
-namespace Behaviours
+[BurstCompile]
+public struct MoveJob : IJobParallelFor
 {
-    [BurstCompile]
-    public struct MoveJob : IJobParallelFor
-    {
-        
-        [NativeDisableParallelForRestriction] public NativeArray<Vector3> unitForwardDirections;
-        [NativeDisableParallelForRestriction] public NativeArray<Vector3> unitCurrentVelocities;
-        [NativeDisableParallelForRestriction] public NativeArray<Vector3> unitPositions;
-        [NativeDisableParallelForRestriction] public NativeArray<Vector3> cohesionNeighbours;
-        [NativeDisableParallelForRestriction] public NativeArray<Vector3> avoidanceNeighbours;
-        [NativeDisableParallelForRestriction] public NativeArray<Vector3> alignmentNeighbours;
-        [NativeDisableParallelForRestriction] public NativeArray<Vector3> alignmentNeighboursDirections;
-        [NativeDisableParallelForRestriction] public NativeArray<float> allUnitsSpeeds;
-        [NativeDisableParallelForRestriction] public NativeArray<float> neighboursSpeeds;
+	public NativeArray<Vector3> unitCurrentVelocities;
 
-        public Vector3 flockPosition;
-        public Vector3 playerPosition;
-        
-        public float cohesionDistance;
-        public float avoidanceDistance;
-        public float alignmentDistance;
-        public float boundsDistance;
-        public float obstacleDistance;
+	[NativeDisableParallelForRestriction] public NativeArray<Vector3> unitForwardDirections;
+	[NativeDisableParallelForRestriction] public NativeArray<Vector3> unitPositions;
+	[NativeDisableParallelForRestriction] public NativeArray<Vector3> cohesionNeighbours;
+	[NativeDisableParallelForRestriction] public NativeArray<Vector3> avoidanceNeighbours;
+	[NativeDisableParallelForRestriction] public NativeArray<Vector3> aligementNeighbours;
+	[NativeDisableParallelForRestriction] public NativeArray<Vector3> aligementNeighboursDirecions;
+	[NativeDisableParallelForRestriction] public NativeArray<float> allUnitsSpeeds;
+	[NativeDisableParallelForRestriction] public NativeArray<float> neighbourSpeeds;
+	[NativeDisableParallelForRestriction] public NativeArray<Vector3> ObstacleVectors;
 
-        public float cohesionWeight;
-        public float avoidanceWeight;
-        public float alignmentWeight;
-        public float boundsWeight;
-        public float obstacleWeight;
+	public Vector3 flockPosition;
+	public float cohesionDistance;
+	public float avoidanceDistance;
+	public float aligementDistance;
+	public float boundsDistance;
+	// public float obstacleDistance;
+	public float cohesionWeight;
+	public float avoidanceWeight;
+	public float aligementWeight;
+	public float boundsWeight;
+	// public float obstacleWeight;
+	public float fovAngle;
+	public float minSpeed;
+	public float maxSpeed;
+	public float smoothDamp;
+	public float deltaTime;
+	
+	// public Vector3 resultingObstacleVector;
+	
+	public void Execute(int index)
+	{
+		//Find Neighbours
+		int cohesionIndex = 0;
+		int avoidanceIndex = 0;
+		int aligementIndex = 0;
+		for (int i = 0; i < unitPositions.Length; i++)
+		{
+			Vector3 currentUnitPosition = unitPositions[index];
+			Vector3 currentNeighbourPosition = unitPositions[i];
+			Vector3 currentNeighbourDirection = unitForwardDirections[i];
+			if (currentUnitPosition != currentNeighbourPosition)
+			{
+				float currentDistanceToNeighbourSqr =
+					Vector3.SqrMagnitude(currentUnitPosition - currentNeighbourPosition);
+				if (currentDistanceToNeighbourSqr < cohesionDistance * cohesionDistance)
+				{
+					cohesionNeighbours[cohesionIndex] = currentNeighbourPosition;
+					neighbourSpeeds[cohesionIndex] = allUnitsSpeeds[i];
+					cohesionIndex++;
+				}
 
-        public float fovAngle;
-        public float minSpeed;
-        public float maxSpeed;
-        public float smoothDamp;
-        public float deltaTime;
+				if (currentDistanceToNeighbourSqr < avoidanceDistance * avoidanceDistance)
+				{
+					avoidanceNeighbours[avoidanceIndex] = currentNeighbourPosition;
+					avoidanceIndex++;
+				}
 
-        public void Execute(int executionIndex)
-        {
-            //Find Neighbours
-            int cohesionIndex = 0;
-            int avoidanceIndex = 0;
-            int alignmentIndex = 0;
-            for (int i = 0; i < unitPositions.Length; i++)
-            {
-                Vector3 currentNeighbourPosition = unitPositions[i];
-                Vector3 currentNeighbourDirection = unitForwardDirections[i];
-                Vector3 currentUnitPosition = unitPositions[executionIndex];
-                if (currentUnitPosition != currentNeighbourPosition)
-                {
-                    float currentDistanceToNeighbourSqr =
-                        Vector3.SqrMagnitude(currentUnitPosition - currentNeighbourPosition);
-                    if (currentDistanceToNeighbourSqr < cohesionDistance * cohesionDistance)
-                    {
-                        cohesionNeighbours[cohesionIndex] = currentNeighbourPosition;
-                        neighboursSpeeds[cohesionIndex] = allUnitsSpeeds[i];
-                        cohesionIndex++;
-                    }
+				if (currentDistanceToNeighbourSqr < aligementDistance * aligementDistance)
+				{
+					aligementNeighbours[aligementIndex] = currentNeighbourPosition;
+					aligementNeighboursDirecions[aligementIndex] = currentNeighbourDirection;
+					aligementIndex++;
+				}
+			}
+		}
 
-                    if (currentDistanceToNeighbourSqr < avoidanceDistance * alignmentDistance)
-                    {
-                        avoidanceNeighbours[avoidanceIndex] = currentNeighbourPosition;
-                        avoidanceIndex++;
-                    }
+		//Calculate speed
+		float speed = 0f;
+		if (cohesionNeighbours.Length != 0)
+		{
+			for (int i = 0; i < cohesionNeighbours.Length; i++)
+			{
+				speed += neighbourSpeeds[i];
+			}
 
-                    if (currentDistanceToNeighbourSqr < alignmentDistance * alignmentDistance)
-                    {
-                        alignmentNeighbours[alignmentIndex] = currentNeighbourPosition;
-                        alignmentNeighboursDirections[alignmentIndex] = currentNeighbourDirection;
-                        alignmentIndex++;
-                    }
-                }
-            }
-            
-            //Calculate speed
-            float speed = 0f;
-            if (cohesionNeighbours.Length != 0)
-            {
-                for (int i = 0; i < cohesionNeighbours.Length; i++)
-                {
-                    if (neighboursSpeeds[i] != 0)
-                    {
-                        speed += neighboursSpeeds[i];
-                    }
-                }
-                speed /= cohesionNeighbours.Length;
-            }
-            
-            //Calculate cohesion 
-            Vector3 cohesionVector = Vector3.zero;
-            if (cohesionNeighbours.Length != 0)
-            {
-                int cohesionNeighboursInFOV = 0;
-                for (int i = 0; i < cohesionNeighbours.Length; i++)
-                {
-                    if (IsInFOV(unitForwardDirections[executionIndex], unitPositions[executionIndex],
-                        cohesionNeighbours[i], fovAngle) && cohesionNeighbours[i] != Vector3.zero)
-                    {
-                        cohesionNeighboursInFOV++;
-                        cohesionVector += cohesionNeighbours[i];
-                    } 
-                }
-                cohesionVector /= cohesionNeighboursInFOV;
-                cohesionVector -= unitPositions[executionIndex];
-                cohesionVector = cohesionVector.normalized * cohesionWeight;
-            }
+			speed /= cohesionNeighbours.Length;
 
-            //Calculate avoidance
-            Vector3 avoidanceVector = Vector3.zero;
-            if (avoidanceNeighbours.Length != 0)
-            {
-                int avoidanceNeighboursInFOV = 0;
-                for (int i = 0; i < avoidanceNeighbours.Length; i++)
-                {
-                    if (IsInFOV(unitForwardDirections[executionIndex], unitPositions[executionIndex],
-                        avoidanceNeighbours[i], fovAngle) && avoidanceNeighbours[i] != Vector3.zero)
-                    {
-                        avoidanceNeighboursInFOV++;
-                        avoidanceVector += (unitPositions[executionIndex] - avoidanceNeighbours[i]);
-                    }
-                }
+		}
 
-                avoidanceVector /= avoidanceNeighboursInFOV;
-                avoidanceVector = avoidanceVector.normalized * avoidanceWeight;
-            }
-            
-            //Calculate alignment
-            Vector3 alignmentVector = Vector3.zero;
-            if (alignmentNeighbours.Length != 0)
-            {
-                int alignmentNeighboursInFOV = 0;
-                for (int i = 0; i < alignmentNeighbours.Length; i++)
-                {
-                    if (IsInFOV(unitForwardDirections[executionIndex], unitPositions[executionIndex],
-                        alignmentNeighbours[i], fovAngle) && alignmentNeighbours[i] != Vector3.zero)
-                    {
-                        alignmentNeighboursInFOV++;
-                        alignmentVector += alignmentNeighboursDirections[i].normalized;
-                    }
-                }
+		speed = Mathf.Clamp(speed, minSpeed, maxSpeed);
 
-                alignmentVector /= alignmentNeighboursInFOV;
-                alignmentVector = alignmentVector.normalized * alignmentWeight;
-            }
+		//Calculate cohesion
+		Vector3 cohesionVector = Vector3.zero;
+		if (cohesionNeighbours.Length != 0)
+		{
+			int cohesionNeighbourdInFOV = 0;
+			for (int i = 0; i <= cohesionIndex; i++)
+			{
+				if (IsInFov(unitForwardDirections[index], unitPositions[index], cohesionNeighbours[i], fovAngle) &&
+				    cohesionNeighbours[i] != Vector3.zero)
+				{
+					cohesionNeighbourdInFOV++;
+					cohesionVector += cohesionNeighbours[i];
+				}
+			}
 
-            Vector3 currentVelocity = unitCurrentVelocities[executionIndex];
-            Vector3 moveVector = cohesionVector + avoidanceVector + alignmentVector;
-            
-            moveVector = Vector3.SmoothDamp(unitForwardDirections[executionIndex], moveVector, ref currentVelocity,
-                smoothDamp, 10000, deltaTime);
-            moveVector = moveVector.normalized * speed;
-            if (moveVector == Vector3.zero)
-            {
-                moveVector = unitForwardDirections[executionIndex];
-            }
+			cohesionVector /= cohesionNeighbourdInFOV;
+			cohesionVector -= unitPositions[index];
+			cohesionVector = cohesionVector.normalized * cohesionWeight;
+		}
 
-            unitPositions[executionIndex] += moveVector * deltaTime;
-            unitForwardDirections[executionIndex] = moveVector.normalized;
-            allUnitsSpeeds[executionIndex] = speed;
-            unitCurrentVelocities[executionIndex] = currentVelocity;
-        }
-        
-        public static bool IsInFOV(Vector3 forward, Vector3 unitPosition, Vector3 targetPosition, float angle)
-        {
-            return Vector3.Angle(forward, targetPosition - unitPosition) <= angle;
-        }
-    }
+		//Calculate avoidance
+		Vector3 avoidanceVector = Vector3.zero;
+		if (avoidanceNeighbours.Length != 0)
+		{
+			int avoidanceNeighbourdInFOV = 0;
+			for (int i = 0; i <= avoidanceIndex; i++)
+			{
+				if (IsInFov(unitForwardDirections[index], unitPositions[index], avoidanceNeighbours[i], fovAngle) &&
+				    avoidanceNeighbours[i] != Vector3.zero)
+				{
+					avoidanceNeighbourdInFOV++;
+					avoidanceVector += (unitPositions[index] - avoidanceNeighbours[i]);
+				}
+			}
+
+			avoidanceVector /= avoidanceNeighbourdInFOV;
+			avoidanceVector = avoidanceVector.normalized * avoidanceWeight;
+		}
+
+		//Calculate aligement
+		Vector3 aligementVector = Vector3.zero;
+		if (aligementNeighbours.Length != 0)
+		{
+			int aligementNeighbourdInFOV = 0;
+			for (int i = 0; i <= aligementIndex; i++)
+			{
+				if (IsInFov(unitForwardDirections[index], unitPositions[index], aligementNeighbours[i], fovAngle) &&
+				    aligementNeighbours[i] != Vector3.zero)
+				{
+					aligementNeighbourdInFOV++;
+					aligementVector += aligementNeighboursDirecions[i].normalized;
+				}
+			}
+
+			aligementVector /= aligementNeighbourdInFOV;
+			aligementVector = aligementVector.normalized * aligementWeight;
+		}
+
+		//Calculate bounds
+		Vector3 offsetToCenter = flockPosition - unitPositions[index];
+		bool isNearBound = offsetToCenter.magnitude >= boundsDistance * 0.9f;
+		Vector3 boundsVector = isNearBound ? offsetToCenter.normalized : Vector3.zero;
+		boundsVector *= boundsWeight;
+
+		//Move Unit
+		Vector3 currentVelocity = unitCurrentVelocities[index];
+		var resultingObstacleVector = ObstacleVectors[index];
+		Vector3 moveVector = cohesionVector + avoidanceVector + aligementVector + boundsVector + resultingObstacleVector;
+
+		moveVector = Vector3.SmoothDamp(unitForwardDirections[index], moveVector, ref currentVelocity, smoothDamp,
+			10000, deltaTime);
+
+		moveVector = moveVector.normalized * speed;
+		if (moveVector == Vector3.zero)
+		{
+			moveVector = unitForwardDirections[index];
+		}
+
+		unitPositions[index] = unitPositions[index] + moveVector * deltaTime;
+		unitForwardDirections[index] = moveVector.normalized;
+		allUnitsSpeeds[index] = speed;
+		unitCurrentVelocities[index] = currentVelocity;
+
+
+	}
+
+	private bool IsInFov(Vector3 forward, Vector3 unitPosition, Vector3 targetPosition, float angle)
+	{
+		return Vector3.Angle(forward, targetPosition - unitPosition) <= angle;
+	}
 }
