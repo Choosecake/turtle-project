@@ -1,8 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Collections;
-using Unity.Mathematics;
 using UnityEngine;
 
 public class ShipBehaviour : MonoBehaviour
@@ -39,9 +34,5 @@ public class ShipBehaviour : MonoBehaviour
         }
 
         transform.position = Vector3.MoveTowards(transform.position, paths[currentPath].transform.position, moveSpeed * Time.deltaTime);
-    }
-
-    private void FixedUpdate()
-    {
     }
 }
