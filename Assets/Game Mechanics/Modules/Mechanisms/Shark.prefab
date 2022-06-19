@@ -112,7 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 2328302265706438544}
   biteSound: {fileID: 8300000, guid: e69c48d47e9d1254f812135016822d88, type: 3}
-  movementSpeed: 1
+  movementSpeed: 0.5
   isHunting: 0
   TargetPrey: {fileID: 0}
 --- !u!82 &2964815859093382032
