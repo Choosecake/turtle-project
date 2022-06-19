@@ -11612,10 +11612,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1178061281524575444, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
-      propertyPath: enableDebugging
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1178061281524575444, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
       propertyPath: movementMultiplier
       value: 3
       objectReference: {fileID: 0}

@@ -2681,10 +2681,6 @@ PrefabInstance:
       propertyPath: sharkBoundaryTag
       value: Boundary
       objectReference: {fileID: 0}
-    - target: {fileID: 1178061281524575444, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
-      propertyPath: enableDebugging
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4301582329761923173, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
       propertyPath: m_Enabled
       value: 1
