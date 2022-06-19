@@ -303,7 +303,7 @@ PrefabInstance:
     - target: {fileID: 9135854282668879642, guid: 7010ad10925c442478014a961c45da9c, type: 3}
       propertyPath: nutritionMeter
       value: 
-      objectReference: {fileID: 9054338113764195832}
+      objectReference: {fileID: 7212559505952098803}
     - target: {fileID: 9135854282668879642, guid: 7010ad10925c442478014a961c45da9c, type: 3}
       propertyPath: nutritionDecayPeriod
       value: 0.6
@@ -661,17 +661,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7660310168048938835, guid: 4f584e47309481340ae39627bc17598d, type: 3}
   m_PrefabInstance: {fileID: 6077081387278564943}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &9054338113764195832 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3022295609405178807, guid: 4f584e47309481340ae39627bc17598d, type: 3}
-  m_PrefabInstance: {fileID: 6077081387278564943}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cdabb6774b00054d818f93e87ba72cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7881431941747559192 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4122581211659351383, guid: 4f584e47309481340ae39627bc17598d, type: 3}
@@ -693,6 +682,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6077081386226131688, guid: 4f584e47309481340ae39627bc17598d, type: 3}
   m_PrefabInstance: {fileID: 6077081387278564943}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7212559505952098803 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3480730534676805564, guid: 4f584e47309481340ae39627bc17598d, type: 3}
+  m_PrefabInstance: {fileID: 6077081387278564943}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ec70a38aeb84a09802ac16e7b75cd2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3434312125645644110 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8934862369030184705, guid: 4f584e47309481340ae39627bc17598d, type: 3}

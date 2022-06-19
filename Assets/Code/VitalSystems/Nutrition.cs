@@ -2,6 +2,7 @@
 using System.Collections;
 using Code.DeathMessages;
 using Ez;
+using UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,9 +14,9 @@ namespace Code
         [SerializeField] private float nutritionDecayPeriod = 1.0f; 
         [Range(0, 1)] [SerializeField] private float nutritionDecayFactor = 0.1f;
 
-        [Header("References")] 
-        //Might have to change to something without ProgressBarPro
-        [SerializeField] private ProgressBarPro nutritionMeter;
+        [Header("User Interface")] 
+        [SerializeField] ProgressBar nutritionMeter;
+        
         
         private float _currentNutrition;
         private CauseOfDeath _causeOfDeath = CauseOfDeath.Indigestion;
