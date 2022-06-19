@@ -10,10 +10,27 @@ public class PlayerMovement : MonoBehaviour
     [Min(0)][SerializeField] private float movementSpeed = 5.0f;
     [Min(0)][SerializeField] private float rotationSpeed = 300.0f;
 
+    // [Header("Debug")]
+    // [SerializeField] private float 
+    // [SerializeField] private float speedMultiplier = 2f;
+    
+
     private Vector3 movementDirection;
 
     private Rigidbody _rb;
     private TurtleVitalSystems _vitalsSystems;
+    
+    public float MovementSpeed
+    {
+        get => movementSpeed;
+        set => movementSpeed = value;
+    }
+
+    public float RotationSpeed
+    {
+        get => rotationSpeed;
+        set => rotationSpeed = value;
+    }
 
     private void Awake()
     {

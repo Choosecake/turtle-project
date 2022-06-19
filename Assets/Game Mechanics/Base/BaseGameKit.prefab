@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5364436828195708409}
   - component: {fileID: 146934628266263562}
   - component: {fileID: 7258430217783252006}
+  - component: {fileID: 1178061281524575444}
   m_Layer: 0
   m_Name: BaseGameKit
   m_TagString: Untagged
@@ -72,6 +73,21 @@ MonoBehaviour:
   playerCamera: {fileID: 7115079260930998226}
   cinematicCamera: {fileID: 2412989296907415830}
   holdingKeyCode: 304
+--- !u!114 &1178061281524575444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5089685788798826983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35b7718ab36d429688d8be88caa8f91a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableDebugging: 0
+  playerMovement: {fileID: 8952975434462437379}
+  movementMultiplier: 2
 --- !u!1 &8952975435704718546
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,6 +336,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3575046197000799505, guid: 7010ad10925c442478014a961c45da9c, type: 3}
   m_PrefabInstance: {fileID: 5594110833991263507}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8952975434462437379 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3575046197000799504, guid: 7010ad10925c442478014a961c45da9c, type: 3}
+  m_PrefabInstance: {fileID: 5594110833991263507}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8952975434462437377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2d1b8edd0aed3047b5ae5d82ed9196a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6095966453726441110 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1818186629508582277, guid: 7010ad10925c442478014a961c45da9c, type: 3}

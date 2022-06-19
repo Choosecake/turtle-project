@@ -65,7 +65,8 @@ namespace UI
                 
             _blackoutScreen.color = new Color(_blackoutScreen.color.r, _blackoutScreen.color.g, _blackoutScreen.color.b, 0);
             messageText.color = new Color(messageText.color.r, messageText.color.g, messageText.color.b, 0);
-            StartCoroutine(BackgroundFadeOut());
+            StartCoroutine(BackgroundFadeOut(true));
+            
         }
 
         private void OnDisable()
@@ -82,13 +83,26 @@ namespace UI
             
             Tween fadeTween = _blackoutScreen.DOFade(1, fadeInTime);
             yield return new WaitForSeconds(fadeInTime+delayTime);
-            StartCoroutine(MessageFadeCycle(causeOfDeath));
+            if (causeOfDeath == CauseOfDeath.Default && !GameplayManager.Instance.IsTheLastScene())
+            {
+                GameplayManager.Instance.GoToNextScene();
+            }
+            else
+            {
+                StartCoroutine(MessageFadeCycle(causeOfDeath));
+            }
         }
         private void FadeInCoroutine(CauseOfDeath causeOfDeath) => StartCoroutine(BackgroundFadeIn(causeOfDeath));
 
-        private IEnumerator BackgroundFadeOut()
+        private IEnumerator BackgroundFadeOut(bool startOpaque = false)
         {
-            _blackoutScreen.DOFade(0, fadeOutTime);
+            if (startOpaque)
+            {
+                Color newColour = _blackoutScreen.color;
+                newColour.a = 1;
+                _blackoutScreen.color = newColour;
+            }
+            _blackoutScreen.DOFade(0, fadeOutTime+delayTime);
             yield return null;
         }
         
@@ -110,7 +124,15 @@ namespace UI
                 fadeTween = messageText.DOFade(0, textFadeInTime);
                 yield return fadeCompletionYield;
             }
-            SceneManager.LoadScene(0);
+
+            // if (causeOfDeath == CauseOfDeath.Default)
+            // {
+            //     GameplayManager.Instance.GoToNextScene();
+            // }
+            // else
+            // {
+            GameplayManager.Instance.RestartGame();
+            // }
         }
 
         private void TryPlayDeathTrack()

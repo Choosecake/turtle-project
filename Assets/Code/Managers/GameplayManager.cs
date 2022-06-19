@@ -112,5 +112,25 @@ namespace Code
         {
             CanPause = false;
         }
+
+        public void GoToNextScene()
+        {
+            var currenSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            Debug.Log(currenSceneIndex.ToString());
+            Debug.Log(SceneManager.sceneCountInBuildSettings.ToString());
+            var nextSceneIndex = (currenSceneIndex + 1) % SceneManager.sceneCountInBuildSettings;
+            Debug.Log(nextSceneIndex.ToString());
+            SceneManager.LoadScene(nextSceneIndex);
+        }
+
+        public void RestartGame()
+        {
+            SceneManager.LoadScene(0);
+        }
+
+        public bool IsTheLastScene()
+        {
+            return SceneManager.sceneCountInBuildSettings == SceneManager.GetActiveScene().buildIndex + 1;
+        }
     }
 }
