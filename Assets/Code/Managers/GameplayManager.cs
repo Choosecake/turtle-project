@@ -12,6 +12,8 @@ namespace Code
 {
     public class GameplayManager : MonoSingleton<GameplayManager>
     {
+        [SerializeField] private GeneralDataStorageSO generalDataStorage;
+        [Space(10)]
         [SerializeField] private GameObject playerGameObject;
         [SerializeField] private TransitionScreen victoryTransitionScreen;
         [SerializeField] private GameObject musicPlayerGameObject;
@@ -125,7 +127,7 @@ namespace Code
 
         public void RestartGame()
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(generalDataStorage.currentLevel);
         }
 
         public bool IsTheLastScene()
