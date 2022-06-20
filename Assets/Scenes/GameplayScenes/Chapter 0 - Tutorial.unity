@@ -6984,6 +6984,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300002, guid: cec9cb48615011241943f8d206bcd23b, type: 3}
+--- !u!82 &644373352 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3905747376216329595, guid: ee76152a454c6854c849a0b1b5476995, type: 3}
+  m_PrefabInstance: {fileID: 1640866512}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &648464779
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12908,6 +12913,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4301582329761923173, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: musicPlayer
+      value: 
+      objectReference: {fileID: 644373352}
     - target: {fileID: 4409698883954191280, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
       propertyPath: m_fontAsset
       value: 
@@ -16015,6 +16024,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3905747376216329595, guid: ee76152a454c6854c849a0b1b5476995, type: 3}
+      propertyPath: m_Volume
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3905747376216329595, guid: ee76152a454c6854c849a0b1b5476995, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0d766800f0f780d4893b07ae56cab812, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee76152a454c6854c849a0b1b5476995, type: 3}
 --- !u!1001 &1643477060

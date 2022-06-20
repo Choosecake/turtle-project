@@ -230,6 +230,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 5364436828195708409}
     m_Modifications:
     - target: {fileID: 651181307, guid: 7010ad10925c442478014a961c45da9c, type: 3}
+      propertyPath: breathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 78240ffcb8ccc7849be5336840052863, type: 3}
+    - target: {fileID: 651181307, guid: 7010ad10925c442478014a961c45da9c, type: 3}
       propertyPath: breathInstruction_UI
       value: 
       objectReference: {fileID: 1590025383}
@@ -242,9 +246,17 @@ PrefabInstance:
       value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 651181309, guid: 7010ad10925c442478014a961c45da9c, type: 3}
+      propertyPath: biteSound
+      value: 
+      objectReference: {fileID: 8300000, guid: dc7153e662f3fa34eaa40119adc61ab5, type: 3}
+    - target: {fileID: 651181309, guid: 7010ad10925c442478014a961c45da9c, type: 3}
       propertyPath: eatInput_UI
       value: 
       objectReference: {fileID: 7881431941747559192}
+    - target: {fileID: 1287858583287368664, guid: 7010ad10925c442478014a961c45da9c, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 7f420338cfd8f5e4cbd2af72127cea77, type: 2}
     - target: {fileID: 2631965485079118842, guid: 7010ad10925c442478014a961c45da9c, type: 3}
       propertyPath: boundary
       value: 
@@ -317,6 +329,26 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 1.25
       objectReference: {fileID: 0}
+    - target: {fileID: 8507313425900643702, guid: 7010ad10925c442478014a961c45da9c, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8507313425900643702, guid: 7010ad10925c442478014a961c45da9c, type: 3}
+      propertyPath: musicPlayer
+      value: 
+      objectReference: {fileID: 6664521114703539915}
+    - target: {fileID: 8507313425900643702, guid: 7010ad10925c442478014a961c45da9c, type: 3}
+      propertyPath: endDangerSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 0e1d8d2b1fa3e5144b140949de925aae, type: 3}
+    - target: {fileID: 8507313425900643702, guid: 7010ad10925c442478014a961c45da9c, type: 3}
+      propertyPath: middleDangerSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 9b3e1a5c732b02e43bef928fbb2b8789, type: 3}
+    - target: {fileID: 8507313425900643702, guid: 7010ad10925c442478014a961c45da9c, type: 3}
+      propertyPath: initialDangerSound
+      value: 
+      objectReference: {fileID: 8300000, guid: bfb95386c75315d4e9119f98696e278a, type: 3}
     - target: {fileID: 9135854282668879642, guid: 7010ad10925c442478014a961c45da9c, type: 3}
       propertyPath: nutritionMeter
       value: 
@@ -359,6 +391,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 515988885a6b4b65ac4a5eb7c96152c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &6664521114703539915 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1287858583287368664, guid: 7010ad10925c442478014a961c45da9c, type: 3}
+  m_PrefabInstance: {fileID: 5594110833991263507}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1945933019120726452 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6242853228796597415, guid: 7010ad10925c442478014a961c45da9c, type: 3}
