@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Code.Managers;
 using Code.Utilities;
 using TMPro;
 using UI;
@@ -55,6 +56,8 @@ namespace Code
             
             MonoUtilities.TryFindWithTag(out musicPlayerGameObject, musicPlayerTag);
             MonoUtilities.TryFindWithTag(out sharkBoundaryGameObject, sharkBoundaryTag);
+            
+            GuaranteeLevelStat();
         }
         
         private void OnEnable()
@@ -127,12 +130,17 @@ namespace Code
 
         public void RestartGame()
         {
-            SceneManager.LoadScene(generalDataStorage.currentLevel);
+            SceneManager.LoadScene(generalDataStorage.CurrentLevel);
         }
 
         public bool IsTheLastScene()
         {
             return SceneManager.sceneCountInBuildSettings == SceneManager.GetActiveScene().buildIndex + 1;
+        }
+
+        private void GuaranteeLevelStat()
+        {
+            generalDataStorage.CurrentLevel = SceneManager.GetActiveScene().buildIndex;
         }
     }
 }

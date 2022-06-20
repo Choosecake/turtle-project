@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35bc15697800482b89815c6c6e0e7726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  generalDataStorage: {fileID: 11400000, guid: 5fe68a621b7b82541ba1fca5e32a5263, type: 2}
   playerGameObject: {fileID: 8952975434462437377}
   victoryTransitionScreen: {fileID: 3434312125645644110}
   musicPlayerGameObject: {fileID: 0}
