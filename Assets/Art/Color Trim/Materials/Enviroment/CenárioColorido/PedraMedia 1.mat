@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Coral05.2
+  m_Name: PedraMedia 1
   m_Shader: {fileID: -6465566751694194690, guid: 131ed2b8d00c056488238911472f813e, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -91,8 +91,8 @@ Material:
     m_Floats:
     - Vector1_04db18677079417e99b7f95a422950d3: 0
     - Vector1_0c1eff59554148a2892c7222f9ef6edb: 0
-    - Vector1_63a0afd297734dc9998b9b19bd747613: 0.17
-    - Vector1_6e12275293314cb7a52c177f83f8f9aa: 0.18
+    - Vector1_63a0afd297734dc9998b9b19bd747613: 0.9
+    - Vector1_6e12275293314cb7a52c177f83f8f9aa: 1.25
     - Vector1_c77d81e545954cd0b55278e2ba9a8830: 0
     - Vector1_fde129e198e94c77ac906bc5d7f525ab: 0.1
     - _AlphaClip: 0
@@ -123,9 +123,9 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - Color_4426999063b847ddb3ca0200d0cd3a69: {r: 1, g: 0, b: 0, a: 0}
-    - Color_64d861fce71044349695d1bac7f2ea98: {r: 0.12860449, g: 0.3135273, b: 0.3207547, a: 1}
+    - Color_64d861fce71044349695d1bac7f2ea98: {r: 0.111516565, g: 0.13207549, b: 0.111516565, a: 1}
     - Color_c2df8d538a29426d87cca79e3feeba9c: {r: 0, g: 0.2338161, b: 1, a: 0}
-    - Color_d3f90b46fa4040c48d4031973961bef6: {r: 0.5254902, g: 0.7463281, b: 0.7529412, a: 0}
+    - Color_d3f90b46fa4040c48d4031973961bef6: {r: 0.38572443, g: 0.41509432, b: 0.38572443, a: 0}
     - _BaseColor: {r: 0.851, g: 0.30557922, b: 0.084249035, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
