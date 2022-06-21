@@ -74,6 +74,7 @@ public class SharkBehaviour : MonoBehaviour
     {
         MoveShark(startPosition);
         transform.LookAt(startPosition);
+        movementSpeed = 0.1f;
         yield return new WaitForSeconds(3f);
         Destroy(this.gameObject);
     }

@@ -125,14 +125,14 @@ namespace UI
                 yield return fadeCompletionYield;
             }
 
-            // if (causeOfDeath == CauseOfDeath.Default)
-            // {
-            //     GameplayManager.Instance.GoToNextScene();
-            // }
-            // else
-            // {
+            if (causeOfDeath == CauseOfDeath.Default)
+            {
+                GameplayManager.Instance.GoToNextScene();
+            }
+            else
+            {
             GameplayManager.Instance.RestartGame();
-            // }
+            }
         }
 
         private void TryPlayDeathTrack()

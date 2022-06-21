@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14dcf16bea9b45e0898ef605429f5ca2, type: 3}
-  m_Name: FODA-MarPoluido
+  m_Name: Pesca ilegal
   m_EditorClassIdentifier: 
-  causeOfDeath: 1
+  causeOfDeath: 2
   messageParts:
-  - MAR TA POLUIDO.
-  - FODA :(
+  - "A pesca ilegal captura n\xE3o apenas\n peixes, mas tamb\xE9m mam\xEDferos,\n
+    crust\xE1ceos, moluscos e outros animais."
   messageDurations:
-  - 0.4405085
-  - 0.20557064
+  - 3
+  - 2
