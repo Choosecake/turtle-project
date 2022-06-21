@@ -13122,8 +13122,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 9f8209b110cc54c418c0d87d1d074857, type: 2}
     - target: {fileID: 1590025385, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 9f8209b110cc54c418c0d87d1d074857, type: 2}
+    - target: {fileID: 1590025385, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 500387627303694610, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
       propertyPath: gameEnders.Array.data[1]
@@ -13170,8 +13174,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 9f8209b110cc54c418c0d87d1d074857, type: 2}
     - target: {fileID: 4409698883954191280, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 9f8209b110cc54c418c0d87d1d074857, type: 2}
+    - target: {fileID: 4409698883954191280, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5089685788798826983, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
       propertyPath: m_Name
