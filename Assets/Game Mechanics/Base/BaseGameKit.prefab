@@ -652,6 +652,10 @@ PrefabInstance:
       propertyPath: _vitalSystems
       value: 
       objectReference: {fileID: 6095966453726441110}
+    - target: {fileID: 8284676180233615882, guid: 4f584e47309481340ae39627bc17598d, type: 3}
+      propertyPath: deathMessages.loadMessagesFromResourceFolder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8934862369030184705, guid: 4f584e47309481340ae39627bc17598d, type: 3}
       propertyPath: gameEnder
       value: 
