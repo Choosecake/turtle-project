@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14dcf16bea9b45e0898ef605429f5ca2, type: 3}
-  m_Name: PescaEhFoda
+  m_Name: "Petr\xF3leo"
   m_EditorClassIdentifier: 
-  causeOfDeath: 2
+  causeOfDeath: 1
   messageParts:
-  - Pesca a foda
-  - Mata as tortuga tudo :((((
+  - "O petr\xF3leo \xE9 capaz de intoxicar os\n animais marinhos, causando danos."
+  - "Como por exemplo, no sistema nervoso,\n al\xE9m de causar asfixia e morte pelo\n
+    aprisionamento no \xF3leo."
   messageDurations:
-  - 0.3524068
-  - 0.7635481
+  - 3
+  - 4
