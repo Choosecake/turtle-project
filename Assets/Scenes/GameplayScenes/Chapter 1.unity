@@ -2919,6 +2919,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4301582329761923173, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 2964815859093382032, guid: a2e0ad960c86d2d47b28f87a07f155b1, type: 3}
+    - target: {fileID: 4301582329761923173, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: musicPlayer
+      value: 
+      objectReference: {fileID: 320610283}
     - target: {fileID: 5089685788798826983, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
       propertyPath: m_Name
       value: BaseGameKit
@@ -2981,6 +2989,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+--- !u!82 &320610283 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6664521114703539915, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+  m_PrefabInstance: {fileID: 320610282}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &321305143 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 5be4b352263731743a7514893a28764f, type: 3}
@@ -7839,7 +7852,7 @@ PrefabInstance:
     - target: {fileID: 3905747376216329595, guid: ee76152a454c6854c849a0b1b5476995, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: bd2624589a4df8e4ca0953f1073ac7d5, type: 3}
+      objectReference: {fileID: 8300000, guid: 4bb1012bf1e08824db17a71952dc35b9, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee76152a454c6854c849a0b1b5476995, type: 3}
 --- !u!1001 &891516722
