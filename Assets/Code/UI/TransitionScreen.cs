@@ -131,7 +131,7 @@ namespace UI
             }
             else
             {
-            GameplayManager.Instance.RestartGame();
+                GameplayManager.Instance.RestartGame();
             }
         }
 
