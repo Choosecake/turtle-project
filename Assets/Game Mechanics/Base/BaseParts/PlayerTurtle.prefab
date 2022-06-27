@@ -208,7 +208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 3575046198383717112}
-  turtleModel: {fileID: 0}
+  turtleModel: {fileID: 6242853228796597415}
   movementSpeed: 7.5
   rotationSpeed: 300
 --- !u!114 &9135854282668879642
@@ -340,7 +340,7 @@ AudioSource:
   m_GameObject: {fileID: 3575046197000799506}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 7f420338cfd8f5e4cbd2af72127cea77, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1

@@ -13153,6 +13153,10 @@ PrefabInstance:
       propertyPath: minDistance
       value: -3
       objectReference: {fileID: 0}
+    - target: {fileID: 2991504320353634703, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: m_Name
+      value: PauseMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 3434312125645644110, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
       propertyPath: gameEnder
       value: 

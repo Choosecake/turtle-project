@@ -8,13 +8,23 @@ using UnityEngine.UI;
 public class SettingsMenu : MonoBehaviour
 {
     [SerializeField] private Slider mouseSensitivitySlider;
+    [SerializeField] private Slider mouseVolumeSlider;
     public AudioMixer audioMixer;
 
-    private void Start()
+    private const string SensitivityString = "Sensitivity";
+    private const string VolumeString = "Volume";
+
+    private void OnEnable()
     {
-        if (PlayerPrefs.HasKey("Sensitivity"))
+        if (PlayerPrefs.HasKey(SensitivityString))
         { 
-            mouseSensitivitySlider.value = PlayerPrefs.GetFloat("Sensitivity");
+            mouseSensitivitySlider.value = PlayerPrefs.GetFloat(SensitivityString);
+        }
+
+        float volumeValue;
+        if (audioMixer.GetFloat(VolumeString, out volumeValue))
+        {
+            mouseVolumeSlider.value = volumeValue;
         }
     }
 
@@ -22,12 +32,12 @@ public class SettingsMenu : MonoBehaviour
     {
         if (!Application.isPlaying) return;
         
-        PlayerPrefs.SetFloat("Sensitivity", sensitivity);
+        PlayerPrefs.SetFloat(SensitivityString, sensitivity);
     }
     
     public void SetVolume(float volume)
     {
-        audioMixer.SetFloat("Volume", volume);
+        audioMixer.SetFloat(VolumeString, volume);
     }
 
 }

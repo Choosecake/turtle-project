@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028441, g: 0.22571543, b: 0.30692348, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028449, g: 0.2257153, b: 0.30692363, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1268,7 +1268,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh185448
+  m_Name: pb_Mesh78348
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4987,17 +4987,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: ---MenuCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 2276219183483559822, guid: 4150a173344dd3d429abce73e4220bf1, type: 3}
-      propertyPath: m_UiScaleMode
+    - target: {fileID: 2276219183483559821, guid: 4150a173344dd3d429abce73e4220bf1, type: 3}
+      propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2276219183483559822, guid: 4150a173344dd3d429abce73e4220bf1, type: 3}
-      propertyPath: m_ReferenceResolution.x
-      value: 1920
-      objectReference: {fileID: 0}
-    - target: {fileID: 2276219183483559822, guid: 4150a173344dd3d429abce73e4220bf1, type: 3}
-      propertyPath: m_ReferenceResolution.y
-      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 2276219184331278094, guid: 4150a173344dd3d429abce73e4220bf1, type: 3}
       propertyPath: m_AnchorMax.y
@@ -5087,10 +5079,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7188724546879654906, guid: 4150a173344dd3d429abce73e4220bf1, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 1f40899728b7d3542a63886c1736e803, type: 3}
     - target: {fileID: 7996499621552478467, guid: 4150a173344dd3d429abce73e4220bf1, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

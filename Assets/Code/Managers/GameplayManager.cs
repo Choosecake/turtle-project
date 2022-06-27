@@ -107,7 +107,7 @@ namespace Code
             }
         }
 
-        public void QuitGame()
+        public void GoToMainMenu()
         {
             // AppHelper.Quit();
             SceneManager.LoadScene(0);
