@@ -9577,6 +9577,10 @@ PrefabInstance:
       propertyPath: avoidanceDistance
       value: 4.9
       objectReference: {fileID: 0}
+    - target: {fileID: 1967855604672378954, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
+      propertyPath: optimizationMethod
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4824578821266108785, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -10482,71 +10486,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6080070187691934570, guid: 09b87d9eb5ee7714285558140852490c, type: 3}
   m_PrefabInstance: {fileID: 1727711198}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &676740977
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1366128137}
-    m_Modifications:
-    - target: {fileID: 4824578821266108784, guid: 7bb35ed63b12f9242885e6a0f5d3ec11, type: 3}
-      propertyPath: flockSize
-      value: 400
-      objectReference: {fileID: 0}
-    - target: {fileID: 4824578821266108785, guid: 7bb35ed63b12f9242885e6a0f5d3ec11, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4824578821266108785, guid: 7bb35ed63b12f9242885e6a0f5d3ec11, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4824578821266108785, guid: 7bb35ed63b12f9242885e6a0f5d3ec11, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4824578821266108785, guid: 7bb35ed63b12f9242885e6a0f5d3ec11, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4824578821266108785, guid: 7bb35ed63b12f9242885e6a0f5d3ec11, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4824578821266108785, guid: 7bb35ed63b12f9242885e6a0f5d3ec11, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4824578821266108785, guid: 7bb35ed63b12f9242885e6a0f5d3ec11, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4824578821266108785, guid: 7bb35ed63b12f9242885e6a0f5d3ec11, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4824578821266108785, guid: 7bb35ed63b12f9242885e6a0f5d3ec11, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4824578821266108785, guid: 7bb35ed63b12f9242885e6a0f5d3ec11, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4824578821266108785, guid: 7bb35ed63b12f9242885e6a0f5d3ec11, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4824578821266108791, guid: 7bb35ed63b12f9242885e6a0f5d3ec11, type: 3}
-      propertyPath: m_Name
-      value: Fish Flock 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4824578821266108791, guid: 7bb35ed63b12f9242885e6a0f5d3ec11, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7bb35ed63b12f9242885e6a0f5d3ec11, type: 3}
 --- !u!1001 &677741554
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10715,6 +10654,10 @@ PrefabInstance:
     - target: {fileID: 1967855604672378954, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
       propertyPath: avoidanceDistance
       value: 4.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1967855604672378954, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
+      propertyPath: optimizationMethod
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4824578821266108785, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
       propertyPath: m_RootOrder
@@ -11344,6 +11287,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f893b72e1d5cd77439e15f91c21ccf7a, type: 3}
+--- !u!1 &797491706
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4824578821266108791, guid: 7bb35ed63b12f9242885e6a0f5d3ec11, type: 3}
+  m_PrefabInstance: {fileID: 677741554}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 797491707}
+  m_Layer: 0
+  m_Name: 'Fish Flock 1 (Missing Prefab with guid: 7bb35ed63b12f9242885e6a0f5d3ec11)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &797491707
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4824578821266108785, guid: 7bb35ed63b12f9242885e6a0f5d3ec11, type: 3}
+  m_PrefabInstance: {fileID: 677741554}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797491706}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 462699196}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &807698497 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2961630572447239170, guid: 23a42ebe5962ed74cb3d672bf8200f6c, type: 3}
@@ -13912,8 +13885,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1819517064}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15206,6 +15178,10 @@ PrefabInstance:
       propertyPath: avoidanceDistance
       value: 4.9
       objectReference: {fileID: 0}
+    - target: {fileID: 1967855604672378954, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
+      propertyPath: optimizationMethod
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4824578821266108785, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -16152,11 +16128,6 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6491910270207658515, guid: f2752b684a09e164a838709059b63dd9, type: 3}
   m_PrefabInstance: {fileID: 1004858204}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1819517064 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4824578821266108785, guid: 7bb35ed63b12f9242885e6a0f5d3ec11, type: 3}
-  m_PrefabInstance: {fileID: 676740977}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1831546541 stripped
 Transform:
@@ -17611,6 +17582,10 @@ PrefabInstance:
     - target: {fileID: 1967855604672378954, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
       propertyPath: avoidanceDistance
       value: 4.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1967855604672378954, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
+      propertyPath: optimizationMethod
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4824578821266108785, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
       propertyPath: m_RootOrder

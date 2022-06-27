@@ -1,12 +1,15 @@
-using System;
-using Behaviours;
 using Unity.Collections;
 using Unity.Jobs;
+using Unity.Profiling;
 using UnityEngine;
+using UnityEngine.Profiling;
 using Random = UnityEngine.Random;
 
 public class Flock_Jobs : MonoBehaviour
 {
+	[Header("Optimization Setup")] 
+	[SerializeField] private OptimizationMethod optimizationMethod; 
+	
 	[Header("Spawn Setup")]
 	[SerializeField] private FlockUnit_Jobs flockUnitPrefab;
 	[SerializeField] private int flockSize;
@@ -51,6 +54,9 @@ public class Flock_Jobs : MonoBehaviour
 	
 	public FlockUnit_Jobs[] allUnits { get; set; }
 
+	private static readonly ProfilerMarker ProfilerWithJobs =
+		new ProfilerMarker(ProfilerCategory.Scripts, "JobsTester.WithJobs");
+
 	private void Start()
 	{
 		GenerateUnits();
@@ -67,6 +73,19 @@ public class Flock_Jobs : MonoBehaviour
 	}
 
 	private void Update()
+	{
+		switch (optimizationMethod)
+		{
+			case OptimizationMethod.WithJobs:
+				using (ProfilerWithJobs.Auto())
+				{
+					MultiThreadedUpdate();
+				}
+				break;
+		}
+	}
+
+	private void MultiThreadedUpdate()
 	{
 		NativeArray<Vector3> unitForwardDirections = new NativeArray<Vector3>(allUnits.Length, Allocator.TempJob);
 		NativeArray<Vector3> unitCurrentVelocities = new NativeArray<Vector3>(allUnits.Length, Allocator.TempJob);
@@ -127,7 +146,7 @@ public class Flock_Jobs : MonoBehaviour
 			ObstacleVectors = obstacleVectors,
 		};
 
-		JobHandle handle = moveJob.Schedule(allUnits.Length, 5);
+		JobHandle handle = moveJob.Schedule(allUnits.Length, 4);
 		handle.Complete();
 		for (int i = 0; i < allUnits.Length; i++)
 		{
@@ -147,7 +166,6 @@ public class Flock_Jobs : MonoBehaviour
 		allUnitsSpeeds.Dispose();
 		neighbourSpeeds.Dispose();
 		obstacleVectors.Dispose();
-
 	}
 
 	private void GenerateUnits()

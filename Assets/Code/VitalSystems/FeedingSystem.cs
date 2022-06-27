@@ -15,7 +15,8 @@ public class FeedingSystem : MonoBehaviour
     [SerializeField] private GameObject eatInput_UI;
     [Min(0)] [SerializeField] private float detectionInterval = 0.2f;
 
-    [Header("Misc")] [SerializeField] private AudioSource audioSource;
+    [Header("Misc")]
+    [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip biteSound;
 
     /// <summary>e

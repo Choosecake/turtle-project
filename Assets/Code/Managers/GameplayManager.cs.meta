@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 35bc15697800482b89815c6c6e0e7726
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - generalDataStorage: {fileID: 11400000, guid: 5fe68a621b7b82541ba1fca5e32a5263, type: 2}
+  - playerGameObject: {instanceID: 0}
+  - victoryTransitionScreen: {instanceID: 0}
+  - musicPlayerGameObject: {instanceID: 0}
+  - sharkBoundaryGameObject: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

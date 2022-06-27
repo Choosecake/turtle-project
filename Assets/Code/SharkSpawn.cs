@@ -88,8 +88,6 @@ public class SharkSpawn : MonoBehaviour
             }
         }
         
-        
-        
         AudioClip originalTrack = musicPlayer.clip;
         musicPlayer.loop = false;
         musicPlayer.clip = initialDangerSound;

@@ -111,8 +111,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 2328302265706438544}
-  biteSound: {fileID: 8300000, guid: e69c48d47e9d1254f812135016822d88, type: 3}
-  movementSpeed: 1
+  biteSound: {fileID: 8300000, guid: 320f7879bd419ad44aadf33d621d697b, type: 3}
+  movementSpeed: 0.5
   isHunting: 0
   TargetPrey: {fileID: 0}
 --- !u!82 &2964815859093382032
@@ -124,8 +124,8 @@ AudioSource:
   m_GameObject: {fileID: 6501827882769555929}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 7f420338cfd8f5e4cbd2af72127cea77, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 9b3e1a5c732b02e43bef928fbb2b8789, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

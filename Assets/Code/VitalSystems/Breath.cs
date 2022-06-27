@@ -2,6 +2,7 @@
 using System.Collections;
 using Code.DeathMessages;
 using Ez;
+using UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
@@ -16,7 +17,7 @@ namespace Code
 
         [Header("References")] 
         //Might have to change to something without ProgressBarPro
-        [SerializeField] private ProgressBarPro breathMeter;
+        [SerializeField] private ProgressBar breathMeter;
         
         private float _currentBreath;
         private CauseOfDeath _causeOfDeath = CauseOfDeath.Asphyxiation;
