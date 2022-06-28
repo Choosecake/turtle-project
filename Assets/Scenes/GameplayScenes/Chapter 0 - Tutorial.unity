@@ -13161,10 +13161,6 @@ PrefabInstance:
       propertyPath: gameEnder
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 3705148829528689161, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
-      propertyPath: nutritionDecayPeriod
-      value: 0.6
-      objectReference: {fileID: 0}
     - target: {fileID: 4301582329761923173, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -13276,6 +13272,18 @@ PrefabInstance:
     - target: {fileID: 8952975434462437378, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
       propertyPath: m_LocalPosition.z
       value: -11.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 8952975434462437379, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: relativeDrag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8952975434462437379, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: movementSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8952975434462437404, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
+      propertyPath: m_Drag
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8952975435712630763, guid: c6cebdda032975444b728869bfa9e9eb, type: 3}
       propertyPath: m_LocalPosition.z

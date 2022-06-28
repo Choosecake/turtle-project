@@ -1,29 +1,27 @@
 using System;
 using Code;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [SelectionBase]
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private Transform target;
     [SerializeField] private Transform turtleModel;
-    [Min(0)][SerializeField] private float movementSpeed = 5.0f;
+    [Min(0)][SerializeField] private float maxSpeed = 7.5f;
+    [Min(0)][SerializeField] private float accelerationRate = 7.5f;
+    [Range(0, 01f)] [SerializeField] private float relativeDrag = 0.1f;
     [Min(0)][SerializeField] private float rotationSpeed = 300.0f;
-
-    // [Header("Debug")]
-    // [SerializeField] private float 
-    // [SerializeField] private float speedMultiplier = 2f;
     
-
     private Vector3 movementDirection;
 
     private Rigidbody _rb;
     private TurtleVitalSystems _vitalsSystems;
     
-    public float MovementSpeed
+    public float MaxSpeed
     {
-        get => movementSpeed;
-        set => movementSpeed = value;
+        get => maxSpeed;
+        set => maxSpeed = value;
     }
 
     public float RotationSpeed
@@ -37,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
         _vitalsSystems = GetComponent<TurtleVitalSystems>();
         _rb = GetComponent<Rigidbody>();
         _rb.maxDepenetrationVelocity = 1;
+        _rb.drag = accelerationRate * relativeDrag;
     }
 
     private void Update()
@@ -61,7 +60,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _rb.velocity = transform.TransformDirection(movementDirection) * movementSpeed;
+        // _rb.velocity = transform.TransformDirection(movementDirection) * movementSpeed;
+        var resultingForce = transform.TransformDirection(movementDirection) * accelerationRate;
+        _rb.AddForce(resultingForce) ;
+        if (_rb.velocity.sqrMagnitude > maxSpeed * maxSpeed)
+        {
+            _rb.velocity = _rb.velocity.normalized * maxSpeed;
+        }
     }
     
 }

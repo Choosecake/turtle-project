@@ -18,7 +18,7 @@ public class DebugManager : MonoBehaviour
             return;
         }
 
-        playerMovement.MovementSpeed *= movementMultiplier;
+        playerMovement.MaxSpeed *= movementMultiplier;
         playerMovement.RotationSpeed *= movementMultiplier;
     }
 }
