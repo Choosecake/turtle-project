@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
         
         transform.rotation = Quaternion.Lerp(transform.rotation, target.rotation, 5.0f * Time.deltaTime);
 
-        turtleModel.transform.Rotate(0, 0, -horizontal * 300 * Time.deltaTime, Space.Self);
+        turtleModel.transform.Rotate(0, 0, -horizontal * rotationSpeed * Time.deltaTime, Space.Self);
 
         if (movementDirection == Vector3.zero) return;
         // character rotation
