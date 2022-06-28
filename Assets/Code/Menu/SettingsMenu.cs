@@ -1,18 +1,13 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using static Code.Menu.GameAttributeStrings;
 
 public class SettingsMenu : MonoBehaviour
 {
     [SerializeField] private Slider mouseSensitivitySlider;
     [SerializeField] private Slider mouseVolumeSlider;
     public AudioMixer audioMixer;
-
-    private const string SensitivityString = "Sensitivity";
-    private const string VolumeString = "Volume";
 
     private void OnEnable()
     {
