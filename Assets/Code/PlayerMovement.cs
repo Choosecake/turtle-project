@@ -60,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // _rb.velocity = transform.TransformDirection(movementDirection) * movementSpeed;
+        // _rb.velocity = transform.TransformDirection(movementDirection) * maxSpeed;
         var resultingForce = transform.TransformDirection(movementDirection) * accelerationRate;
         _rb.AddForce(resultingForce) ;
         if (_rb.velocity.sqrMagnitude > maxSpeed * maxSpeed)
