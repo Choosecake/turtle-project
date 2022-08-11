@@ -13,6 +13,8 @@ public class ThirdPersonCameraController : MonoBehaviour
 
     private void Awake()
     {
+	Cursor.visible = true;
+	//Cursor.lockState
         if (PlayerPrefs.HasKey("Sensitivity"))
         {
             Sensitivity = PlayerPrefs.GetFloat("Sensitivity");
