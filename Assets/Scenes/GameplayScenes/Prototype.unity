@@ -9564,7 +9564,7 @@ MonoBehaviour:
   fleeFactors: []
   preyFactors:
   - flock: {fileID: 1423296946}
-    distance: 64.6
+    distance: 10
     weight: 10
 --- !u!1001 &354446062
 PrefabInstance:
@@ -14744,7 +14744,7 @@ MonoBehaviour:
   obstacleWeight: 100
   fleeFactors:
   - flock: {fileID: 341799637}
-    distance: 21.2
+    distance: 12
     weight: 6.81
   preyFactors: []
 --- !u!1001 &1426294324
