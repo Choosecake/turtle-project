@@ -167,7 +167,7 @@ public struct MoveJob : IJobParallelFor
 			moveVector = unitForwardDirections[index];
 		}
 
-		unitPositions[index] = unitPositions[index] + moveVector * deltaTime;
+		unitPositions[index] += moveVector * deltaTime;
 		unitForwardDirections[index] = moveVector.normalized;
 		allUnitsSpeeds[index] = speed;
 		unitCurrentVelocities[index] = currentVelocity;

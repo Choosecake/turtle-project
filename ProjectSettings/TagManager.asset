@@ -9,6 +9,7 @@ TagManager:
   - PollutedAir
   - Boundary
   - MusicPlayer
+  - Fire
   layers:
   - Default
   - TransparentFX
@@ -23,8 +24,8 @@ TagManager:
   - SharkBoundary
   - Shark
   - Floor
-  - 
-  - 
+  - Player
+  - FlockObstacle
   - 
   - 
   - 

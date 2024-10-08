@@ -68,16 +68,16 @@ public class Flock_Jobs : MonoBehaviour
 
 	private void Update()
 	{
-		NativeArray<Vector3> unitForwardDirections = new NativeArray<Vector3>(allUnits.Length, Allocator.TempJob);
-		NativeArray<Vector3> unitCurrentVelocities = new NativeArray<Vector3>(allUnits.Length, Allocator.TempJob);
-		NativeArray<Vector3> unitPositions = new NativeArray<Vector3>(allUnits.Length, Allocator.TempJob);
-		NativeArray<Vector3> cohesionNeighbours = new NativeArray<Vector3>(allUnits.Length, Allocator.TempJob);
-		NativeArray<Vector3> avoidanceNeighbours = new NativeArray<Vector3>(allUnits.Length, Allocator.TempJob);
-		NativeArray<Vector3> aligementNeighbours = new NativeArray<Vector3>(allUnits.Length, Allocator.TempJob);
-		NativeArray<Vector3> aligementNeighboursDirecions = new NativeArray<Vector3>(allUnits.Length, Allocator.TempJob);
-		NativeArray<Vector3> obstacleVectors = new NativeArray<Vector3>(allUnits.Length, Allocator.TempJob);
-		NativeArray<float> allUnitsSpeeds = new NativeArray<float>(allUnits.Length, Allocator.TempJob);
-		NativeArray<float> neighbourSpeeds = new NativeArray<float>(allUnits.Length, Allocator.TempJob);
+		var unitForwardDirections = new NativeArray<Vector3>(allUnits.Length, Allocator.TempJob);
+		var unitCurrentVelocities = new NativeArray<Vector3>(allUnits.Length, Allocator.TempJob);
+		var unitPositions         = new NativeArray<Vector3>(allUnits.Length, Allocator.TempJob);
+		var cohesionNeighbours    = new NativeArray<Vector3>(allUnits.Length, Allocator.TempJob);
+		var avoidanceNeighbours   = new NativeArray<Vector3>(allUnits.Length, Allocator.TempJob);
+		var alignmentNeighbours   = new NativeArray<Vector3>(allUnits.Length, Allocator.TempJob);
+		var neighboursDirections  = new NativeArray<Vector3>(allUnits.Length, Allocator.TempJob);
+		var obstacleVectors       = new NativeArray<Vector3>(allUnits.Length, Allocator.TempJob);
+		var allUnitsSpeeds        = new NativeArray<float>(allUnits.Length, Allocator.TempJob);
+		var neighbourSpeeds       = new NativeArray<float>(allUnits.Length, Allocator.TempJob);
 
 		for (int i = 0; i < allUnits.Length; i++)
 		{
@@ -86,8 +86,8 @@ public class Flock_Jobs : MonoBehaviour
 			unitPositions[i] = allUnits[i].Transform.position;
 			cohesionNeighbours[i] = Vector3.zero;
 			avoidanceNeighbours[i] = Vector3.zero;
-			aligementNeighbours[i] = Vector3.zero;
-			aligementNeighboursDirecions[i] = Vector3.zero;
+			alignmentNeighbours[i] = Vector3.zero;
+			neighboursDirections[i] = Vector3.zero;
 			allUnitsSpeeds[i] = allUnits[i].speed;
 			neighbourSpeeds[i] = 0f;
 
@@ -97,15 +97,15 @@ public class Flock_Jobs : MonoBehaviour
 					: Vector3.zero;
 		}
 
-		MoveJob moveJob = new MoveJob
+		var moveJob = new MoveJob
 		{
 			unitForwardDirections = unitForwardDirections,
 			unitCurrentVelocities = unitCurrentVelocities,
 			unitPositions = unitPositions,
 			cohesionNeighbours = cohesionNeighbours,
 			avoidanceNeighbours = avoidanceNeighbours,
-			aligementNeighbours = aligementNeighbours,
-			aligementNeighboursDirecions = aligementNeighboursDirecions,
+			aligementNeighbours = alignmentNeighbours,
+			aligementNeighboursDirecions = neighboursDirections,
 			allUnitsSpeeds = allUnitsSpeeds,
 			neighbourSpeeds = neighbourSpeeds,
 			cohesionDistance = cohesionDistance,
@@ -142,8 +142,8 @@ public class Flock_Jobs : MonoBehaviour
 		unitPositions.Dispose();
 		cohesionNeighbours.Dispose();
 		avoidanceNeighbours.Dispose();
-		aligementNeighbours.Dispose();
-		aligementNeighboursDirecions.Dispose();
+		alignmentNeighbours.Dispose();
+		neighboursDirections.Dispose();
 		allUnitsSpeeds.Dispose();
 		neighbourSpeeds.Dispose();
 		obstacleVectors.Dispose();

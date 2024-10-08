@@ -23,6 +23,9 @@ namespace Behaviours
         [Range(0,10)][SerializeField] private float alignmentDistance;
         [Range(0, 100)] [SerializeField] private float boundDistance;
         [Range(0, 10)] [SerializeField] private float obstacleDistance;
+        [SerializeField] private Transform goal;
+        [Range(0, 10)] [SerializeField] private float goalDistance;
+        [Range(0, 10)] [SerializeField] private float fleeDistance;
         
         [Header("Behaviour Weights")] 
         [Range(0,10)][SerializeField] private float cohesionWeight;
@@ -30,6 +33,8 @@ namespace Behaviours
         [Range(0,10)][SerializeField] private float alignmentWeight;
         [Range(0, 10)] [SerializeField] private float boundWeight;
         [Range(0, 100)] [SerializeField] private float obstacleWeight;
+        [Range(0, 10)] [SerializeField] private float goalWeight;
+        [Range(0, 10)] [SerializeField] private float fleeWeight;
 
 
         public float CohesionDistance => cohesionDistance;
@@ -46,7 +51,7 @@ namespace Behaviours
 
         public float MinSpeed => minSpeed;
         public float MaxSpeed => maxSpeed;
-        public FlockUnit[] allUnits { get; set; }
+        public FlockUnit[] allUnits { get; private set; }
 
         private void Start()
         {
@@ -55,9 +60,9 @@ namespace Behaviours
 
         private void Update()
         {
-            for (int i = 0; i < allUnits.Length; i++)
+            foreach (var unit in allUnits)
             {
-                allUnits[i].MoveUnit();
+                unit.MoveUnit();
             }
         }
 
@@ -72,8 +77,8 @@ namespace Behaviours
                 var spawnPosition = transform.position + randomVector;
                 var rotation = Quaternion.Euler(0, Random.Range(0, 360), 0);
                 allUnits[i] = Instantiate(flockUnityPrefab, spawnPosition, rotation, flockParent)
-                    .AssignFlock(this).
-                    InitializeSpeed(Random.Range(minSpeed, maxSpeed));
+                    .AssignFlock(this)
+                    .InitializeSpeed(Random.Range(minSpeed, maxSpeed));
             }
         }
 

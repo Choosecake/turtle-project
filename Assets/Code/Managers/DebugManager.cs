@@ -1,4 +1,5 @@
 ﻿using System;
+using Code;
 using UnityEngine;
 using Utilities;
 
@@ -9,6 +10,8 @@ public class DebugManager : MonoBehaviour
     [Header("References")] 
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private float movementMultiplier;
+    [SerializeField] private Nutrition nutrition;
+    [SerializeField] private Breath breath;
 
     private void Awake()
     {
@@ -20,5 +23,8 @@ public class DebugManager : MonoBehaviour
 
         playerMovement.MovementSpeed *= movementMultiplier;
         playerMovement.RotationSpeed *= movementMultiplier;
+
+        nutrition.enabled = false;
+        breath.enabled = false;
     }
 }

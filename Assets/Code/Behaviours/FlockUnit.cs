@@ -5,20 +5,21 @@ using UnityEngine;
 
 namespace  Behaviours
 {
-    public class FlockUnit : MonoBehaviour
+    public class Boid : MonoBehaviour
     {
         [SerializeField] private float FOVAngle;
         [SerializeField] private float smoothDamp;
         [SerializeField] private LayerMask obstacleMask;
         [SerializeField] private Vector3[] directionsToCheckWhenAvoidingObstacles;
 
-        private List<FlockUnit> cohesionNeighbours = new List<FlockUnit>();
-        private List<FlockUnit> avoidanceNeighbours = new List<FlockUnit>();
-        private List<FlockUnit> alignmentNeighbours = new List<FlockUnit>();
+        private List<FlockUnit> cohesionNeighbours = new();
+        private List<FlockUnit> avoidanceNeighbours = new();
+        private List<FlockUnit> alignmentNeighbours = new();
         private Flock assignedFlock;
         private Vector3 currentVelocity;
         private Vector3 currentObstacleAvoidanceVector;
         private float speed;
+        private bool isFacingObstacle;
         
         public Transform Transform { get; set; }
 
@@ -30,6 +31,7 @@ namespace  Behaviours
         public FlockUnit AssignFlock(Flock flock)
         {
             assignedFlock = flock;
+            Transform.forward = flock.transform.forward;
             return this;
         }
 
@@ -111,13 +113,10 @@ namespace  Behaviours
             if (cohesionNeighbours.Count == 0)
                 return cohesionVector;
             int neighboursInFOV = 0;
-            for (int i = 0; i < cohesionNeighbours.Count; i++)
+            foreach (var unit in cohesionNeighbours.Where(t => IsInFOV(t.Transform.position)))
             {
-                if (IsInFOV(cohesionNeighbours[i].Transform.position))
-                {
-                    neighboursInFOV++;
-                    cohesionVector += cohesionNeighbours[i].Transform.position;
-                }
+                neighboursInFOV++;
+                cohesionVector += unit.Transform.position;
             }
             cohesionVector /= neighboursInFOV;
             cohesionVector -= Transform.position;
@@ -175,10 +174,12 @@ namespace  Behaviours
         {
             var obstacleVector = Vector3.zero;
             RaycastHit hit;
-            if (Physics.Raycast(Transform.position, Transform.forward, out hit, assignedFlock.ObstacleDistance,
-                obstacleMask))
+            isFacingObstacle = Physics.Raycast(Transform.position, Transform.forward, out hit,
+                assignedFlock.ObstacleDistance,
+                obstacleMask);
+            if (isFacingObstacle)
             {
-                obstacleVector = FindBestDirectionToAvoidObstacle();
+                obstacleVector = FindBestDirectionToAvoidObstacle(isFacingObstacle);
             }
             else
             {
@@ -187,13 +188,11 @@ namespace  Behaviours
             return obstacleVector;
         }
 
-        public Vector3 FindBestDirectionToAvoidObstacle()
+        public Vector3 FindBestDirectionToAvoidObstacle(bool isFacingObstacle)
         {
             if (currentObstacleAvoidanceVector != Vector3.zero)
             {
-                RaycastHit hit;
-                if (!Physics.Raycast(Transform.position, Transform.forward, out hit, assignedFlock.ObstacleDistance,
-                    obstacleMask))
+                if (!isFacingObstacle)
                 {
                     return currentObstacleAvoidanceVector;
                 }
@@ -201,6 +200,7 @@ namespace  Behaviours
             
             float maxDistance = int.MinValue;
             var selectedDirection = Vector3.zero;
+            directionsToCheckWhenAvoidingObstacles.Shuffle();
             for (int i = 0; i < directionsToCheckWhenAvoidingObstacles.Length; i++)
             {
                 RaycastHit hit;
@@ -236,6 +236,8 @@ namespace  Behaviours
         {
             Gizmos.color = Color.cyan;
             Array.ForEach(directionsToCheckWhenAvoidingObstacles, d => Gizmos.DrawRay(transform.position, d));
+            Gizmos.color = isFacingObstacle ? Color.red : Color.green;
+            Gizmos.DrawRay(transform.position, transform.forward * assignedFlock.ObstacleDistance);
         }
     }
 }
