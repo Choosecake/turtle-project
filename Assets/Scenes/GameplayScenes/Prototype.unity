@@ -9501,6 +9501,71 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f676b0c1c8a75349a7a5d568374c61d, type: 3}
+--- !u!1 &341799635
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 341799636}
+  - component: {fileID: 341799637}
+  m_Layer: 0
+  m_Name: Shark Flock
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &341799636
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341799635}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 26.88}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1069676256}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &341799637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341799635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba01cbf81eca97b41833160d10afb5cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flockUnityPrefab: {fileID: 6793657996499855306, guid: 65485d48a03c94145a547738aa3f6548, type: 3}
+  flockSize: 3
+  spawnBounds: {x: 6, y: 2, z: 2}
+  flockParent: {fileID: 341799636}
+  minSpeed: 2
+  maxSpeed: 4
+  cohesionDistance: 0
+  avoidanceDistance: 10
+  alignmentDistance: 0.46
+  boundDistance: 50
+  obstacleDistance: 10
+  cohesionWeight: 0
+  avoidanceWeight: 1.57
+  alignmentWeight: 0
+  boundWeight: 10
+  obstacleWeight: 100
+  fleeFactors: []
+  preyFactors:
+  - flock: {fileID: 1423296946}
+    distance: 64.6
+    weight: 10
 --- !u!1001 &354446062
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10711,7 +10776,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1967855604672378954, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
       propertyPath: flockSize
-      value: 150
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1967855604672378954, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
       propertyPath: useObstacles
@@ -12838,6 +12903,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1423296945}
+  - {fileID: 341799636}
   m_Father: {fileID: 1749480171}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1073140381 stripped
@@ -14627,7 +14693,7 @@ GameObject:
   - component: {fileID: 1423296945}
   - component: {fileID: 1423296946}
   m_Layer: 0
-  m_Name: Fish Flock
+  m_Name: Prey Flock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14660,24 +14726,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba01cbf81eca97b41833160d10afb5cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flockUnityPrefab: {fileID: -2005627938519672340, guid: 472e6c82de31f9c4b95ce00d5c29feb1, type: 3}
+  flockUnityPrefab: {fileID: 3355571048705338870, guid: 472e6c82de31f9c4b95ce00d5c29feb1, type: 3}
   flockSize: 50
   spawnBounds: {x: 5, y: 5, z: 5}
   flockParent: {fileID: 1423296945}
-  minSpeed: 0.1
-  maxSpeed: 2
-  cohesionDistance: 10
-  avoidanceDistance: 10
-  alignmentDistance: 10
-  boundDistance: 100
+  minSpeed: 2
+  maxSpeed: 4
+  cohesionDistance: 5.33
+  avoidanceDistance: 7.45
+  alignmentDistance: 3.57
+  boundDistance: 10
   obstacleDistance: 10
-  goal: {fileID: 0}
-  goalDistance: 0
-  cohesionWeight: 6.24
-  avoidanceWeight: 2.43
-  alignmentWeight: 8.87
+  cohesionWeight: 8.81
+  avoidanceWeight: 6.03
+  alignmentWeight: 5.71
   boundWeight: 10
-  obstacleWeight: 92.2
+  obstacleWeight: 100
+  fleeFactors:
+  - flock: {fileID: 341799637}
+    distance: 21.2
+    weight: 6.81
+  preyFactors: []
 --- !u!1001 &1426294324
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18479,7 +18548,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2044165769
 Transform:
   m_ObjectHideFlags: 0

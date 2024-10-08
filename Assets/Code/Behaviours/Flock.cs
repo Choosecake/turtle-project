@@ -23,19 +23,17 @@ namespace Behaviours
         [Range(0,10)][SerializeField] private float alignmentDistance;
         [Range(0, 100)] [SerializeField] private float boundDistance;
         [Range(0, 10)] [SerializeField] private float obstacleDistance;
-        [SerializeField] private Transform goal;
-        [Range(0, 10)] [SerializeField] private float goalDistance;
-        [Range(0, 10)] [SerializeField] private float fleeDistance;
-        
+
         [Header("Behaviour Weights")] 
         [Range(0,10)][SerializeField] private float cohesionWeight;
         [Range(0,10)][SerializeField] private float avoidanceWeight;
         [Range(0,10)][SerializeField] private float alignmentWeight;
         [Range(0, 10)] [SerializeField] private float boundWeight;
         [Range(0, 100)] [SerializeField] private float obstacleWeight;
-        [Range(0, 10)] [SerializeField] private float goalWeight;
-        [Range(0, 10)] [SerializeField] private float fleeWeight;
 
+        [Header("Flock Driven Factors")] 
+        [SerializeField] private BehaviourShapingFactor[] fleeFactors;
+        [SerializeField] private BehaviourShapingFactor[] preyFactors;
 
         public float CohesionDistance => cohesionDistance;
         public float AvoidanceDistance => avoidanceDistance;
@@ -49,6 +47,10 @@ namespace Behaviours
         public float BoundWeight => boundWeight;
         public float ObstacleWeight => obstacleWeight;
 
+        public BehaviourShapingFactor[] FleeFactors => fleeFactors; //NEW
+        public BehaviourShapingFactor[] PreyFactors => preyFactors; //NEW
+
+
         public float MinSpeed => minSpeed;
         public float MaxSpeed => maxSpeed;
         public FlockUnit[] allUnits { get; private set; }
@@ -58,7 +60,7 @@ namespace Behaviours
             GenerateUnits();
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             foreach (var unit in allUnits)
             {

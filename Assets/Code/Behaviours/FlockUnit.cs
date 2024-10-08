@@ -5,9 +5,10 @@ using UnityEngine;
 
 namespace  Behaviours
 {
-    public class Boid : MonoBehaviour
+    //BOID
+    public class FlockUnit : MonoBehaviour
     {
-        [SerializeField] private float FOVAngle;
+        [Range(0,180)][SerializeField] private float FOVAngle;
         [SerializeField] private float smoothDamp;
         [SerializeField] private LayerMask obstacleMask;
         [SerializeField] private Vector3[] directionsToCheckWhenAvoidingObstacles;
@@ -21,7 +22,8 @@ namespace  Behaviours
         private float speed;
         private bool isFacingObstacle;
         
-        public Transform Transform { get; set; }
+        public Transform Transform { get; private set; }
+        public Flock Flock => assignedFlock; //NEW
 
         private void Awake()
         {
@@ -51,8 +53,10 @@ namespace  Behaviours
             var avoidanceVector = CalculateAvoidanceVector() * assignedFlock.AvoidanceWeight;
             var boundsVector = CalculateBoundsVector() * assignedFlock.BoundWeight;
             var obstacleVector = CalculateObstacleVector() * assignedFlock.ObstacleWeight;
-
-            var moveVector = cohesionVector + alignmentVector + avoidanceVector + boundsVector + obstacleVector;
+            var fleeVector = CalculateFleeVector(); //NEW
+            var preyVector = CalculatePreyVector(); //NEW
+            
+            var moveVector = cohesionVector + alignmentVector + avoidanceVector + boundsVector + obstacleVector + fleeVector + preyVector;
             moveVector = Vector3.SmoothDamp(Transform.forward, moveVector, ref currentVelocity, smoothDamp);
             moveVector = moveVector.normalized * speed;
             if (moveVector == Vector3.zero)
@@ -68,25 +72,26 @@ namespace  Behaviours
             avoidanceNeighbours.Clear();
             alignmentNeighbours.Clear();
             var allUnits = assignedFlock.allUnits;
-            for (int i = 0; i < allUnits.Length; i++)
+            foreach (var currentUnit in allUnits)
             {
-                var currentUnit = allUnits[i];
-                if (currentUnit != this)
+                if (currentUnit == this)
                 {
-                    float currentNeighbourDistanceSqr =
-                        Vector3.SqrMagnitude(currentUnit.Transform.position - Transform.position);
-                    if (currentNeighbourDistanceSqr <= assignedFlock.CohesionDistance * assignedFlock.CohesionDistance)
-                    {
-                        cohesionNeighbours.Add(currentUnit);
-                    }
-                    if (currentNeighbourDistanceSqr <= assignedFlock.AvoidanceDistance * assignedFlock.AvoidanceDistance)
-                    {
-                        avoidanceNeighbours.Add(currentUnit);
-                    }
-                    if (currentNeighbourDistanceSqr <= assignedFlock.AlignmentDistance * assignedFlock.AlignmentDistance)
-                    {
-                        alignmentNeighbours.Add(currentUnit);
-                    }
+                    continue;
+                }
+                
+                float currentNeighbourDistanceSqr =
+                    Vector3.SqrMagnitude(currentUnit.Transform.position - Transform.position);
+                if (currentNeighbourDistanceSqr <= assignedFlock.CohesionDistance * assignedFlock.CohesionDistance)
+                {
+                    cohesionNeighbours.Add(currentUnit);
+                }
+                if (currentNeighbourDistanceSqr <= assignedFlock.AvoidanceDistance * assignedFlock.AvoidanceDistance)
+                {
+                    avoidanceNeighbours.Add(currentUnit);
+                }
+                if (currentNeighbourDistanceSqr <= assignedFlock.AlignmentDistance * assignedFlock.AlignmentDistance)
+                {
+                    alignmentNeighbours.Add(currentUnit);
                 }
             }
         }
@@ -120,8 +125,7 @@ namespace  Behaviours
             }
             cohesionVector /= neighboursInFOV;
             cohesionVector -= Transform.position;
-            cohesionVector = cohesionVector.normalized;
-            return cohesionVector;
+            return cohesionVector.normalized;
         }
 
         private Vector3 CalculateAlignmentVector()
@@ -130,17 +134,13 @@ namespace  Behaviours
             if (alignmentNeighbours.Count == 0)
                 return alignmentVector;
             int neighboursInFOV = 0;
-            for (int i = 0; i < alignmentNeighbours.Count; i++)
+            foreach (var unit in alignmentNeighbours.Where(t => IsInFOV(t.Transform.position)))
             {
-                if (IsInFOV(alignmentNeighbours[i].Transform.position))
-                {
-                    neighboursInFOV++;
-                    alignmentVector += alignmentNeighbours[i].Transform.forward;
-                }
+                neighboursInFOV++;
+                alignmentVector += unit.Transform.forward;
             }
             alignmentVector /= neighboursInFOV;
-            alignmentVector = alignmentVector.normalized;
-            return alignmentVector;
+            return alignmentVector.normalized;
         }
 
         private Vector3 CalculateAvoidanceVector()
@@ -149,25 +149,65 @@ namespace  Behaviours
             if (avoidanceNeighbours.Count == 0)
                 return avoidanceVector;
             int neighboursInFOV = 0;
-            for (int i = 0; i < avoidanceNeighbours.Count; i++)
+            foreach (var unit in avoidanceNeighbours.Where(t => IsInFOV(t.Transform.position)))
             {
-                if (IsInFOV(avoidanceNeighbours[i].Transform.position))
-                {
-                    neighboursInFOV++;
-                    avoidanceVector += (Transform.position - avoidanceNeighbours[i].Transform.position);
-                }
+                neighboursInFOV++;
+                avoidanceVector += (Transform.position - unit.Transform.position);
             }
 
             avoidanceVector /= neighboursInFOV;
-            avoidanceVector = avoidanceVector.normalized;
-            return avoidanceVector;
+            return avoidanceVector.normalized;
         }
 
         public Vector3 CalculateBoundsVector()
         {
             var offsetToCenter = assignedFlock.transform.position - Transform.position;
-            bool isNearCenter = (offsetToCenter.magnitude >= assignedFlock.BoundDistance * 0.9f);
-            return isNearCenter ? offsetToCenter.normalized : Vector3.zero;
+            bool isEvading = (offsetToCenter.magnitude >= assignedFlock.BoundDistance * 0.9f);
+            Debug.Log("Offset Magnituede = " + offsetToCenter.magnitude);
+            Debug.Log("Is Evading = " + isEvading);
+            return isEvading ? offsetToCenter.normalized : Vector3.zero;
+        }
+
+        //NEW
+        public Vector3 CalculateFleeVector()
+        {
+            var totalResult = Vector3.zero;
+            foreach (var factor in assignedFlock.FleeFactors)
+            {
+                int unitCount = 0;
+                var factorResult = Vector3.zero;
+                foreach (var unit in factor.flock.allUnits)
+                {
+                    if (Vector3.SqrMagnitude(unit.Transform.position - Transform.position) > factor.SqrDistance)
+                        continue;
+                    unitCount++;
+                    factorResult += (Transform.position - unit.Transform.position);
+                }
+                var weightedResult = (factorResult / unitCount).normalized * factor.weight;
+                totalResult += weightedResult;
+            }
+            return totalResult;
+        }
+        
+        //NEW
+        public Vector3 CalculatePreyVector()
+        {
+            var totalResult = Vector3.zero;
+            foreach (var factor in assignedFlock.PreyFactors)
+            {
+                int unitCount = 0;
+                var factorResult = Vector3.zero;
+                foreach (var unit in factor.flock.allUnits)
+                {
+                    if (Vector3.SqrMagnitude(unit.Transform.position - Transform.position) > factor.SqrDistance)
+                        continue;
+                    unitCount++;
+                    factorResult += (unit.Transform.position - Transform.position);
+                }
+                var weightedResult = (factorResult / unitCount).normalized * factor.weight;
+                totalResult += weightedResult;
+            }
+            return totalResult;
         }
 
         public Vector3 CalculateObstacleVector()
@@ -187,7 +227,8 @@ namespace  Behaviours
             }
             return obstacleVector;
         }
-
+        
+        //It's still kinda broken
         public Vector3 FindBestDirectionToAvoidObstacle(bool isFacingObstacle)
         {
             if (currentObstacleAvoidanceVector != Vector3.zero)
@@ -201,14 +242,13 @@ namespace  Behaviours
             float maxDistance = int.MinValue;
             var selectedDirection = Vector3.zero;
             directionsToCheckWhenAvoidingObstacles.Shuffle();
-            for (int i = 0; i < directionsToCheckWhenAvoidingObstacles.Length; i++)
+            foreach (var t in directionsToCheckWhenAvoidingObstacles)
             {
-                RaycastHit hit;
                 var currentDirection =
-                    Transform.TransformDirection(directionsToCheckWhenAvoidingObstacles[i].normalized);
+                    Transform.TransformDirection(t.normalized);
                 
-                if (Physics.Raycast(Transform.position, currentDirection, out hit, assignedFlock.ObstacleDistance,
-                    obstacleMask))
+                if (Physics.Raycast(Transform.position, currentDirection, out var hit, assignedFlock.ObstacleDistance,
+                        obstacleMask))
                 {
                     float currentDistance = (hit.point - Transform.position).sqrMagnitude;
                     if (currentDistance > maxDistance)
@@ -236,6 +276,10 @@ namespace  Behaviours
         {
             Gizmos.color = Color.cyan;
             Array.ForEach(directionsToCheckWhenAvoidingObstacles, d => Gizmos.DrawRay(transform.position, d));
+            if (Application.isPlaying == false)
+            {
+                return;
+            }
             Gizmos.color = isFacingObstacle ? Color.red : Color.green;
             Gizmos.DrawRay(transform.position, transform.forward * assignedFlock.ObstacleDistance);
         }

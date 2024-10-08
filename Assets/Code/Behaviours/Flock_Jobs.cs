@@ -1,5 +1,3 @@
-using System;
-using Behaviours;
 using Unity.Collections;
 using Unity.Jobs;
 using UnityEngine;
