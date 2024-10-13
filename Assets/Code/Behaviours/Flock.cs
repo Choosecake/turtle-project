@@ -1,14 +1,16 @@
 using System;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 namespace Behaviours
 {
     public class Flock : MonoBehaviour
     {
+        [FormerlySerializedAs("flockUnityPrefab")]
         [Header("Spawn Setup")]
-        [SerializeField] private FlockUnit flockUnityPrefab;
+        [SerializeField] private FlockUnit boidPrefab;
         [SerializeField] private int flockSize;
         [SerializeField] private Vector3 spawnBounds;
         [SerializeField] private Transform flockParent;
@@ -78,7 +80,7 @@ namespace Behaviours
                     randomVector.z * spawnBounds.z);
                 var spawnPosition = transform.position + randomVector;
                 var rotation = Quaternion.Euler(0, Random.Range(0, 360), 0);
-                allUnits[i] = Instantiate(flockUnityPrefab, spawnPosition, rotation, flockParent)
+                allUnits[i] = Instantiate(boidPrefab, spawnPosition, rotation, flockParent)
                     .AssignFlock(this)
                     .InitializeSpeed(Random.Range(minSpeed, maxSpeed));
             }
@@ -92,6 +94,4 @@ namespace Behaviours
             Gizmos.DrawWireCube(transform.position, spawnBounds);
         }
     }
-
-
 }

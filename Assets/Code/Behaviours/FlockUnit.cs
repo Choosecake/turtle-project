@@ -12,6 +12,15 @@ namespace  Behaviours
         [SerializeField] private float smoothDamp;
         [SerializeField] private LayerMask obstacleMask;
         [SerializeField] private Vector3[] directionsToCheckWhenAvoidingObstacles;
+        
+        [ReadOnly][SerializeField] private Vector3 cohesionVector;
+        [ReadOnly][SerializeField] private Vector3 alignmentVector;
+        [ReadOnly][SerializeField] private Vector3 avoidanceVector;
+        [ReadOnly][SerializeField] private Vector3 boundsVector;
+        [ReadOnly][SerializeField] private Vector3 obstacleVector;
+        [ReadOnly][SerializeField] private Vector3 fleeVector;
+        [ReadOnly][SerializeField] private Vector3 preyVector;
+        [ReadOnly][SerializeField] private Vector3 moveVector;
 
         private List<FlockUnit> cohesionNeighbours = new();
         private List<FlockUnit> avoidanceNeighbours = new();
@@ -48,15 +57,15 @@ namespace  Behaviours
             FindNeighbours();
             CalculateSpeed();
             
-            var cohesionVector = CalculateCohesionVector() * assignedFlock.CohesionWeight;
-            var alignmentVector = CalculateAlignmentVector() * assignedFlock.AlignmentWeight;
-            var avoidanceVector = CalculateAvoidanceVector() * assignedFlock.AvoidanceWeight;
-            var boundsVector = CalculateBoundsVector() * assignedFlock.BoundWeight;
-            var obstacleVector = CalculateObstacleVector() * assignedFlock.ObstacleWeight;
-            var fleeVector = CalculateFleeVector(); //NEW
-            var preyVector = CalculatePreyVector(); //NEW
+            cohesionVector = CalculateCohesionVector() * assignedFlock.CohesionWeight;
+            alignmentVector = CalculateAlignmentVector() * assignedFlock.AlignmentWeight;
+            avoidanceVector = CalculateAvoidanceVector() * assignedFlock.AvoidanceWeight;
+            boundsVector = CalculateBoundsVector() * assignedFlock.BoundWeight;
+            obstacleVector = CalculateObstacleVector() * assignedFlock.ObstacleWeight;
+            fleeVector = CalculateFleeVector(); //NEW
+            preyVector = CalculatePreyVector(); //NEW
             
-            var moveVector = cohesionVector + alignmentVector + avoidanceVector + boundsVector + obstacleVector + fleeVector + preyVector;
+            moveVector = cohesionVector + alignmentVector + avoidanceVector + boundsVector + obstacleVector + fleeVector + preyVector;
             moveVector = Vector3.SmoothDamp(Transform.forward, moveVector, ref currentVelocity, smoothDamp);
             moveVector = moveVector.normalized * speed;
             if (moveVector == Vector3.zero)
@@ -163,8 +172,6 @@ namespace  Behaviours
         {
             var offsetToCenter = assignedFlock.transform.position - Transform.position;
             bool isEvading = (offsetToCenter.magnitude >= assignedFlock.BoundDistance * 0.9f);
-            Debug.Log("Offset Magnituede = " + offsetToCenter.magnitude);
-            Debug.Log("Is Evading = " + isEvading);
             return isEvading ? offsetToCenter.normalized : Vector3.zero;
         }
 
@@ -176,6 +183,8 @@ namespace  Behaviours
             {
                 int unitCount = 0;
                 var factorResult = Vector3.zero;
+                if (factor.flock.isActiveAndEnabled == false)
+                    continue;
                 foreach (var unit in factor.flock.allUnits)
                 {
                     if (Vector3.SqrMagnitude(unit.Transform.position - Transform.position) > factor.SqrDistance)
@@ -197,6 +206,8 @@ namespace  Behaviours
             {
                 int unitCount = 0;
                 var factorResult = Vector3.zero;
+                if (factor.flock.isActiveAndEnabled == false)
+                    continue;
                 foreach (var unit in factor.flock.allUnits)
                 {
                     if (Vector3.SqrMagnitude(unit.Transform.position - Transform.position) > factor.SqrDistance)

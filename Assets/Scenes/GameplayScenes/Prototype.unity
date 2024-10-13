@@ -437,7 +437,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &103536538
 Transform:
   m_ObjectHideFlags: 0
@@ -9545,7 +9545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba01cbf81eca97b41833160d10afb5cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flockUnityPrefab: {fileID: 6793657996499855306, guid: 65485d48a03c94145a547738aa3f6548, type: 3}
+  boidPrefab: {fileID: 6793657996499855306, guid: 65485d48a03c94145a547738aa3f6548, type: 3}
   flockSize: 3
   spawnBounds: {x: 6, y: 2, z: 2}
   flockParent: {fileID: 341799636}
@@ -9703,7 +9703,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1967855604672378954, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
       propertyPath: flockSize
-      value: 25
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1967855604672378954, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
       propertyPath: flockParent
@@ -9799,7 +9799,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4824578821266108791, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9878,7 +9878,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &439508449
 Transform:
   m_ObjectHideFlags: 0
@@ -10766,6 +10766,71 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09b87d9eb5ee7714285558140852490c, type: 3}
+--- !u!1 &683384964
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 683384965}
+  - component: {fileID: 683384966}
+  m_Layer: 0
+  m_Name: Jellyfish Flock
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &683384965
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683384964}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 15.47}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1069676256}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &683384966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683384964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba01cbf81eca97b41833160d10afb5cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boidPrefab: {fileID: 5128797329921304328, guid: 60d1349af6baa754a9ddd79fc61bbe87, type: 3}
+  flockSize: 50
+  spawnBounds: {x: 10, y: 10, z: 10}
+  flockParent: {fileID: 683384965}
+  minSpeed: 1
+  maxSpeed: 4
+  cohesionDistance: 7.86
+  avoidanceDistance: 3.68
+  alignmentDistance: 4.55
+  boundDistance: 20
+  obstacleDistance: 10
+  cohesionWeight: 7.16
+  avoidanceWeight: 7.62
+  alignmentWeight: 2.78
+  boundWeight: 10
+  obstacleWeight: 100
+  fleeFactors:
+  - flock: {fileID: 1423296946}
+    distance: 6.5
+    weight: 6.81
+  preyFactors: []
 --- !u!1001 &683525195
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12883,7 +12948,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1069676256}
   m_Layer: 0
-  m_Name: Fish Flocks
+  m_Name: Flocks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12902,8 +12967,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1423296945}
   - {fileID: 341799636}
+  - {fileID: 1423296945}
+  - {fileID: 683384965}
   m_Father: {fileID: 1749480171}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1073140381 stripped
@@ -14693,7 +14759,7 @@ GameObject:
   - component: {fileID: 1423296945}
   - component: {fileID: 1423296946}
   m_Layer: 0
-  m_Name: Prey Flock
+  m_Name: Fish Flock A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14726,8 +14792,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba01cbf81eca97b41833160d10afb5cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flockUnityPrefab: {fileID: 3355571048705338870, guid: 472e6c82de31f9c4b95ce00d5c29feb1, type: 3}
-  flockSize: 50
+  boidPrefab: {fileID: 3355571048705338870, guid: 472e6c82de31f9c4b95ce00d5c29feb1, type: 3}
+  flockSize: 100
   spawnBounds: {x: 5, y: 5, z: 5}
   flockParent: {fileID: 1423296945}
   minSpeed: 2
@@ -14735,10 +14801,10 @@ MonoBehaviour:
   cohesionDistance: 5.33
   avoidanceDistance: 7.45
   alignmentDistance: 3.57
-  boundDistance: 10
+  boundDistance: 20
   obstacleDistance: 10
   cohesionWeight: 8.81
-  avoidanceWeight: 6.03
+  avoidanceWeight: 6.43
   alignmentWeight: 5.71
   boundWeight: 10
   obstacleWeight: 100
@@ -14746,7 +14812,10 @@ MonoBehaviour:
   - flock: {fileID: 341799637}
     distance: 12
     weight: 6.81
-  preyFactors: []
+  preyFactors:
+  - flock: {fileID: 683384966}
+    distance: 5
+    weight: 5
 --- !u!1001 &1426294324
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15752,7 +15821,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1967855604672378954, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
       propertyPath: flockSize
-      value: 25
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1967855604672378954, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
       propertyPath: useObstacles
@@ -15844,7 +15913,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4824578821266108791, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19020,7 +19089,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1967855604672378954, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
       propertyPath: flockSize
-      value: 25
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1967855604672378954, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
       propertyPath: useObstacles
@@ -19112,7 +19181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4824578821266108791, guid: 3919c9e07d5c2b0428016920772a7d84, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
